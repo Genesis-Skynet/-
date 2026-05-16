@@ -1,0 +1,4707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="草本初色客服岗前测试系统 - 专业的客服培训评估工具">
+<meta name="keywords" content="客服测试,培训系统,售后管理,草本初色">
+<meta name="author" content="草本初色">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2563eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>草本初色 - 客服岗前测试系统</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}:root{--primary:#2563eb;--primary-light:#3b82f6;--primary-dark:#1d4ed8;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;--gray-50:#f8fafc;--gray-100:#f1f5f9;--gray-200:#e2e8f0;--gray-300:#cbd5e1;--gray-400:#94a3b8;--gray-500:#64748b;--gray-600:#475569;--gray-700:#334155;--gray-800:#1e293b;--shadow:0 1px 3px rgba(0,0,0,.1);--shadow-md:0 4px 6px rgba(0,0,0,.07);--shadow-lg:0 10px 15px rgba(0,0,0,.1);--radius:8px;--radius-lg:12px;--radius-xl:16px}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--gray-100);color:var(--gray-800);height:100vh;overflow:hidden;display:flex;flex-direction:column}.top-bar{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);z-index:1000;flex-shrink:0}.brand{display:flex;align-items:center;gap:12px}.brand-logo{width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px}.brand-name{font-size:18px;font-weight:600;letter-spacing:1px}.brand-sub{font-size:11px;opacity:.7;margin-left:8px;padding:2px 8px;background:rgba(255,255,255,.15);border-radius:10px}.tab-nav{display:flex;gap:4px;background:rgba(255,255,255,.1);border-radius:10px;padding:4px}.tab-btn{padding:8px 18px;border:none;background:0 0;color:rgba(255,255,255,.7);cursor:pointer;border-radius:8px;font-size:13px;font-weight:500;transition:.2s;white-space:nowrap}.tab-btn:hover{background:rgba(255,255,255,.15);color:#fff}.tab-btn.active{background:#fff;color:var(--primary);font-weight:600}.top-score-display{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);padding:6px 16px;border-radius:20px}.top-score-label{font-size:12px;opacity:.8}.top-score-value{font-size:20px;font-weight:700}.main-container{display:flex;flex:1;overflow:hidden}.left-panel{width:280px;min-width:280px;background:#fff;border-right:1px solid var(--gray-200);display:flex;flex-direction:column;overflow-y:auto;flex-shrink:0}.left-panel::-webkit-scrollbar{width:4px}.left-panel::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:4px}.panel-section{padding:16px;border-bottom:1px solid var(--gray-100)}.panel-section-title{font-size:12px;font-weight:600;color:var(--gray-500);letter-spacing:1px;margin-bottom:12px;display:flex;align-items:center;gap:6px}.config-group{margin-bottom:12px}.config-label{font-size:12px;color:var(--gray-600);margin-bottom:4px;font-weight:500}.config-input{width:100%;padding:8px 12px;border:1px solid var(--gray-200);border-radius:var(--radius);font-size:13px;background:#fff}.config-input:focus{outline:none;border-color:var(--primary)}.config-input:disabled{background:var(--gray-50);cursor:not-allowed}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border:none;border-radius:var(--radius);font-size:13px;font-weight:600;cursor:pointer;transition:.2s;width:100%}.btn:hover{transform:translateY(-1px);opacity:.9}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}.btn-primary{background:var(--primary);color:#fff}.btn-danger{background:var(--danger);color:#fff}.btn-outline{background:#fff;color:var(--gray-700);border:1px solid var(--gray-200)}.progress-bar-container{background:var(--gray-100);border-radius:20px;height:8px;overflow:hidden;margin:8px 0}.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--primary-light));border-radius:20px;transition:width .5s;width:0}.progress-text{font-size:12px;color:var(--gray-500);display:flex;justify-content:space-between}.customer-list{display:flex;flex-direction:column;gap:4px}.customer-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--radius);cursor:pointer;transition:.2s;border:1px solid transparent;position:relative}.customer-item:hover{background:var(--gray-50)}.customer-item.active{background:#eff6ff;border-color:var(--primary-light)}.customer-item.completed{opacity:.6}.customer-item.hidden-customer{display:none}.customer-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}.customer-info{flex:1;min-width:0}.customer-name{font-size:13px;font-weight:600}.customer-scene{font-size:11px;color:var(--gray-500);margin-top:2px}.customer-time{font-size:10px;color:var(--gray-400);margin-top:2px}.customer-status{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;white-space:nowrap}.status-waiting{background:var(--gray-100);color:var(--gray-500)}.status-active{background:#dbeafe;color:var(--primary)}.status-completed{background:#d1fae5;color:var(--success)}.online-dot{width:8px;height:8px;background:var(--success);border-radius:50%;position:absolute;top:10px;left:38px;border:2px solid #fff;display:none}.customer-item.active .online-dot{display:block}.violation-list{max-height:200px;overflow-y:auto;display:flex;flex-direction:column;gap:6px}.violation-item{padding:8px 10px;background:#fef2f2;border-radius:6px;border-left:3px solid var(--danger);font-size:11px}.violation-round{font-weight:600;color:var(--danger)}.violation-desc{color:var(--gray-600);margin-top:2px}.violation-score{color:var(--danger);font-weight:600}.no-violations{text-align:center;color:var(--gray-400);font-size:12px;padding:20px}.right-content{flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative}.tab-page{display:none;flex:1;flex-direction:column;overflow:hidden}.tab-page.active{display:flex}.chat-container{display:flex;flex:1;overflow:hidden}.chat-main{flex:1;display:flex;flex-direction:column;overflow:hidden}.chat-header{padding:12px 20px;background:#fff;border-bottom:1px solid var(--gray-200);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.chat-header-left{display:flex;align-items:center;gap:10px}.chat-header-placeholder{font-size:13px;color:var(--gray-400)}.chat-messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:16px}.chat-messages::-webkit-scrollbar{width:6px}.chat-messages::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:6px}.message{display:flex;gap:10px;max-width:75%;animation:msgIn .3s ease}@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.message-customer{align-self:flex-start}.message-agent{align-self:flex-end;flex-direction:row-reverse}.message-system{align-self:center;max-width:80%}.msg-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;font-weight:600}.message-customer .msg-avatar{background:#fef3c7;color:#92400e}.message-agent .msg-avatar{background:#dbeafe;color:var(--primary)}.msg-content{display:flex;flex-direction:column;gap:4px}.message-agent .msg-content{align-items:flex-end}.msg-name{font-size:11px;color:var(--gray-500);font-weight:500}.msg-bubble{padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.6;word-break:break-word;white-space:pre-wrap}.message-customer .msg-bubble{background:#fff;border:1px solid var(--gray-200);border-top-left-radius:4px}.message-agent .msg-bubble{background:var(--primary);color:#fff;border-top-right-radius:4px}.message-system .msg-bubble{background:var(--gray-100);color:var(--gray-600);text-align:center;font-size:12px;border-radius:20px;padding:8px 20px}.msg-time{font-size:10px;color:var(--gray-400)}.msg-penalty{display:inline-flex;align-items:center;gap:4px;background:#fef2f2;color:var(--danger);font-size:10px;padding:2px 8px;border-radius:10px;margin-top:4px;font-weight:500}.typing-indicator{display:none;align-self:flex-start;padding:0 20px}.typing-indicator.show{display:flex}.typing-dots{display:flex;align-items:center;gap:10px}.typing-avatar{width:36px;height:36px;border-radius:50%;background:#fef3c7;display:flex;align-items:center;justify-content:center;font-size:14px}.typing-bubble{background:#fff;border:1px solid var(--gray-200);border-radius:12px;border-top-left-radius:4px;padding:12px 16px;display:flex;align-items:center;gap:4px}.typing-dot{width:7px;height:7px;background:var(--gray-400);border-radius:50%;animation:bounce 1.4s infinite ease-in-out}.typing-dot:nth-child(1){animation-delay:0s}.typing-dot:nth-child(2){animation-delay:.2s}.typing-dot:nth-child(3){animation-delay:.4s}@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-8px);opacity:1}}.chat-input-area{padding:16px 20px;background:#fff;border-top:1px solid var(--gray-200);display:flex;gap:10px;align-items:flex-end}.chat-input-wrapper{flex:1}.chat-input{width:100%;min-height:44px;max-height:120px;padding:10px 14px;border:1px solid var(--gray-200);border-radius:var(--radius-lg);font-size:13px;line-height:1.5;resize:none;outline:none;font-family:inherit}.chat-input:focus{border-color:var(--primary)}.chat-input:disabled{background:var(--gray-50);cursor:not-allowed}.send-btn{padding:10px 20px;background:var(--primary);color:#fff;border:none;border-radius:var(--radius-lg);cursor:pointer;font-size:13px;font-weight:600;transition:.2s;white-space:nowrap;height:44px}.send-btn:hover{background:var(--primary-dark)}.send-btn:disabled{opacity:.5;cursor:not-allowed}.transfer-btn{padding:8px 14px;background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);cursor:pointer;font-size:12px;transition:.2s;display:flex;align-items:center;gap:4px;color:var(--gray-600)}.transfer-btn:hover{background:var(--gray-50);color:var(--primary)}.transfer-btn:disabled{opacity:.5;cursor:not-allowed}.transfer-btn.pulse{animation:pulseA 1.5s infinite;border-color:var(--danger);color:var(--danger);font-weight:700}@keyframes pulseA{0%{box-shadow:0 0 0 0 rgba(239,68,68,.5)}70%{box-shadow:0 0 0 10px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}.order-panel{width:280px;min-width:280px;background:var(--gray-50);border-left:1px solid var(--gray-200);padding:16px;overflow-y:auto;flex-shrink:0}.order-panel-title{font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:12px}.order-card{background:#fff;border-radius:var(--radius);padding:14px;margin-bottom:10px;border:1px solid var(--gray-200)}.order-field{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--gray-100)}.order-field:last-child{border-bottom:none}.order-field-label{font-size:11px;color:var(--gray-500)}.order-field-value{font-size:11px;color:var(--gray-800);font-weight:500;text-align:right;max-width:60%}.welcome-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;z-index:100;backdrop-filter:blur(5px)}.welcome-content{text-align:center;max-width:500px;padding:40px}.welcome-icon{font-size:64px;margin-bottom:20px}.welcome-title{font-size:24px;font-weight:700;margin-bottom:8px}.welcome-desc{font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:30px}.scoring-page{padding:24px;overflow-y:auto}.score-overview{background:#fff;border-radius:var(--radius-xl);padding:24px;margin-bottom:20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:24px}.score-circle{width:100px;height:100px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}.score-circle-value{font-size:32px;font-weight:700}.score-circle-label{font-size:11px;opacity:.8}.score-circle.pass{background:linear-gradient(135deg,#d1fae5,#6ee7b7);color:#065f46}.score-circle.fail{background:linear-gradient(135deg,#fee2e2,#fca5a5);color:#991b1b}.score-circle.pending{background:linear-gradient(135deg,var(--gray-100),var(--gray-200));color:var(--gray-500)}.score-summary{flex:1}.score-summary h3{font-size:16px;margin-bottom:8px}.score-summary p{font-size:13px;color:var(--gray-500)}.score-modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}.score-module-card{background:#fff;border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow)}.module-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.module-name{font-size:14px;font-weight:600}.module-score{font-size:18px;font-weight:700}.module-progress{height:6px;background:var(--gray-100);border-radius:6px;overflow:hidden;margin-bottom:8px}.module-progress-fill{height:100%;border-radius:6px;transition:width .5s}.module-rate{font-size:11px;color:var(--gray-500);margin-bottom:10px}.module-deductions{display:flex;flex-direction:column;gap:4px}.deduction-item{font-size:11px;padding:6px 10px;background:#fef2f2;border-radius:4px;display:flex;justify-content:space-between}.no-deduction{font-size:12px;color:var(--success);padding:6px 0}.report-page{padding:24px;overflow-y:auto}.report-container{max-width:900px;margin:0 auto;background:#fff;border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);overflow:hidden}.report-header{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:32px;text-align:center}.report-header h2{font-size:22px;margin-bottom:6px}.report-header p{font-size:13px;opacity:.8}.report-body{padding:32px}.report-info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px}.report-info-item{padding:14px;background:var(--gray-50);border-radius:var(--radius)}.report-info-label{font-size:11px;color:var(--gray-500);margin-bottom:4px}.report-info-value{font-size:15px;font-weight:600}.report-table{width:100%;border-collapse:collapse;margin-bottom:28px}.report-table th,.report-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--gray-100);font-size:12px}.report-table th{background:var(--gray-50);font-weight:600;color:var(--gray-600);font-size:11px}.report-table tr:last-child{font-weight:600;background:var(--gray-50)}.suggestion-cards{display:flex;flex-direction:column;gap:12px}.suggestion-card{padding:16px;border-radius:var(--radius);border-left:4px solid var(--warning);background:#fffbeb}.suggestion-card h4{font-size:13px;margin-bottom:6px}.suggestion-card p{font-size:12px;color:var(--gray-600);line-height:1.6}.report-actions{display:flex;gap:12px;justify-content:center;padding:24px 32px;border-top:1px solid var(--gray-100)}.report-actions .btn{width:auto;padding:10px 28px}.report-not-ready{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center}.report-not-ready .icon{font-size:48px;margin-bottom:16px;opacity:.5}.report-not-ready h3{font-size:18px;color:var(--gray-600);margin-bottom:8px}.report-not-ready p{font-size:13px;color:var(--gray-400)}.rating-badge{display:inline-flex;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600}.rating-excellent{background:#d1fae5;color:#065f46}.rating-pass{background:#fef3c7;color:#92400e}.rating-fail{background:#fee2e2;color:#991b1b}.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:2000;backdrop-filter:blur(3px)}.modal-overlay.show{display:flex}.modal-box{background:#fff;border-radius:var(--radius-xl);padding:28px;max-width:400px;width:90%;box-shadow:var(--shadow-lg);text-align:center}.modal-box h3{font-size:16px;margin-bottom:10px}.modal-box p{font-size:13px;color:var(--gray-500);margin-bottom:20px}.modal-actions{display:flex;gap:10px;justify-content:center}.modal-actions .btn{width:auto;padding:8px 24px}.transfer-option{padding:12px 16px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);cursor:pointer;transition:.2s;text-align:left;display:flex;align-items:center;gap:10px;margin-bottom:12px}.transfer-option:hover{background:#eff6ff;border-color:var(--primary-light)}.transfer-option .avatar{width:36px;height:36px;background:#fef3c7;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}.transfer-option .info{flex:1}.transfer-option .name{font-size:13px;font-weight:600}.transfer-option .role{font-size:11px;color:var(--gray-500)}.process-page{padding:24px;overflow-y:auto}.process-step{display:flex;gap:16px;padding:16px 0;position:relative}.process-step::before{content:'';position:absolute;left:18px;top:44px;bottom:0;width:2px;background:var(--gray-200)}.process-step:last-child::before{display:none}.process-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;z-index:1}.process-dot.done{background:#d1fae5;color:var(--success)}.process-info{flex:1}.process-title{font-size:14px;font-weight:600;margin-bottom:4px}.process-desc{font-size:12px;color:var(--gray-500)}.customer-list-empty{text-align:center;padding:20px;color:var(--gray-400);font-size:12px}@media print{.top-bar,.left-panel,.tab-nav,.report-actions{display:none!important}body{background:#fff}}.chat-container{display:flex;flex:1;overflow:hidden;position:relative}.chat-main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:200px}.chat-resizer{width:6px;background:var(--gray-200);cursor:col-resize;transition:background 0.2s;flex-shrink:0;position:relative;z-index:10}.chat-resizer:hover{background:var(--primary-light)}.chat-resizer::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:2px;height:40px;background:var(--gray-400);border-radius:1px}.chat-resizer:hover::before{background:#fff}.chat-resizer.dragging{background:var(--primary)}.chat-resizer.dragging::before{background:#fff}.order-panel{width:280px;min-width:200px;background:var(--gray-50);border-left:1px solid var(--gray-200);padding:16px;overflow-y:auto;flex-shrink:0}
+
+.aftersale-card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-width:280px}
+
+.aftersale-card-header{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--gray-50);border-bottom:1px solid var(--gray-100)}
+
+.aftersale-card-title{font-size:12px;font-weight:600;color:var(--gray-800)}
+
+.aftersale-card-submit-btn{padding:3px 10px;background:#dcfce7;color:var(--success);border:none;border-radius:10px;font-size:10px;font-weight:600;cursor:pointer;transition:all 0.15s ease}
+
+.aftersale-card-submit-btn:hover{background:var(--success);color:#fff}
+
+.aftersale-product{display:flex;gap:8px;padding:8px 10px;border-bottom:1px dashed var(--gray-100)}
+
+.product-images{display:flex;gap:2px;flex-shrink:0}
+
+.product-image{width:40px;height:40px;border-radius:4px;object-fit:cover;border:1px solid var(--gray-100)}
+
+.product-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+
+.product-title{font-size:11px;color:var(--gray-800);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+.product-meta{font-size:10px;color:var(--gray-500);margin-top:2px}
+
+.aftersale-details{padding:8px 10px;display:flex;flex-direction:column;gap:5px}
+
+.aftersale-row{display:flex;justify-content:space-between;align-items:center}
+
+.aftersale-label{font-size:10px;color:var(--gray-500)}
+
+.aftersale-value{font-size:10px;color:var(--gray-800);font-weight:500;text-align:right;max-width:65%;word-break:break-word}
+
+.aftersale-card-footer{padding:8px 10px;display:flex;justify-content:flex-end;border-top:1px solid var(--gray-100)}
+
+.aftersale-cancel-btn{padding:4px 12px;background:var(--gray-100);color:var(--gray-500);border:none;border-radius:4px;font-size:10px;cursor:pointer;transition:all 0.15s ease}
+
+.aftersale-cancel-btn:hover{background:var(--gray-200);color:var(--gray-700)}
+
+/* 售后卡片消息样式 - 独立于消息气泡 */
+.message-aftersale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  width: 100%;
+  gap: 6px;
+}
+
+.aftersale-card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.aftersale-card-time {
+  font-size: 10px;
+  color: var(--gray-400);
+  margin-top: 4px;
+  align-self: flex-end;
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .left-panel {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  
+  .right-content {
+    width: 100%;
+  }
+  
+  .chat-container {
+    flex-direction: column;
+  }
+  
+  .order-panel {
+    width: 100% !important;
+    min-width: unset !important;
+    max-height: 300px;
+    border-top: 1px solid var(--gray-200);
+    border-left: none;
+  }
+  
+  .chat-resizer {
+    display: none;
+  }
+  
+  .tab-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 0 12px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .brand {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tab-nav {
+    width: 100%;
+    order: 3;
+  }
+  
+  .top-score-display {
+    order: 2;
+  }
+  
+  .panel-section {
+    padding: 12px;
+  }
+  
+  .config-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .chat-input {
+    font-size: 16px;
+  }
+  
+  .score-overview {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .score-modules {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-box {
+    margin: 16px;
+    padding: 20px;
+  }
+  
+  .welcome-content {
+    padding: 24px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
+  }
+  
+  .welcome-desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --radius: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 10px;
+  }
+  
+  .brand-name {
+    font-size: 16px;
+  }
+  
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+  
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .panel-section-title {
+    font-size: 13px;
+  }
+  
+  .customer-card {
+    padding: 8px;
+  }
+  
+  .customer-name {
+    font-size: 13px;
+  }
+  
+  .customer-scene {
+    font-size: 11px;
+  }
+  
+  .violation-item {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+  
+  .message-content {
+    font-size: 13px;
+    padding: 8px 12px;
+    max-width: 85%;
+  }
+  
+  .order-panel-title {
+    font-size: 13px;
+  }
+  
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .score-circle-value {
+    font-size: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .tab-btn,
+  .btn,
+  .customer-card,
+  .send-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .chat-input {
+    min-height: 44px;
+  }
+}
+</style>
+</head>
+<body role="application" aria-label="客服岗前测试系统">
+<header class="top-bar" role="banner"><nav class="brand" aria-label="系统品牌"><div class="brand-logo" role="img" aria-label="草本初色标志">🌿</div><span class="brand-name">草本初色</span><span class="brand-sub">祈愿工作室</span></nav><div class="tab-nav" role="tablist" aria-label="功能导航"><button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tabChat" tabindex="0" onclick="switchTab('chat',this)">💬 对话测试</button><button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabScoring" tabindex="-1" onclick="switchTab('scoring',this)">📊 实时评分</button><button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabProcess" tabindex="-1" onclick="switchTab('process',this)">🔍 流程检测</button><button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabReport" tabindex="-1" onclick="switchTab('report',this)">📋 测试报告</button></div><div class="top-score-display" aria-live="polite" aria-label="当前总分"><span class="top-score-label">当前总分</span><span class="top-score-value" id="topScoreValue" aria-describedby="topScoreLabel">—</span></div></header>
+<div class="main-container"><div class="left-panel"><div class="panel-section" id="configSection"><div class="panel-section-title">👤 被测人员信息</div><div class="config-group"><div class="config-label">客服姓名</div><input type="text" class="config-input" id="agentName" value="刘亮"></div><button class="btn btn-primary" id="startBtn" onclick="startTest()">🚀 开始测试</button></div><div class="panel-section"><div class="panel-section-title">📈 测试进度</div><div class="progress-text"><span id="progressLabel">等待开始</span><span id="progressCount">0/10</span></div><div class="progress-bar-container"><div class="progress-bar-fill" id="progressBar"></div></div><div style="font-size:11px;color:var(--gray-400);margin-top:4px" id="stageLabel">当前阶段：待启动</div></div><div class="panel-section" style="flex:1"><div class="panel-section-title">👥 客户列表</div><div class="customer-list" id="customerList"></div><div class="customer-list-empty" id="customerListEmpty">暂无客户进线</div></div><div class="panel-section"><div class="panel-section-title">⚠️ 实时违规 <span id="violationCount" style="background:var(--danger);color:#fff;padding:1px 8px;border-radius:10px;font-size:11px">0</span></div><div class="violation-list" id="violationList"><div class="no-violations">暂无违规记录</div></div></div><div class="panel-section"><button class="btn btn-outline" onclick="showResetModal()">🔄 重置测试</button></div></div>
+<div class="right-content"><div class="tab-page active" id="tabChat"><div class="chat-container"><div class="chat-main"><div class="chat-header"><div class="chat-header-left" id="chatHeaderLeft"><span class="chat-header-placeholder">请选择客户开始对话</span></div><div><button class="transfer-btn" id="transferBtn" onclick="showTransferModal()" disabled>🔀 转接高级售后</button></div></div><div class="chat-messages" id="chatMessages"></div><div class="typing-indicator" id="typingIndicator"><div class="typing-dots"><div class="typing-avatar">👩</div><div class="typing-bubble"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div></div><div class="chat-input-area"><div class="chat-input-wrapper"><textarea class="chat-input" id="chatInput" placeholder="请输入回复内容..." disabled rows="1"></textarea></div><button class="send-btn" id="sendBtn" onclick="sendMessage()" disabled>发送</button></div></div><div class="chat-resizer" id="chatResizer"></div><div class="order-panel"><div class="order-panel-title">📦 当前客户订单信息</div><div id="orderContent"><div style="text-align:center;padding:40px 0;color:var(--gray-400);font-size:12px">等待测试开始...</div></div></div></div><div class="welcome-overlay" id="welcomeOverlay"><div class="welcome-content"><div class="welcome-icon">🎯</div><div class="welcome-title">客服岗前测试系统</div><div class="welcome-desc">本测试将模拟10位不同诉求的客户进行对话。<br>请在左侧确认信息后点击「开始测试」。</div></div></div></div>
+<div class="tab-page" id="tabScoring"><div class="scoring-page"><div class="score-overview"><div class="score-circle pending" id="scoreCircle"><div class="score-circle-value" id="scoreCircleValue">—</div><div class="score-circle-label">总分</div></div><div class="score-summary"><h3 id="scoreSummaryTitle">等待测试开始</h3><p id="scoreSummaryDesc"></p></div></div><div class="score-modules" id="scoreModules"></div></div></div>
+<div class="tab-page" id="tabProcess"><div class="process-page"><div id="processTimeline"><div style="text-align:center;padding:60px;color:var(--gray-400)">测试开始后显示</div></div></div></div>
+<div class="tab-page" id="tabReport"><div class="report-page"><div id="reportContent"><div class="report-not-ready"><div class="icon">📋</div><h3>报告尚未生成</h3><p>完成全部客户对话后自动生成</p></div></div></div></div></div></div>
+<div class="modal-overlay" id="resetModal"><div class="modal-box"><h3>⚠️ 确认重置</h3><p>此操作不可撤销。</p><div class="modal-actions"><button class="btn btn-outline" onclick="hideResetModal()">取消</button><button class="btn btn-danger" onclick="resetTest()">确认重置</button></div></div></div>
+<div class="modal-overlay" id="transferModal"><div class="modal-box"><h3>🔀 转接会话</h3><p>请选择要转接的专员：</p><div class="transfer-option" onclick="confirmTransfer()"><div class="avatar">👨‍💼</div><div class="info"><div class="name">高级售后专员</div><div class="role">处理复杂售后问题</div></div></div><div class="modal-actions"><button class="btn btn-outline" onclick="hideTransferModal()">取消</button></div></div></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      const focusedElement = document.activeElement;
+      if (focusedElement && focusedElement.classList.contains('tab-btn')) {
+        const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+        const currentIndex = tabButtons.indexOf(focusedElement);
+        let nextIndex;
+        
+        if (e.shiftKey) {
+          nextIndex = currentIndex > 0 ? currentIndex - 1 : tabButtons.length - 1;
+        } else {
+          nextIndex = currentIndex < tabButtons.length - 1 ? currentIndex + 1 : 0;
+        }
+        
+        tabButtons[nextIndex].focus();
+        e.preventDefault();
+      }
+    }
+    
+    if (e.key === 'Enter' && e.ctrlKey) {
+      const sendBtn = document.getElementById('sendBtn');
+      if (sendBtn && !sendBtn.disabled) {
+        sendMessage();
+        e.preventDefault();
+      }
+    }
+  });
+  
+  document.querySelectorAll('button, input, textarea').forEach(function(element) {
+    element.addEventListener('focus', function() {
+      this.style.outline = '2px solid var(--primary)';
+      this.style.outlineOffset = '2px';
+    });
+    
+    element.addEventListener('blur', function() {
+      this.style.outline = '';
+      this.style.outlineOffset = '';
+    });
+  });
+});
+
+/**
+ * 初始化可拖拽分隔条功能
+ */
+function initResizer() {
+  const resizer = document.getElementById('chatResizer');
+  const chatMain = document.querySelector('.chat-main');
+  const orderPanel = document.querySelector('.order-panel');
+  
+  if (!resizer || !chatMain || !orderPanel) return;
+  
+  let isDragging = false;
+  
+  function startDrag(e) {
+    isDragging = true;
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    
+    e.preventDefault();
+  }
+  
+  function drag(e) {
+    if (!isDragging) return;
+    
+    const chatContainer = document.querySelector('.chat-container');
+    if (!chatContainer) return;
+    
+    const containerRect = chatContainer.getBoundingClientRect();
+    let newOrderWidth = containerRect.right - e.clientX;
+    
+    // 设置最小和最大宽度
+    const minWidth = 200;
+    const maxWidth = containerRect.width - 200;
+    
+    if (newOrderWidth < minWidth) {
+      newOrderWidth = minWidth;
+    } else if (newOrderWidth > maxWidth) {
+      newOrderWidth = maxWidth;
+    }
+    
+    orderPanel.style.width = newOrderWidth + 'px';
+    orderPanel.style.minWidth = newOrderWidth + 'px';
+  }
+  
+  function endDrag() {
+    if (!isDragging) return;
+    
+    isDragging = false;
+    resizer.classList.remove('dragging');
+    document.body.style.cursor = '';
+    document.body.style.userSelect = '';
+  }
+  
+  // 鼠标事件
+  resizer.addEventListener('mousedown', startDrag);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', endDrag);
+  
+  // 触摸事件
+  resizer.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    startDrag(touch);
+  });
+  
+  document.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    drag(touch);
+  });
+  
+  document.addEventListener('touchend', endDrag);
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', initResizer);
+
+/**
+ * 将文本转换为二元组数组
+ * @param {string} text - 输入文本
+ * @returns {Array} 二元组数组
+ */
+function textToBigrams(text) {
+  const cleanedText = text.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, '');
+  const bigrams = [];
+  for (let i = 0; i < cleanedText.length - 1; i++) {
+    bigrams.push(cleanedText.substring(i, i + 2));
+  }
+  if (cleanedText.length === 1) {
+    bigrams.push(cleanedText);
+  }
+  return bigrams;
+}
+
+/**
+ * 计算二元组频率
+ * @param {Array} bigrams - 二元组数组
+ * @returns {Object} 二元组频率对象
+ */
+function calculateBigramFrequency(bigrams) {
+  const frequency = {};
+  bigrams.forEach(bigram => {
+    frequency[bigram] = (frequency[bigram] || 0) + 1;
+  });
+  return frequency;
+}
+
+/**
+ * 计算两个文本的余弦相似度
+ * @param {string} text1 - 第一个文本
+ * @param {string} text2 - 第二个文本
+ * @returns {number} 余弦相似度值
+ */
+function calculateCosineSimilarity(text1, text2) {
+  const bigrams1 = textToBigrams(text1);
+  const bigrams2 = textToBigrams(text2);
+  
+  if (!bigrams1.length || !bigrams2.length) return 0;
+  
+  const frequency1 = calculateBigramFrequency(bigrams1);
+  const frequency2 = calculateBigramFrequency(bigrams2);
+  
+  const allBigrams = new Set([...Object.keys(frequency1), ...Object.keys(frequency2)]);
+  let dotProduct = 0;
+  let magnitude1 = 0;
+  let magnitude2 = 0;
+  
+  allBigrams.forEach(bigram => {
+    const value1 = frequency1[bigram] || 0;
+    const value2 = frequency2[bigram] || 0;
+    dotProduct += value1 * value2;
+    magnitude1 += value1 * value1;
+    magnitude2 += value2 * value2;
+  });
+  
+  const sqrtMagnitude1 = Math.sqrt(magnitude1);
+  const sqrtMagnitude2 = Math.sqrt(magnitude2);
+  
+  return (sqrtMagnitude1 && sqrtMagnitude2) ? dotProduct / (sqrtMagnitude1 * sqrtMagnitude2) : 0;
+}
+
+/**
+ * 计算文本与答案数组的最大相似度
+ * @param {string} response - 客服回复
+ * @param {Array} answers - 标准答案数组
+ * @returns {number} 最大相似度值
+ */
+function calculateMaxSimilarity(response, answers) {
+  let maxSimilarity = 0;
+  answers.forEach(answer => {
+    const similarity = calculateCosineSimilarity(response, answer);
+    if (similarity > maxSimilarity) {
+      maxSimilarity = similarity;
+    }
+  });
+  return maxSimilarity;
+}
+
+/**
+ * 计算关键词命中率
+ * @param {string} response - 客服回复
+ * @param {Array} keywords - 关键词数组
+ * @returns {number} 命中率
+ */
+function calculateKeywordHitRate(response, keywords) {
+  if (!keywords || !keywords.length) return 1;
+  let hitCount = 0;
+  keywords.forEach(keyword => {
+    if (response.includes(keyword)) {
+      hitCount++;
+    }
+  });
+  return hitCount / keywords.length;
+}
+
+/**
+ * 检查回复是否合格
+ * @param {string} response - 客服回复
+ * @param {Array} keywords - 关键词数组
+ * @param {Array} standardAnswers - 标准答案数组
+ * @returns {Object} 检查结果
+ */
+function checkResponseQuality(response, keywords, standardAnswers, answerBanks = null) {
+  const keywordHitRate = calculateKeywordHitRate(response, keywords);
+  const similarity = calculateMaxSimilarity(response, standardAnswers);
+  
+  // 检测命中哪个答案库
+  let hitAnswerBank = null;
+  if (answerBanks && answerBanks.length > 0) {
+    answerBanks.forEach((bank, index) => {
+      const bankSimilarity = calculateMaxSimilarity(response, bank);
+      if (bankSimilarity >= 0.5) {
+        hitAnswerBank = index + 1; // 返回1、2、3
+      }
+    });
+  }
+  
+  if (similarity >= 0.6) {
+    return { pass: true, keywordHitRate, similarity, hitAnswerBank };
+  }
+  if (keywordHitRate >= 0.2 && similarity >= 0.25) {
+    return { pass: true, keywordHitRate, similarity, hitAnswerBank };
+  }
+  return { pass: false, keywordHitRate, similarity, hitAnswerBank };
+}
+/**
+ * 辱骂性词汇列表
+ */
+const abusiveWords = ['傻逼','操你','去死','白痴','脑残','智障','废物','垃圾','滚蛋','混蛋','你妈','他妈','畜生','贱人','sb','cnm','弱智','有病'];
+
+/**
+ * 检查文本是否包含辱骂性词汇
+ * @param {string} text - 输入文本
+ * @returns {boolean} 是否包含辱骂性词汇
+ */
+function checkAbusiveLanguage(text) {
+  return abusiveWords.some(word => text.toLowerCase().includes(word));
+}
+
+/**
+ * 矛盾话术配置
+ */
+const contradictoryPhrases = [
+  { pos: ['保暖','暖和','锁温'], neg: ['不保暖','不暖和','没用'] },
+  { pos: ['抱歉','理解','处理'], neg: ['不关我事','管不了','活该'] },
+  { pos: ['补偿','退款','换货','补发'], neg: ['不退','不换','不赔','凑合用'] }
+];
+
+/**
+ * 检查回复是否存在矛盾话术
+ * @param {string} response - 客服回复
+ * @param {Array} standardAnswers - 标准答案数组
+ * @returns {boolean} 是否存在矛盾话术
+ */
+function checkContradictoryLanguage(response, standardAnswers) {
+  for (const pattern of contradictoryPhrases) {
+    if (pattern.neg.some(negative => response.includes(negative)) && 
+        standardAnswers.some(answer => pattern.pos.some(positive => answer.includes(positive)))) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * 辱骂性回复模板
+ */
+const abusiveResponses = ['你说什么？！我要投诉你！','你居然骂人？我找你们主管！'];
+
+/**
+ * 矛盾回复模板
+ */
+const contradictoryResponses = ['你确定？跟其他客服说的不一样！','你这回答有问题吧？'];
+
+/**
+ * 随机选择回复模板
+ * @param {Array} responses - 回复模板数组
+ * @returns {string} 随机选择的回复
+ */
+function getRandomResponse(responses) {
+  return responses[Math.floor(Math.random() * responses.length)];
+}
+/**
+ * 评分模块配置
+ */
+const scoringModules = [
+  {id: 'greeting', name: '开场问候与安抚', maxScore: 15, score: 15, deductions: []},
+  {id: 'problem', name: '问题确认与信息收集', maxScore: 20, score: 20, deductions: []},
+  {id: 'solution', name: '解决方案提供', maxScore: 25, score: 25, deductions: []},
+  {id: 'communication', name: '沟通技巧与话术', maxScore: 15, score: 15, deductions: []},
+  {id: 'process', name: '流程规范执行', maxScore: 15, score: 15, deductions: []},
+  {id: 'closing', name: '结束语与跟进', maxScore: 10, score: 10, deductions: []}
+];
+
+/**
+ * 客户数据配置
+ */
+const customers = [
+{id:1,name:'张小雅',avatar:'👩',scene:'不保暖投诉',bgColor:'#fef3c7',order:{orderId:'CB20260301001',orderDate:'2026-03-15',product:'草本初色加绒发热打底衣',spec:'肤色/L码',code:'CBCS-FH-001',price:'¥189.00'},dialogues:[{emotion:'concerned',customerMessages:['你这衣服说穿上会发热，我穿上也没有见发热啊','什么情况啊？'],keywords:['锁温','保暖','暖和','外套','搭配'],standardAnswers:['亲爱的，这件打底衣主要是比较锁温哦，相对其他普通未加绒的打底衫，会暖和一些哈，搭配外套一起穿会比较暖和哦。','亲亲，这件打底衣锁温保暖效果比较好哦，比普通不加绒的打底衫更暖和，搭配外套穿效果更好，更保暖哦～','亲爱的，您下单这件打底衣主打锁温保暖，是比普通不加绒的打底衫更暖和的呢，建议是搭配外套穿会更暖和的呢~','亲爱的，这款打底衣主打锁温保暖，比普通不加绒的打底衫更暖和，搭配外套穿效果更好哦。','亲亲，这件打底衣保暖性很不错，能牢牢锁住温度，比常规薄款打底衫更保暖，外搭外套穿超合适。','亲爱的，这款打底衣侧重锁温设计，相较于普通无绒打底衫会更暖和，配上外套穿保暖效果更佳。'],moduleId:'greeting',penalty:5},{emotion:'angry',customerMessages:['那怎么处理啊？','我买的时候你们直播间就是说是自发热的呀','虚假宣传吗','总不能没有这个效果了 你们就说要搭配其他衣服穿吧'],keywords:['视频','水洗标','核实'],standardAnswers:['亲亲辛苦您提供一下视频这边核实一下情况哈（视频中需要展示水洗标+衣服全貌）','亲亲，麻烦拍个视频给我看看哈，要拍到水洗标和整件衣服就行，我好帮你处理问题～','亲爱的，需要你提供一段视频哦，里面展示下衣服的水洗标 + 整体样子，我这边马上帮你核实～'],moduleId:'problem',penalty:5,conditionalKeywords:['搭配','配合','配搭','组合','配对','组配']},{emotion:'calm',customerMessages:['照片'],keywords:['抱歉','尺码','款式','满意','补偿','8元'],standardAnswers:['亲爱的, 非常抱歉，没有给您满意是服务体验！请问尺码和款式您是否满意？如果要留下商品，我帮您向主管申请补偿您8元，您看可以吗🙏','亲爱的，真的很抱歉没能让您满意～要是尺码和款式您还满意、愿意留下这件衣服，我帮您去申请8 元补偿，您觉得可以吗🙏','亲亲，非常抱歉让您体验不好！如果尺码和款式您还能接受、想留下这件衣服，我帮您向主管申请8 元补偿，您看可以吗🙏'],moduleId:'solution',penalty:5},{emotion:'angry',customerMessages:['尺码那些都可以，但是视频展示说穿上出汗，到身上就是完全不一样，你们虚假宣传太严重了','太少了吧，我几十块买来 你才给我补偿这么点？'],keywords:['抱歉','升级','12元','补偿','谅解'],standardAnswers:['亲，抱歉没能达到您预期的，这样吧，咱给您升级处理一下，给您多申请些共（12）元的哈，还请您谅解，不好意思不好意思','亲亲，实在抱歉没让您满意！我给您升级处理，帮您申请12 块钱补偿，您看行不？','亲亲，抱歉没能符合您的期待！我给您升级方案，帮您申请到12 元补偿，还请您多多包涵，实在不好意思啦🙇'],moduleId:'solution',penalty:5,conditionalKeywords:['尺码','尺寸','码数']},{emotion:'calm',customerMessages:['你做客服的也不容易','行吧，那就12吧','你帮我发送一下售后申请，我确认就好了 老年人不会用手机 理解一下'],keywords:['协商','补偿','12元','仅退款','代申','同意','祝'],standardAnswers:['亲亲，已为您协商好补偿方案啦，非常感谢您对产品的支持，这边将 12元为您代申仅退款处理，辛苦您点击一下同意哦，祝您生活愉快~~','亲亲，已经帮您申请好12 元仅退款啦！麻烦您点击同意一下，非常感谢您的理解，祝您生活愉快～','亲亲，补偿方案已经帮您协商好，这边为您申请12 元仅退款，辛苦您点击同意，感谢支持，祝您生活愉快～','亲爱的，对不起没达到您预期～我这边给您申请12 元补偿，您多多谅解哈🙏','亲亲，抱歉没能符合您的期待！我给您升级方案，帮您申请到12 元补偿，还请您多多包涵，实在不好意思啦🙇'],moduleId:'closing',penalty:5},{emotion:'calm',customerMessages:['好了 什么时候给我退'],keywords:['点','同意','就可以'],standardAnswers:['亲爱的 您点同意就可以了哦🌹','亲爱的，您点一下同意就行哦🌹','亲爱的，您直接点击同意就好啦🌹','亲爱的，您只要点同意就可以咯🌹','亲爱的，您点一下同意按钮就可以啦🌹','您只需耐心等待售后团队跟进处理即可。','后续事宜已完整转交售后部门处理，您安心等候结果就好。','静待售后专员处理即可，无需您进行任何额外操作。','该问题已流转至售后专属处理环节，您等待后续进展即可。','您不用再多做其他操作，等着售后这边给您处理完成就行','您的相关诉求已完成售后受理，请静待后续的处理结果。','您的问题我们已完整记录归档，后续由售后团队全程跟进，您耐心等候就可以了。','请您等待售后部门的专项跟进与处理即可。','后续全流程将由售后专员全权负责推进，您只需静待最终处理结果。','该事项已创建专属售后工单，您等待售后团队的处理反馈即可。'],moduleId:'closing',penalty:3}]},
+{id:2,name:'李婷婷',avatar:'👩‍🦰',scene:'不含棉/超期售后',bgColor:'#dbeafe',order:{orderId:'CB20260302002',orderDate:'2025-09-20',product:'草本初色加绒锁温打底衣',spec:'灰色/M码',code:'CBCS-SW-003',price:'¥168.00'},dialogues:[{emotion:'upset',customerMessages:['你好，这个美肤衣试穿了下身上好凉','你们不是宣传保暖吗'],keywords:['锁温','保暖','暖和','外套','搭配'],standardAnswers:['亲,这件打底衣主要是比较锁温哦，相对其他普通未加绒的打底衫，会暖和一些哈，搭配外套一起穿会锁温效果会更好哦','亲爱的，这件打底衣主打锁温设计，相较于常规不加绒的打底衫，保暖性更强，和外套叠穿时，锁温保暖效果会更出色哈～','亲爱的，您下单这件打底衣主打锁温保暖，是比普通不加绒的打底衫更暖和的呢，建议是搭配外套穿会更暖和的呢~','亲，这款打底衣锁温效果特别好，比普通没加绒的打底衫要暖和不少，搭配外套一起穿，保暖锁温的体验会更棒～','亲爱的，这件打底衣的亮点是锁温保暖，相比普通未加绒打底衫更御寒，和外套搭配穿着，锁温保暖效果会更好呢～','亲，这款打底衣专注锁温保暖，比普通不加绒打底衫更暖，搭配外套穿能进一步提升锁温保暖效果哦～'],moduleId:'greeting',penalty:5},{emotion:'angry',customerMessages:['你直播间全程宣传能自发热','快速升温锁温','我试穿过了一点发热升温的感觉都没有','跟普通几十块的秋衣一模一样','这不是虚假宣传吗？'],keywords:['签收','5个月','第一次','穿洗','吊牌','体质','体感','耐寒','环境温度','怕冷'],standardAnswers:['亲亲，这边查询您订单也是签收了5个多月了 ，是第一次穿洗吗？包装吊牌还在吗?','亲亲，我这边查到您的订单已经签收超过五个多月啦，请问是第一次拿出来穿洗吗？那您的包装和吊牌还在吗？','亲爱的，您的订单签收都 5 个多月了哦，请问是第一次清洗穿着吗？相关的包装吊牌还保存完好吗？','亲，查询到您的订单已签收五个多月啦，想问下这是第一次穿洗不？包装和吊牌还在不呀？','亲亲，您的订单签收已经 5 个多月咯，请问是首次进行洗涤穿着吗？那包装和吊牌都还在吗？','亲爱的，这边看到您的订单签收已超五个多月，请问是第一次穿洗吗？包装和吊牌还在不？','每个人的耐寒能力和体感都不一样，有的朋友觉得保暖度刚刚好，怕冷的姐妹会觉得暖度不够，这都是特别正常的情况哈。','每个人的体质不同，对冷暖的感知和耐受度都存在差异，有人觉得保暖效果刚好，怕冷的朋友会觉得暖度不足，这都是很正常的现象。','大家对冷暖的体感本就因人而异，耐寒能力也各不相同，有的朋友穿了觉得暖度刚好，体质偏怕冷的朋友会觉得不够保暖，这都是很正常的哈。','人体对温度的感知阈值存在天然个体差异，耐寒能力各有不同，部分用户觉得保暖度适配，怕冷体质人群会觉得暖度不足，此为正常的体感差异。','每个人的怕冷程度都不一样，对暖度的体感也有差别，有的姐妹穿起来觉得刚好合适，本身怕冷的朋友会觉得不够暖，这都是再正常不过的啦。','大家所处的环境温度各不相同，本身怕冷的姐妹单穿这件，会觉得保暖力度不够哦。','各地的环境温度有不小的差异，体质偏畏寒的姐妹只单穿这一件，会觉得暖度达不到预期。','每个人所在的室内外温度不一样，怕冷的朋友如果单独穿这款，很容易会觉得保暖效果不足。','不同地域的环境温差比较大，本身怕冷的姐妹仅单穿这一件，会觉得保暖度不够用。','大家身处的环境温度有高有低，畏寒怕冷的朋友单穿本品的话，会觉得保暖效果满足不了需求。'],moduleId:'problem',penalty:5,answerBanks:[['亲亲，这边查询您订单也是签收了5个多月了 ，是第一次穿洗吗？包装吊牌还在吗?','亲亲，我这边查到您的订单已经签收超过五个多月啦，请问是第一次拿出来穿洗吗？那您的包装和吊牌还在吗？','亲爱的，您的订单签收都 5 个多月了哦，请问是第一次清洗穿着吗？相关的包装吊牌还保存完好吗？','亲，查询到您的订单已签收五个多月啦，想问下这是第一次穿洗不？包装和吊牌还在不呀？','亲亲，您的订单签收已经 5 个多月咯，请问是首次进行洗涤穿着吗？那包装和吊牌都还在吗？','亲爱的，这边看到您的订单签收已超五个多月，请问是第一次穿洗吗？包装和吊牌还在不？'],['每个人的耐寒能力和体感都不一样，有的朋友觉得保暖度刚刚好，怕冷的姐妹会觉得暖度不够，这都是特别正常的情况哈。','每个人的体质不同，对冷暖的感知和耐受度都存在差异，有人觉得保暖效果刚好，怕冷的朋友会觉得暖度不足，这都是很正常的现象。','大家对冷暖的体感本就因人而异，耐寒能力也各不相同，有的朋友穿了觉得暖度刚好，体质偏怕冷的朋友会觉得不够保暖，这都是很正常的哈。','人体对温度的感知阈值存在天然个体差异，耐寒能力各有不同，部分用户觉得保暖度适配，怕冷体质人群会觉得暖度不足，此为正常的体感差异。','每个人的怕冷程度都不一样，对暖度的体感也有差别，有的姐妹穿起来觉得刚好合适，本身怕冷的朋友会觉得不够暖，这都是再正常不过的啦。'],['大家所处的环境温度各不相同，本身怕冷的姐妹单穿这件，会觉得保暖力度不够哦。','各地的环境温度有不小的差异，体质偏畏寒的姐妹只单穿这一件，会觉得暖度达不到预期。','每个人所在的室内外温度不一样，怕冷的朋友如果单独穿这款，很容易会觉得保暖效果不足。','不同地域的环境温差比较大，本身怕冷的姐妹仅单穿这一件，会觉得保暖度不够用。','大家身处的环境温度有高有低，畏寒怕冷的朋友单穿本品的话，会觉得保暖效果满足不了需求。']]},{emotion:'calm',customerMessages:['不在了','买回来 直接洗了 放柜子里','昨天第一次穿 难受的不行 我想退货退款'],conditionalMessages:{bank1:['不在了','买回来 直接洗了 放柜子里','昨天第一次穿 难受的不行 我想退货退款'],bank2:['你们宣传的是产品本身具备发热升温的物理功效','并非主观体感功效','若该功效仅靠个人体感感知，就属于引人误解的虚假宣传','我要退货退款'],bank3:['你们宣传时，并未标注该发热功效有严苛的环境温度限制','仅宣传 即穿即发热、日常通勤居家都能穿，我已按照正常穿着方式、在日常室内环境下试穿','完全达不到你们宣传的效果；若该功效有特殊使用条件，你们事前未明确告知，也属于隐瞒关键信息、误导消费者','我需要退货退款']},keywords:['抱歉','道歉','不好意思','超过','售后期'],standardAnswers:['对于这次没能给你带来最佳体验，我们诚恳道歉，内心满是自责，不好意思不好意思亲亲订单也是超过售后期了哈亲','非常抱歉这次没能给您带来满意的体验，我们深感抱歉与自责，实在不好意思～订单已经超出售后期限啦亲亲。','对于这次不佳的购物体验，我们向您诚恳致歉，真的十分过意不去，但订单已超过售后时间了哦亲。','很抱歉让您有了不好的体验，我们内心很是愧疚，实在不好意思，订单已经超出售后期啦亲亲。','针对这次没能给您带来良好体验，我们深表歉意，真的非常抱歉，订单已过售后时限了哈亲。','万分抱歉让您不满意了，我们对此很自责也很抱歉，您的订单已经超过售后期限，还望您理解亲亲。'],moduleId:'communication',penalty:4},{emotion:'upset',customerMessages:['道歉我收到了，','但这件事的核心不是 体验不佳，是你们宣传的自发热核心功效 我实测完全没有','属于产品宣传与实际性能严重不符','这不是普通售后问题，不能用 "超出售后期" 来规避责任。','我现在不坚持退货退款，只希望你们能拿出诚意','给出合理的补偿方案来解决这个问题，而不是拿售后期敷衍了事。'],keywords:['申请','补偿','超出','售后期','无法','10','重视','粉丝'],standardAnswers:['这边给您申请补偿的哈亲 亲亲实在对不起这边看您的订单已经超出售后期了，这边也无法确定您的穿洗情况，这样哈亲，咱家重视每一位粉丝售后体验，为维护粉丝们的权益与对商品的体验感，对于体验上的不满意这边和上级申请帮您10的补偿哦，您看可以吗亲亲','亲亲真的非常抱歉，您的订单已经超出售后期，已经无法核实穿洗情况。但我们十分重视每位粉丝的体验，特意为您向上级申请了 10 元补偿，您看可以吗？','实在不好意思亲亲，您的订单已过售后时效，也没办法核实具体使用情况。考虑到您的体验不好，我们特别重视，专门帮您申请了 10 元补偿，您是否能接受呢？','亲亲抱歉让您不满意了，您的订单已经超出售后期，无法核实实际穿洗状况。但我们一直很在意粉丝的售后感受，为此特意向上级申请给您 10 元补偿，您看这样可以吗？','真的非常抱歉亲亲，您的订单已超售后期限，无法核实穿洗情况了。为了不辜负您的信任，我们重视每位粉丝的体验，特地申请了 10 元补偿，希望您能谅解，您看可以吗？','亲亲实在对不住，您的订单已经过了售后时间，暂时无法核实穿洗情况。但我们十分看重粉丝体验，特意为您申请了 10 元补偿，用来弥补这次不好的体验，您看可以吗？'],moduleId:'solution',penalty:5},{emotion:'calm',customerMessages:['可以的，我接受这个 10 元补偿方案。麻烦你告知一下这笔补偿的到账渠道、具体到账时间，辛苦尽快安排处理。','好的，感谢你们的跟进和协调，这个补偿方案我接受了。麻烦帮忙尽快安排打款，同步一下到账的相关事宜就可以啦，辛苦啦。','可以，我同意该 10 元补偿方案，本方案履行完毕后，本次关于该产品的相关纠纷就此全部了结。麻烦你尽快完成打款操作，并同步补偿的到账渠道与预计到账时间。','可以，我同意，麻烦尽快安排到账。','好嘞，这个方案我接受啦，谢谢你们的处理～麻烦帮忙尽快把补偿打款安排上哈。'],keywords:['重视','粉丝','退款','处理','查看','感谢'],standardAnswers:['亲您好，咱家重视每一位粉丝服务体验，为维护粉丝们的权益与对商品的体验感，对于服务体验上的不满意这边后台已经为您处理退款了哈，辛苦查看一下，谢谢您的支持🌹','亲您好，我们非常重视每一位粉丝的服务体验，针对这次服务上的不满意，我们已经直接为您办理退款啦，麻烦您留意查收，感谢您的支持与理解～','亲，我们一直很看重每位粉丝的服务体验，对于这次服务上让您不满意的地方，我们已经在后台为您处理退款，您可以抽空查看一下，谢谢您的支持🌹','亲您好，考虑到您对服务体验不太满意，我们十分重视您的购物体验，已经为您完成退款处理，辛苦您留意账户到账情况，感谢您的支持与包容～','亲，为了保障粉丝的权益和良好体验，针对这次服务体验，我们已经在后台为您操作退款了，您可以查看一下，非常感谢您一直以来的支持🌹','亲您好，我们重视每一位粉丝的感受，对于这次服务不满意的地方，已为您处理退款，麻烦您查收，谢谢您的支持与理解～'],moduleId:'closing',penalty:4},{emotion:'calm',customerMessages:['好了 什么时候给我退'],keywords:['已','处理','退款','查看','到账'],standardAnswers:['亲爱的，退款已处理好啦，您查看下到账情况哦🌹'],moduleId:'closing',penalty:2}]},
+{id:3,name:'王美琪',avatar:'👩‍🦱',scene:'发霉投诉',bgColor:'#fce7f3',requireTransfer:true,order:{orderId:'CB20260303003',orderDate:'2026-02-10',product:'草本初色蕾丝无钢圈内衣',spec:'白色/75B',code:'CBCS-NW-003',price:'¥159.00'},dialogues:[{emotion:'upset',customerMessages:['发霉图片','你们这什么情况？','我才穿 2 次就发霉成这样了？'],keywords:['潮湿','霉菌','晾晒','通风','清洗','环境','湿度','梅雨','汗液','贴身','密闭','透气'],standardAnswers:['如果内衣长时间处于潮湿状态，或者在多雨潮湿的季节里没有及时晾晒和通风，就容易滋生霉菌。此外，存放内衣的环境不卫生、湿度过高、通风不良等也是导致霉点出现的原因。内衣发霉还与个人体质有关，偏酸性体质的人出汗后，如果内衣没能及时清洗，就容易长霉点。特别是在南方梅雨天，或者天气热了流汗多','内衣若长期潮湿、梅雨季未及时晾晒通风，很容易滋生霉菌；存放环境不洁、湿度大、不透气，以及出汗后未及时清洗，都会导致内衣长霉点。','潮湿环境、多雨天气未及时晾干通风，是内衣发霉的主要原因；存放卫生差、湿度高、不通风，加上出汗后未及时清洗，也容易出现霉点。','内衣长时间潮湿、梅雨天没及时晾晒通风，易滋生霉菌；存放环境差、湿度大、不透气，或是出汗后未及时清洗，都会引发霉点。','多雨潮湿季节内衣未及时晾晒通风、长期处于潮湿状态，容易发霉；存放环境不佳、出汗后未及时清洗，同样会造成霉点产生。','内衣潮湿不通风、梅雨季未及时晾干，易长霉菌；存放环境卫生差、湿度高，以及出汗后未及时清洗，都是出现霉点的重要原因。','文胸作为女性贴身内衣，长时间紧贴肌肤且处于密闭环境，空气不流通、散热散湿困难，容易积聚汗液。汗液中含有的水分、蛋白质、脂肪酸等物质，正是霉菌滋生的养分，在适宜温湿度下文胸就很容易发霉。','女士文胸贴身穿着、密封性强，四季都难以通风透气，汗液不易挥发排出。而汗液里的水、尿素、乳酸等成分，能为霉菌提供充足营养，在温暖潮湿的环境下，霉菌易繁殖导致文胸发霉。','文胸紧密贴合肌肤，长期处于密闭不透气状态，很难散热排湿，会积攒大量汗液。汗液中的水分与各类有机物，是霉菌生长繁殖的理想养料，在合适温湿度下，文胸就容易出现发霉情况。','女性贴身穿着的文胸密封性好、空气对流差，四季都不易散热散湿，易留存汗液。汗液里的水、蛋白质、脂肪酸等物质，能为霉菌提供生存基质，霉菌分解汗液后，文胸就很容易发霉。','文胸是贴身内衣，紧贴肌肤且密闭性强，难以通风散热、排出湿气，会产生较多汗液。汗液中的多种成分都是霉菌的营养来源，在适宜的温湿度环境中，霉菌大量繁殖就会让文胸发霉。'],moduleId:'problem',penalty:5,answerBanks:[['如果内衣长时间处于潮湿状态，或者在多雨潮湿的季节里没有及时晾晒和通风，就容易滋生霉菌。此外，存放内衣的环境不卫生、湿度过高、通风不良等也是导致霉点出现的原因。内衣发霉还与个人体质有关，偏酸性体质的人出汗后，如果内衣没能及时清洗，就容易长霉点。特别是在南方梅雨天，或者天气热了流汗多','内衣若长期潮湿、梅雨季未及时晾晒通风，很容易滋生霉菌；存放环境不洁、湿度大、不透气，以及出汗后未及时清洗，都会导致内衣长霉点。','潮湿环境、多雨天气未及时晾干通风，是内衣发霉的主要原因；存放卫生差、湿度高、不通风，加上出汗后未及时清洗，也容易出现霉点。','内衣长时间潮湿、梅雨天没及时晾晒通风，易滋生霉菌；存放环境差、湿度大、不透气，或是出汗后未及时清洗，都会引发霉点。','多雨潮湿季节内衣未及时晾晒通风、长期处于潮湿状态，容易发霉；存放环境不佳、出汗后未及时清洗，同样会造成霉点产生。','内衣潮湿不通风、梅雨季未及时晾干，易长霉菌；存放环境卫生差、湿度高，以及出汗后未及时清洗，都是出现霉点的重要原因。'],['文胸作为女性贴身内衣，长时间紧贴肌肤且处于密闭环境，空气不流通、散热散湿困难，容易积聚汗液。汗液中含有的水分、蛋白质、脂肪酸等物质，正是霉菌滋生的养分，在适宜温湿度下文胸就很容易发霉。','女士文胸贴身穿着、密封性强，四季都难以通风透气，汗液不易挥发排出。而汗液里的水、尿素、乳酸等成分，能为霉菌提供充足营养，在温暖潮湿的环境下，霉菌易繁殖导致文胸发霉。','文胸紧密贴合肌肤，长期处于密闭不透气状态，很难散热排湿，会积攒大量汗液。汗液中的水分与各类有机物，是霉菌生长繁殖的理想养料，在合适温湿度下，文胸就容易出现发霉情况。','女性贴身穿着的文胸密封性好、空气对流差，四季都不易散热散湿，易留存汗液。汗液里的水、蛋白质、脂肪酸等物质，能为霉菌提供生存基质，霉菌分解汗液后，文胸就很容易发霉。','文胸是贴身内衣，紧贴肌肤且密闭性强，难以通风散热、排出湿气，会产生较多汗液。汗液中的多种成分都是霉菌的营养来源，在适宜的温湿度环境中，霉菌大量繁殖就会让文胸发霉。']]},{emotion:'angry',customerMessages:['我这件内衣才穿了 2 次','正常穿着、及时清洗晾干','根本不存在你说的长期潮湿、存放不当的情况','你方不能仅凭话术就把发霉的责任全部推给我。','按照法律规定，谁主张谁举证，你们声称是我使用不当导致发霉，请你们拿出对应的检测证据，而不是靠话术推诿责任。现在请你们正视产品质量问题，给我提供合理的售后解决方案。'],conditionalMessages:{bank1A:['我这件内衣才穿了 2 次','正常穿着、及时清洗晾干','根本不存在你说的长期潮湿、存放不当的情况','你方不能仅凭话术就把发霉的责任全部推给我。','按照法律规定，谁主张谁举证，你们声称是我使用不当导致发霉，请你们拿出对应的检测证据，而不是靠话术推诿责任。现在请你们正视产品质量问题，给我提供合理的售后解决方案。'],bank1B:['首先纠正你们的错误科普','健康人体的汗液本身就是弱酸性的','这是正常的生理现象','不存在所谓 \"偏酸性体质导致发霉\" 的说法。','贴身内衣的国家强制标准，明确要求面料必须具备基本的耐汗、抗菌性能，合格的产品完全可以适配人体正常出汗的穿着场景。你们的产品穿 2 次就发霉，只能说明面料本身不具备贴身衣物应有的基本性能，属于质量缺陷，和消费者体质没有任何关系。','请你们停止用伪科学话术甩锅，正视产品本身的问题，依法履行售后义务。'],bank2:['我发现你一直在偷换概念','你说的，只是 \"霉菌生长的条件\"，从来不敢回答一个核心问题 —— 为什么别家同类型的贴身文胸，我完全一样的穿着、清洗、存放习惯，从来没有穿 2 次就发霉的情况，唯独你们家的产品出了问题？','贴身文胸本来就是要贴身穿着的，适配人体日常出汗、正常穿着场景，是它作为商品最基本的质量底线。你们把产品本身必须承担的基础性能义务，反过来当成指责消费者的理由，完全是本末倒置、强词夺理。','别再拿发霉的原理绕圈子了，要么拿出我不当使用的实质证据，要么立刻给我处理售后，否则我会直接向平台和 12315 市场监管部门提交投诉。']},conditionalKeywords:['晒','潮湿','梅雨'],conditionalKeywordsB:['偏酸','酸性','体质','性体'],keywords:['抱歉','体验','重视','反馈','转接','高级售后','专员','稍等','消气'],standardAnswers:['非常抱歉这次没有给您带来愉快的购物体验 ，我们非常重视您的反馈，我们一定会改善问题哈～亲亲您消消气，为了给您给好的解决，这边给您转接到高级售后专员处理，售后目前咨询人数较多，可能需要耐心稍等片刻～～','实在抱歉让您有了不好的购物体验，您的反馈我们特别重视，后续一定会认真改进！您先别生气，为了更好地帮您解决问题，我现在为您转接高级售后专员，当前咨询人数较多，可能需要您稍等片刻哈～','非常抱歉这次没能让您满意，您的意见这边会反馈并及时优化！您先消消气，我马上为您转接高级售后专员来处理，目前咨询量较大，麻烦您耐心等待一下哦亲亲～','对不起亲亲，给您带来不愉快的购物感受了，我们十分重视您的反馈，后续会全力改进！为了给您更妥善的解决方案，现在为您转接高级售后专员，咨询人数较多，可能需要您稍作等候～','很抱歉让您不满意了，您的反馈对我们很重要，我们定会及时整改优化！您先别着急，我这就为您转接高级售后专员处理，当前咨询较多，麻烦您耐心等一下哈～','万分抱歉这次购物体验不佳，您的问题我们高度重视，定会认真改善！为了更好地帮您处理，现在为您转接高级售后专员，目前咨询量较大，可能需要您稍微等待一会儿哦～'],moduleId:'solution',penalty:5,isLastAndNeedTransfer:true}]},
+{id:4,name:'赵丽娜',avatar:'👧',scene:'杯垫发霉发黑',bgColor:'#d1fae5',requireTransfer:true,order:{orderId:'CB20260304004',orderDate:'2025-10-01',product:'草本初色美背内衣',spec:'白色/M码',code:'CBCS-MB-004',price:'¥139.00'},dialogues:[{emotion:'angry',customerMessages:['你们家美背质量严重有问题！白色杯垫全部大面积发霉发黑，根本没法穿了！','我现在坚决要求全额退款，这质量实在太离谱了！'],keywords:['不好意思','抱歉','查看','订单','6个月'],standardAnswers:['不好意思呢亲亲。这比查看到您的订单已经有6个月咯亲亲','实在不好意思亲亲，这边查询到您的订单已经有 6 个月的时间了哦','抱歉呀亲亲，系统显示您的这笔订单距离现在已经 6 个月啦','不好意思呢亲亲，查看到您这个订单已经是 6 个月之前的了哦','亲亲实在抱歉，这边查到您的订单已经时隔 6 个月了哈','很抱歉亲亲，您的这笔订单到目前为止已经有 6 个月咯'],moduleId:'problem',penalty:5},{emotion:'angry',customerMessages:['拿6个月当借口敷衍我是吗？','我同一时间买的另一件美背，一模一样的穿着、清洗、存放方式，一点毛病都没有！','凭什么就你们这件质量差发霉？','难道消费者买的内衣，穿半年就该发霉报废、自认倒霉吗？','这分明是你们产品面料有严重质量问题，别拿时效搪塞推卸责任！'],keywords:['抱歉','消消气','转接','高级售后','专员','稍等','耐心'],standardAnswers:['实在是抱歉呢 亲亲您消消气，为了给您给好的解决，这边给您转接到高级售后专员处理，售后目前咨询人数较多，可能需要耐心稍等片刻~~','实在抱歉亲亲，您先别生气～为了更好地帮您解决问题，我现在为您转接高级售后专员，目前咨询人数较多，麻烦您稍等片刻哦。','非常不好意思让您不满意了，您消消气！我马上为您转接专业的高级售后专员处理，当前咨询量较大，可能需要您耐心等候一下哈。','真的很抱歉亲亲，您先别着急，为了给您更妥善的解决方案，这就为您转接高级售后专员，现在咨询的人比较多，辛苦您稍微等一会儿哦。','实在对不住亲亲，您消消气～这边帮您转接高级售后专员来处理您的问题，目前售后咨询比较繁忙，麻烦您耐心等待一下哈。','抱歉让您有不好的体验了亲亲，您先别生气，为了更好地帮您处理，我给您转接高级售后专员，现在咨询人数较多，可能需要您稍作等待哦。'],moduleId:'solution',penalty:5,isLastAndNeedTransfer:true}]},
+{id:5,name:'陈晓梅',avatar:'👩‍💼',scene:'掉色投诉',bgColor:'#e0e7ff',order:{orderId:'CB20260305005',orderDate:'2026-02-20',product:'草本初色深色内裤（3条装）',spec:'红色/M码',code:'CBCS-NK-008',price:'¥79.00'},dialogues:[{emotion:'upset',customerMessages:['【发送掉色实拍图片】','真的很无语，这已经是好几次了，衣服一直掉色！'],keywords:['视频','水洗标','问题部位','处理','核实'],standardAnswers:['亲亲，为了更快更精准地帮您处理问题，辛苦您提供一段视频。视频中同时拍到两处关键位置：一是衣物的水洗标（标注尺码的位置），二是出现问题的部位，这样能让我们高效对接处理哈','亲亲，为了更快帮您准确处理问题，麻烦您提供一段视频，视频里需要同时拍到衣服的水洗标（尺码标）和问题部位，我们好尽快为您对接处理哦～','亲您好，为了高效精准地解决您的问题，辛苦拍摄一段视频，同时展示衣物水洗标尺码处和问题位置，我们会马上为您处理哈。','亲亲，麻烦您提供一段包含两处内容的视频：一是衣物水洗标及尺码，二是问题出现的地方，这样我们能更快更准确地帮您处理哦。','亲，为了不耽误您的时间，精准为您解决问题，辛苦拍一段视频，同时拍到衣服尺码水洗标和问题部位，我们立即为您跟进处理哈。','亲亲，麻烦配合提供一段视频，需同时展示衣物的水洗标尺码位置和问题处，方便我们高效核实并帮您处理问题哦。'],moduleId:'problem',penalty:5},{emotion:'calm',customerMessages:['好的，我等下拍给你','【发送问题实拍视频】','【发送细节实拍图片】','你们自己看，我正常清洗，洗完之后还是严重掉色，根本不是我清洗的问题'],keywords:['深色','面料','固色','前3次','掉色','正常','漂白液','消毒液','分开','清洗'],standardAnswers:['抱歉哈亲，一般深色面料都会做出厂过程中会做固色处理（在行业规范标准内），所以前3次洗涤都会有轻微掉色现象，属于正常现象的；注意洗涤时切勿使用漂白液或者是消毒液，这两种液体具有褪色的功能，不论是深色还是浅色也会造成掉色的情况哈。建议深色衣物要区分开来清洗避免被染到哈⁤⁢⁢','亲亲不好意思呀～深色面料在生产时都会按行业标准做固色处理，所以前几次清洗轻微掉色是正常现象哦。清洗时千万别用漂白剂、消毒液，这类产品会加重褪色，也建议深色衣物单独洗涤，防止串染哈。','抱歉亲，深色面料出厂前都会进行合规固色，前 3 次洗涤有轻微浮色掉落属于正常情况。漂白液和消毒液会导致衣物褪色，不管深浅色都不建议使用，同时深色衣物最好分开清洗，避免染色。','实在抱歉哈亲，深色面料都会做标准固色工艺，前几次清洗轻微掉色是正常的，并非质量问题。清洗时不要使用漂白、消毒类产品，否则容易褪色，深色衣物也建议单独清洗哦。','亲亲抱歉啦，深色衣物在出厂时都做了固色处理，符合行业标准，前几次洗涤轻微掉色属正常现象。使用漂白液或消毒液会让衣物褪色，同时深色衣服要分开洗，防止被染上色。','不好意思亲～深色面料都会按规范做固色，所以前几次清洗会有轻微掉色，这是正常情况。清洗时避开漂白剂、消毒液，这类产品易造成褪色，深色衣物也建议分开洗涤哦。','非常抱歉这次没有给您带来愉快的购物体验 ，我们非常重视您的反馈，我们一定会改善问题哈~前3次洗涤都会有轻微掉色现象，属于正常现象的；注意洗涤时切勿使用漂白液或者是消毒液，这两种液体具有褪色的功能，不论是深色还是浅色也会造成掉色的情况哈。','实在抱歉让您这次购物体验不佳，您的反馈我们特别重视，一定会及时改进～衣物前三次清洗有轻微掉色是正常情况，清洗时千万别用漂白液、消毒液，这类产品会加重掉色哦。','非常不好意思没能给您愉快的购物体验，您的建议我们会认真优化！前几次洗涤轻微掉色属于正常现象，洗涤时避开漂白剂和消毒液，能有效减少掉色情况哈。','对不起亲亲，给您带来不好的体验了，我们很重视您的反馈并会积极改善～深色衣物前三次清洗轻微掉色是正常的，切记不要用漂白液、消毒液清洗，避免加重褪色。','很抱歉这次让您不满意了，您的反馈我们会牢记并改进！衣物初次洗涤有轻微掉色属于正常情况，清洗时不要使用漂白类、消毒类产品，不然会导致掉色更严重哦。','万分抱歉影响了您的购物体验，您的意见对我们很重要，我们会及时整改～前三次洗涤轻微掉色是正常现象，清洗时不要用漂白液和消毒液，能防止衣物掉色加重哈。'],moduleId:'solution',penalty:5,trackResult:true},{emotion:'upset',customerMessages:['我完全是正常清水手洗，没有用任何漂白液、消毒液，也单独分开清洗','根本不存在你们说的洗涤不当的情况','请不要拿通用话术敷衍甩锅，给我对应解决方案。'],conditionalMessages:{fail:['我刚买的这款产品才用了没几天就出现了明显的掉色情况，这是什么原因导致的呢？','请问你们的产品在出厂前有没有做过掉色测试？为什么我正常使用就会掉色这么严重？','我按照产品说明书上的要求使用和保养的，怎么还是会掉色？这是产品本身的质量问题吗？','同样的产品我朋友买的就没有掉色，为什么我这个掉色这么厉害？是批次问题还是个别情况？','我之前买过你们家其他产品都没有这个问题，这次这款掉色这么严重，到底是哪里出了问题？','掉色的部分已经染到我其他东西上了，造成了额外的损失，你们能解释一下为什么会出现这种情况吗？','你们宣传的时候说这款产品不掉色、耐磨损，现在实际使用情况完全相反，能给我一个合理的解释吗？','我还没有得到关于掉色原因的明确答复，麻烦尽快告诉我这到底是怎么回事。','这种掉色情况是正常现象吗？如果不是，你们打算怎么处理这个质量问题？'],pass:[['我完全是正常清水手洗，没有用任何漂白液、消毒液，也单独分开清洗','根本不存在你们说的洗涤不当的情况','请不要拿通用话术敷衍甩锅，给我对应解决方案。'],['请不要一直套用固定话术推卸质量责任。','首先，我全程规范洗涤，没有任何违规操作','你们没有任何证据证明是我清洗方式导致掉色。','请停止误导、甩锅消费者 提供有效处理方案'],['我不接受你们的敷衍说辞！','我严格按照衣物洗涤要求正常清洗','无漂白、无消毒、混洗情况，完全排除人为洗涤问题。','请立刻给出合理处理方案']]},keywords:['补发','退款','换货','补偿','退货'],standardAnswers:['这边给您申请补发一条，您看下可以吗？','这边为您申请补发一条，您看可以吗？','我们给您申请补发一件，您觉得这样可以吗？','这边特意为您申请补发一条，您看是否接受呢？','我们为您申请补发一条新的，您看这样处理可以吗？','这边给你申请退款一条，您看可以吗','我这边帮您申请其中一条的退款，您觉得这样可以吗？','我为您单独申请一条商品的退款，您看这样处理行吗？','那我这边给您申请一条的退款处理，您是否同意呢？','我帮您申请其中一件的退款，您看这个方案可以接受吗？','这边可以为您申请一条的退款，您觉得这样解决可以吗？','这边给您申请补发一件，您看这个方案行吗？','我这边帮您申请换货处理，您看这样可以吗？','那我为您申请一下换货，您觉得这样解决行吗？','这边可以给您申请换货，您是否同意这个处理方案呢？','我帮您申请换货服务，您看这个方案可以接受吗？','那我这边给您安排申请换货，您觉得这样可以吗？','我这边帮您申请相应的补偿，您看这样可以吗？','那我为您申请一份补偿，您觉得这样处理行吗？','这边可以给您申请适当的补偿，您是否同意这个方案呢？','我帮您申请对应的补偿处理，您看这个解决方案可以接受吗？','那我这边给您安排申请补偿，您觉得这样解决可以吗？','那我这边帮您申请退货退款，您看这样处理可以吗？','那我这边为您安排退货退款申请，您觉得这个解决方案可以吗？','那我这边给您安排退货退款，这样能妥善解决您的问题吗？','那我这边尽快为您安排退货退款申请，您觉得可以吗？','那我这边为您申请退货退款，您看是否接受这个解决方案？'],moduleId:'solution',penalty:5,answerBanks:[['这边给您申请补发一条，您看下可以吗？','这边为您申请补发一条，您看可以吗？','我们给您申请补发一件，您觉得这样可以吗？','这边特意为您申请补发一条，您看是否接受呢？','我们为您申请补发一条新的，您看这样处理可以吗？'],['这边给你申请退款一条，您看可以吗','我这边帮您申请其中一条的退款，您觉得这样可以吗？','我为您单独申请一条商品的退款，您看这样处理行吗？','那我这边给您申请一条的退款处理，您是否同意呢？','我帮您申请其中一件的退款，您看这个方案可以接受吗？','这边可以为您申请一条的退款，您觉得这样解决可以吗？','这边给您申请补发一件，您看这个方案行吗？'],['我这边帮您申请换货处理，您看这样可以吗？','那我为您申请一下换货，您觉得这样解决行吗？','这边可以给您申请换货，您是否同意这个处理方案呢？','我帮您申请换货服务，您看这个方案可以接受吗？','那我这边给您安排申请换货，您觉得这样可以吗？'],['我这边帮您申请相应的补偿，您看这样可以吗？','那我为您申请一份补偿，您觉得这样处理行吗？','这边可以给您申请适当的补偿，您是否同意这个方案呢？','我帮您申请对应的补偿处理，您看这个解决方案可以接受吗？','那我这边给您安排申请补偿，您觉得这样解决可以吗？'],['那我这边帮您申请退货退款，您看这样处理可以吗？','那我这边为您安排退货退款申请，您觉得这个解决方案可以吗？','那我这边给您安排退货退款，这样能妥善解决您的问题吗？','那我这边尽快为您安排退货退款申请，您觉得可以吗？','那我这边为您申请退货退款，您看是否接受这个解决方案？']]},{emotion:'calm',customerMessages:['好的，那就补发吧，麻烦不要发红色的了，这个颜色掉色太厉害。'],conditionalMessages:{bank1:['好的，那就补发吧，麻烦不要发红色的了，这个颜色掉色太厉害。','可以，那就按你说的补发，不过红色款就免了，掉色太严重了。','行，补发没问题，但是请一定避开红色，这个颜色掉色太严重。','好的，我同意补发，就是别再给我发红色的了，掉色太严重。','可以的，那就补发吧，不过红色的就不要了，掉色太厉害。','行，那就安排补发吧，麻烦不要发红色款，这个颜色掉色太严重。','好的，我接受补发方案，但是别发红色的了，掉色太严重了。','可以，那就补发吧，红色的就不用发了，掉色太厉害。','行，那就按这个方案来，补发的时候别发红色的，掉色太严重。','好的，麻烦帮我补发一件，但是不要红色的，这个颜色掉色太严重了。'],bank2:['好的，你帮我把这件掉色的退款就可以了。','行，你只需要给我这条掉色的办理退款就行。','可以，就给我这件掉色的退款就好了。','好的，我只要求这件掉色的退款。'],bank3:['行，那就给我换货吧，千万别再发红色了，这个颜色掉色太严重。','可以，那就走换货流程，但是红色我不要了，掉色实在太厉害。','好的，我同意换货，只是别再给我发红色款，掉色问题太严重。','行吧，那就换货处理，避开红色就行，这个颜色掉色太离谱。','可以换货没问题，但是不要再发红色了，这款颜色掉色很严重。','好，那就给我换货，麻烦不要安排红色，掉色情况实在受不了。','行，接受换货方案，就是别再发红色，这个颜色掉色太严重了。','没问题那就换货吧，红色款式不用发了，掉色实在太严重。','可以，那就申请换货，记得别发红色的，掉色问题太明显。','行，那就帮我换货处理，只求别发红色，这个颜色掉色太厉害。'],bank4:['好的，我同意补偿，请问款项是原路退回吗？','可以，那就按补偿方案处理，钱是原路退回来吗？','行，补偿我接受，麻烦确认下款项是不是原路退回？','没问题，那就补偿吧，请问退款是原路返回吗？','好的，我接受这个补偿方案，款项会原路退回吗？','可以，那就这么处理吧，补偿款是原路退回的吗？','行，我同意补偿，麻烦问下钱是原路退到我支付账户吗？','好的，补偿方案我认可，请问款项是原路退回吗？','可以，那就按补偿方案来，钱会原路退给我吗？','行，那就这样吧，补偿的钱是原路退回吗？'],bank5:['好的，那就办理退货吧，是上门取件吗？','可以，那就走退货流程，会安排上门取件吗？','行，那就按退货处理，是上门来取件吗？','没问题，那就退货吧，你们会安排上门取件吗？','好的，我同意退货，请问是上门取件吗？','可以，那就退货吧，是你们上门来取件吗？','行吧，那就办理退货，会有快递上门取件吗？','没问题，那就按退货来，是上门取件的吗？','好的，那就申请退货吧，请问会上门取件吗？','行，那就退货处理，是安排上门取件吗？']},keywords:['内裤','补发','换货','不支持','指定','颜色','随机','没错','对的','是的','嗯嗯'],standardAnswers:['亲亲，非常抱歉，补发的内裤暂时不支持指定颜色哦，会为您随机发货的哈～','亲亲，不好意思呀，补发的内裤暂时没办法挑选颜色呢，是随机安排发货的哦～','亲亲，实在抱歉，关于补发内裤的颜色，我们暂时无法指定哦，会随机为您发出哒～','亲亲，不好意思哈，补发的内裤暂时不能指定具体颜色呢，会随机给您发货的哦～','亲亲，非常抱歉，补发的内裤暂时不支持颜色选择哦，会为您随机安排发出哈～','亲亲，非常抱歉，换货的内裤暂时不支持指定颜色哦，会为您随机发货的哈～','亲亲，不好意思呀，换货的内裤暂时没办法挑选颜色呢，是随机安排发货的哦～','亲亲，实在抱歉，关于换货内裤的颜色，我们暂时无法指定哦，会随机为您发出哒～','亲亲，不好意思哈，换货的内裤暂时不能指定具体颜色呢，会随机给您发货的哦～','亲亲，非常抱歉，换货的内裤暂时不支持颜色选择哦，会为您随机安排发出哈～','没错哦，亲爱的','对的呀，亲爱的','是的呀，亲爱的','嗯嗯，亲爱的','对的呢，亲爱的'],moduleId:'process',penalty:3},{emotion:'calm',customerMessages:['好的，那就按你们的安排正常补发吧。'],conditionalMessages:{hasColorInfo:['好的，那就按你们的安排正常补发吧。','行，不能选颜色也没关系，正常补发就行。','好的，既然没办法指定颜色，那就正常补发吧，麻烦你们了。','可以的，不能选颜色也没事，麻烦帮我正常安排补发哈。','行吧，既然没法挑颜色，那就只能这样正常补发了。','好的，那就按你们的安排正常发出吧。','行，不能选颜色也没关系，正常发出就行。','好的，既然没办法指定颜色，那就正常发出吧，麻烦你们了。','可以的，不能选颜色也没事，麻烦帮我正常安排换货哈。','行吧，既然没法挑颜色，那就只能这样正常换货了。'],noColorInfo:['好的，麻烦发货后把物流单号发给我一下。','行，发货之后记得把快递单号给我哈。','好的，等你们发货了，请把物流单号同步给我。','没问题，发货后麻烦把快递单号告知我一下。','好的，发货后记得把物流单号发我哦。']},conditionalKeywords:['不支持','指定颜色','没办法挑选颜色','无法指定','不能指定','不支持颜色选择'],keywords:['登记','补发','单号','留言','祝','愉快'],standardAnswers:['好的呢亲爱的，这边登记为您补发一条哈，有单号会为您留言哦，祝您生活愉快~~'],moduleId:'closing',penalty:3}]},
+{id:6,name:'刘佳佳',avatar:'👩‍🎤',scene:'掉色/转接',bgColor:'#fef9c3',requireTransfer:true,order:{orderId:'CB20260306006',orderDate:'2026-03-10',product:'草本初色深色蕾丝内裤',spec:'黑色/M码',code:'CBCS-NK-016',price:'¥69.00'},dialogues:[{emotion:'upset',customerMessages:['掉色太严重了吧'],keywords:['深色','面料','固色','前3次','掉色','正常','漂白液','消毒液','分开','清洗'],standardAnswers:['抱歉哈亲，深色面料都会做固色处理，前3次洗涤轻微掉色属正常；切勿使用漂白液或消毒液，建议深色衣物分开清洗'],moduleId:'solution',penalty:5},{emotion:'upset',customerMessages:['你意思是掉色正常？'],keywords:['视频','水洗标','问题部位','处理','核实'],standardAnswers:['亲亲，为了更快精准帮您处理，辛苦提供视频，同时拍到水洗标和问题部位'],moduleId:'problem',penalty:5},{emotion:'angry',customerMessages:['[视频]','[照片]'],keywords:['消消气','理解','心情','耐心','等待','转接','高级售后','专员'],standardAnswers:['请您消消气，我们非常理解您的心情，请您耐心等待一下，这边为您转接高级售后专员为您提供更妥善的方案处理'],moduleId:'solution',penalty:5,isLastAndNeedTransfer:true}]},
+{id:7,name:'周芳芳',avatar:'👩‍🏫',scene:'内裤勒/尺码投诉',bgColor:'#ede9fe',requireTransfer:true,order:{orderId:'CB20260307007',orderDate:'2026-03-17',product:'草本初色中腰蕾丝内裤（3条装）',spec:'混色/XL码',code:'CBCS-NK-020',price:'¥89.00'},dialogues:[{emotion:'upset',customerMessages:['这内裤怎么那么勒两侧'],keywords:['尺码','不合适','勒','小了'],standardAnswers:['亲爱的，是尺码不合适吗？勒就是尺码小了哦'],moduleId:'greeting',penalty:4},{emotion:'upset',customerMessages:['我都拍大一个码了'],keywords:['体型','不同','效果','体重','建议','个人','穿','为准'],standardAnswers:['每个人的体型不同效果也许会不同的哦~体重建议只是根据经验建议的，具体以个人穿起来的效果为准'],moduleId:'communication',penalty:4},{emotion:'angry',customerMessages:['我168/118我还是拍大码了 是不是洗完缩水了我靠'],keywords:['抱歉','不好意思','重视','反馈','缩水','正常清洗','不会','视频','水洗标','问题部位'],standardAnswers:['实在是不好意思，给您添麻烦了，您反映的问题我非常重视，一定反馈改善\n亲亲 正常清洗是不会缩水的哦','亲亲，为了更快精准帮您处理，辛苦提供视频，同时拍到水洗标和问题部位'],moduleId:'problem',penalty:5},{emotion:'calm',customerMessages:['三条都拆了洗了 今天才穿'],keywords:['内裤','私密','独立包装','拆开','不支持','退换','七天','无理由'],standardAnswers:['亲爱的，内裤是私密物品独立包装的哈拆开是不支持退换的，没拆的支持七天无理由的哈'],moduleId:'process',penalty:4},{emotion:'angry',customerMessages:['离谱了吧？那怎么办？'],keywords:['尺码','合适','不会勒','重视','粉丝','体验','权益','5元','补偿'],standardAnswers:['亲亲 尺码合适的话是不会勒的哈，咱家重视每一位粉丝售后体验，为维护粉丝们的权益，申请帮您5元补偿，您看可以吗？'],moduleId:'solution',penalty:5},{emotion:'extreme',customerMessages:['你尺寸有问题怪我吗，不退我也耍无赖，我天天抖音发视频说你们，还去小红书曝光你们'],keywords:['抱歉','消消气','转接','高级售后','专员','稍等','耐心'],standardAnswers:['实在是抱歉呢亲亲您消消气，这边给您转接到高级售后专员处理，可能需要耐心稍等~~'],moduleId:'solution',penalty:5,isLastAndNeedTransfer:true}]},
+
+// === 客户8:吴婉婷 — 开胶投诉（含条件分支）新剧本===
+{id:8,name:'吴婉婷',avatar:'👩‍🔬',scene:'开胶投诉',bgColor:'#ccfbf1',order:{orderId:'CB20260308008',orderDate:'2026-03-01',product:'草本初色无痕压胶内衣（2件装）',spec:'肤色/75B',code:'CBCS-YJ-025',price:'¥258.00'},dialogues:[
+{emotion:'angry',customerMessages:['穿一天就坏了，我不要了！','你自己看吧，好在我是在穿的时候开的，我要退货退款','[图片]'],keywords:['抱歉','不好意思','压胶','做工','没有做好','处理','售后','放心'],standardAnswers:['不好意思，可能在压胶过程中，这个位置的做工没有做好，给您添麻烦了，您放心，我一定为您处理好售后！','非常抱歉！实在不好意思，亲在清洗过程中避免用热的水清洗，避免高温溶胶开胶；如果未下水前开胶，则是生产工序上生产员工不小心漏了贴合环节，这种情况发生率很低，属于少数个别情况，您放心，我一定为您妥善处理好售后，这就帮您核实一下给到您处理方案！','非常抱歉，这款产品在压胶工序中可能出现了一些小瑕疵，给您带来不好的体验了，您放心，我们一定会妥善为您处理好售后问题','抱歉让您遇到这样的问题，应该是压胶环节的做工出现了疏忽，给您造成不便了，您放心，我们一定会认真为您解决售后问题。','实在不好意思，这件商品压胶部位的做工可能没做到位，给您添麻烦了，您别担心，我们会负责到底，帮您处理好售后事宜。'],moduleId:'greeting',penalty:5},
+{emotion:'upset',customerMessages:['那怎么处理？'],keywords:['抱歉','不便','反馈','申请','仅退款','一件'],standardAnswers:['很抱歉给您带来不便，这边给您反馈申请到仅退款一件您看可以吗？','非常抱歉给您带来了不好的体验，我们已为您反馈申请了该商品的单件仅退款，请问您是否接受这个处理方案？','真的很抱歉让您有这么糟糕的购物体验，我们特意帮您反馈申请了这件商品的仅退款，您看这样处理可以吗？','抱歉给您带来不便，这边已为您反馈申请该商品单件仅退款，您看是否可行？','非常抱歉给您带来了不佳的购物体验，针对这件商品的问题，我们已帮您专项反馈申请了仅退款，请问这个处理方式您是否满意？','实在不好意思给您添了麻烦，这边帮您跟相关部门反馈申请了这件商品的仅退款，您看这样行不行？'],moduleId:'solution',penalty:5},
+{emotion:'angry',customerMessages:['这一件穿一次就这样了，另一件也穿不了多久，退全款！'],keywords:['抱歉','麻烦','理解','心情','仅退款','一件','权限','超出'],standardAnswers:['给您带来不必要的麻烦，我实在是很抱歉，您的心情小妹理解哦，这边给您仅退款一件价格了呢，其他超出小妹权限实在抱歉~','真的非常抱歉给您带来了不必要的麻烦，我特别理解您的心情。这边可以为您办理一件商品的仅退款，超出部分实在不在我的权限范围内，还请您多多谅解。','很抱歉让您遇到这样的问题，给您添了不必要的麻烦，您的心情我完全明白。我这边能为您申请到一件的仅退款，再多就超出我的处理权限了，实在不好意思。','实在对不起，给您造成困扰了，我特别能体会您现在的心情。我帮您处理一件的仅退款，其他部分我这边没有权限操作，还请您见谅。'],moduleId:'communication',penalty:4},
+{emotion:'angry',customerMessages:['我不接受退一件，我都不要了'],keywords:['另一件','穿洗','没有','全新','寄','退全款'],standardAnswers:['亲爱的，您另一件穿洗了吗，没有穿洗的话您看寄出一件全新的 这边给您退全款~','亲爱的，请问您另外一件有没有穿过、洗过呀？如果没穿没洗的话，您把这件寄回来，我们给您安排退退全款哦～','亲亲，另一件如果保持原样没使用过，您寄回后我们马上为您退全款哈～','亲亲，麻烦确认下另外一件有没有穿过洗过呢？要是保持全新状态，您寄回后我们直接给您退全款哒～','亲亲，想问下另一件有没有穿洗过呀？只要是全新未使用的，您寄回后我们马上为您办理全额退款～'],moduleId:'solution',penalty:5,trackResult:true},
+//★ 第5轮：条件分支 — 根据上一轮回答是否合格决定客户消息
+{emotion:'calm',customerMessages:['这还差不多','怎么退','快点吧，我没那么闲跟你聊天'],conditionalMessages:{pass:['这还差不多','怎么退','快点吧，我没那么闲跟你聊天'],fail:['我另一件都没清洗过吊牌都还在','我给你退回去，你要给我退全款']},keywords:['辛苦','提供','完整','内衣','凭证','核实','售后','退款','退货'],standardAnswers:['亲亲，辛苦您提供下完整的内衣凭证这边核实后给您操作售后退款退货呢~','亲亲，辛苦您提供一下完整的内衣凭证呀，我们这边核实清楚后，就马上为您操作售后的退款退货流程～','亲，麻烦您提供完整的内衣相关凭证，等我们这边核实无误，会第一时间帮您处理售后的退款退货事宜呢～','亲，劳烦您提供一下完整的内衣凭证，我们这边核实完毕，会尽快帮您走售后的退款退货流程哦～','亲亲，辛苦您把完整的内衣凭证发给我们，这边核实确认后，就立即为您办理售后的退款退货操作哈～'],moduleId:'process',penalty:4},
+{emotion:'calm',customerMessages:['行的','[视频]','退吧'],keywords:['点击','确认','提交','寄出','收到','处理','售后','退款','完结'],standardAnswers:['好的哦亲，您点击下确认提交，寄出，这边收到会给您处理售后退款，这边售后就完结了哈~','好的哦亲，您点击确认提交并寄出商品，我们这边收到后会立即处理售后退款，处理完成后这次售后就完结啦～','亲，您操作确认提交并寄出货物，等我们这边收到，会马上为您办理售后退款，之后这次售后就结束啦哈～','好的亲，麻烦您点击确认提交然后寄出商品，我们收到后会及时处理售后退款，退款完成后这次售后就正式完结咯～','亲，您先点击确认提交并寄出货物，这边收到商品后会第一时间处理售后退款，处理完毕后这次售后就结束啦～'],moduleId:'closing',penalty:3}
+]},
+
+{id:9,name:'孙晓晓',avatar:'👩‍🎨',scene:'发霉',bgColor:'#fee2e2',order:{orderId:'CB20260309009',orderDate:'2026-03-05',product:'草本初色天然乳胶内衣',spec:'裸色/75B',code:'CBCS-RJ-030',price:'¥349.00'},dialogues:[{emotion:'angry',customerMessages:['乳胶内衣直接发霉了！349块买个发霉的东西？'],keywords:['抱歉','重视','安全','照片','紧急'],standardAnswers:['非常抱歉！发霉我们高度重视，请千万不要穿着，麻烦拍几张照片，我立刻走紧急处理通道！'],moduleId:'greeting',penalty:3},{emotion:'extreme',customerMessages:['你们是怎么存储的？我要投诉！'],keywords:['严重','质量','退货','退款','赔偿'],standardAnswers:['我完全理解您的愤怒！立即办理全额退货退款，同时额外赔偿您50元。'],moduleId:'solution',penalty:5},{emotion:'upset',customerMessages:['没碰到。退款赔偿赶紧处理！'],keywords:['处理','退款','赔偿','到账'],standardAnswers:['太好了，没有直接接触就放心了。退款和赔偿已提交加急处理，预计1-2个工作日到账。'],moduleId:'process',penalty:3}]},
+{id:10,name:'郑雨桐',avatar:'👩‍⚕️',scene:'严重掉色',bgColor:'#f3e8ff',order:{orderId:'CB20260310010',orderDate:'2026-03-08',product:'草本初色撞色运动内衣',spec:'红黑撞色/M码',code:'CBCS-YD-035',price:'¥179.00'},dialogues:[{emotion:'upset',customerMessages:['运动内衣掉色太严重了！一整盆衣服都毁了！'],keywords:['抱歉','理解','掉色','照片'],standardAnswers:['非常抱歉！第一次水洗就严重掉色确实不应该，麻烦您拍个照片发给我。'],moduleId:'greeting',penalty:3},{emotion:'angry',customerMessages:['好几件白T恤都染上红色了！你们怎么赔！'],keywords:['看到','退货','退款','赔偿'],standardAnswers:['我看到照片了，掉色确实很严重。首先全额退货退款；其次请提供购买凭证，我们会赔偿。运费由我们承担。'],moduleId:'solution',penalty:5},{emotion:'upset',customerMessages:['那些衣服有的没发票了，怎么赔？'],keywords:['没关系','评估','赔偿','照片'],standardAnswers:['没有发票也没关系，把被染色衣物拍照，我们根据照片评估协商赔偿金额。'],moduleId:'communication',penalty:3},{emotion:'concerned',customerMessages:['好吧，我整理照片发你。'],keywords:['好的','照片','处理','跟进','反馈'],standardAnswers:['好的，收到后24小时内给您反馈赔偿方案，全程跟进。深表歉意！'],moduleId:'closing',penalty:3}]}
+];
+
+/**
+ * 获取当前时间
+ * @returns {string} 当前时间字符串
+ */
+function getCurrentTime() {
+  return new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+}
+
+/**
+ * 获取情绪文本
+ * @param {string} emotion - 情绪类型
+ * @returns {string} 情绪文本
+ */
+function getEmotionText(emotion) {
+  return {
+    calm: '😊平静',
+    concerned: '😟担忧',
+    upset: '😤不满',
+    angry: '😡愤怒',
+    extreme: '🤬极度愤怒'
+  }[emotion] || '';
+}
+
+/**
+ * 系统状态
+ */
+let systemState = {
+  on: false,           // 测试是否开始
+  end: false,          // 测试是否结束
+  startTime: null,     // 开始时间
+  endTime: null,       // 结束时间
+  agentName: '刘亮',    // 客服姓名
+  currentCustomers: [], // 当前在线客户
+  activeCustomer: null, // 当前活动客户
+  customerStates: {},   // 客户状态
+  completedCustomers: [], // 已完成客户
+  nextCustomerIndex: 0, // 下一个客户索引
+  totalScore: 100,     // 总分
+  violations: [],       // 违规记录
+  scoringModules: JSON.parse(JSON.stringify(scoringModules)), // 评分模块
+  steps: [],           // 流程步骤
+  transferTimers: {}    // 转接计时器
+};
+/**
+ * 切换标签页
+ * @param {string} tabName - 标签页名称
+ * @param {HTMLElement} button - 点击的按钮元素
+ */
+function switchTab(tabName, button) {
+  document.querySelectorAll('.tab-page').forEach(page => page.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById('tab' + tabName.charAt(0).toUpperCase() + tabName.slice(1))?.classList.add('active');
+  if (button) {
+    button.classList.add('active');
+  } else {
+    document.querySelector(`.tab-btn[onclick*="${tabName}"]`)?.classList.add('active');
+  }
+  if (tabName === 'scoring') updateScoringPage();
+  if (tabName === 'process') updateProcessPage();
+  if (tabName === 'report') updateReportPage();
+}
+
+/**
+ * 初始化客户列表
+ */
+function initCustomerList() {
+  const list = document.getElementById('customerList');
+  list.innerHTML = '';
+  customers.forEach(customer => {
+    const item = document.createElement('div');
+    item.className = 'customer-item hidden-customer';
+    item.id = `customer-${customer.id}`;
+    item.onclick = () => switchToCustomer(customer.id);
+    item.innerHTML = `
+      <div class="customer-avatar" style="background:${customer.bgColor}">${customer.avatar}</div>
+      <div class="online-dot"></div>
+      <div class="customer-info">
+        <div class="customer-name">${customer.name}</div>
+        <div class="customer-scene">${customer.scene}</div>
+        <div class="customer-time" id="customer-time-${customer.id}">进线时间：-</div>
+      </div>
+      <span class="customer-status status-waiting">等待</span>
+    `;
+    list.appendChild(item);
+  });
+  updateCustomerListEmptyState();
+}
+
+/**
+ * 更新客户列表空状态
+ */
+function updateCustomerListEmptyState() {
+  document.getElementById('customerListEmpty').style.display = 
+    document.querySelectorAll('.customer-item:not(.hidden-customer)').length > 0 ? 'none' : 'block';
+}
+
+/**
+ * 更新聊天头部信息
+ * @param {number} customerId - 客户ID
+ */
+function updateChatHeader(customerId) {
+  const header = document.getElementById('chatHeaderLeft');
+  if (!customerId) {
+    header.innerHTML = '<span class="chat-header-placeholder">请选择客户开始对话</span>';
+    return;
+  }
+  const customer = customers.find(c => c.id === customerId);
+  if (!customer) return;
+  const customerState = systemState.customerStates[customerId];
+  const status = customerState?.completed ? '已完成' : '在线';
+  const statusColor = customerState?.completed ? 'var(--gray-400)' : 'var(--success)';
+  header.innerHTML = `
+    <div style="width:40px;height:40px;border-radius:50%;background:${customer.bgColor};display:flex;align-items:center;justify-content:center;font-size:18px">${customer.avatar}</div>
+    <div>
+      <div style="font-size:14px;font-weight:600">${customer.name}</div>
+      <div style="font-size:11px;color:var(--gray-500);margin-top:2px">
+        <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${statusColor};margin-right:4px;vertical-align:middle"></span>
+        ${status} · ${customer.scene}
+      </div>
+    </div>
+  `;
+}
+/**
+ * 开始测试
+ */
+function startTest() {
+  systemState.on = true;
+  systemState.startTime = new Date();
+  systemState.agentName = document.getElementById('agentName').value || '刘亮';
+  document.getElementById('agentName').disabled = true;
+  document.getElementById('startBtn').disabled = true;
+  document.getElementById('configSection').style.display = 'none';
+  document.getElementById('welcomeOverlay').style.display = 'none';
+  document.getElementById('chatInput').disabled = false;
+  document.getElementById('sendBtn').disabled = false;
+  document.getElementById('transferBtn').disabled = false;
+  
+  customers.forEach(customer => {
+    systemState.customerStates[customer.id] = {
+      dialogueIndex: 0,
+      completed: false,
+      messages: [],
+      transferred: false,
+      awaitTransfer: false,
+      lastPass: true
+    };
+  });
+  
+  bringCustomers(2);
+  addStep('测试启动', `被测：${systemState.agentName}`, 'done');
+  updateProgress();
+}
+
+/**
+ * 引入客户
+ * @param {number} count - 引入客户数量
+ */
+function bringCustomers(count) {
+  for (let i = 0; i < count && systemState.nextCustomerIndex < customers.length; i++) {
+    const customer = customers[systemState.nextCustomerIndex];
+    systemState.currentCustomers.push(customer.id);
+    systemState.nextCustomerIndex++;
+    
+    const element = document.getElementById(`customer-${customer.id}`);
+    if (element) {
+      element.classList.remove('hidden-customer');
+      element.querySelector('.customer-status').className = 'customer-status status-active';
+      element.querySelector('.customer-status').textContent = '在线';
+      // 记录并显示进线时间
+      const currentTime = getCurrentTime();
+      const timeElement = document.getElementById(`customer-time-${customer.id}`);
+      if (timeElement) {
+        timeElement.textContent = `进线时间：${currentTime}`;
+      }
+    }
+    
+    setTimeout(() => sendCustomerDialogue(customer.id), 800 + i * 1200);
+  }
+  
+  if (systemState.currentCustomers.length > 0 && !systemState.activeCustomer) {
+    switchToCustomer(systemState.currentCustomers[0]);
+  }
+  
+  updateCustomerListEmptyState();
+}
+
+/**
+ * 切换到指定客户
+ * @param {number} customerId - 客户ID
+ */
+function switchToCustomer(customerId) {
+  if (!systemState.on) return;
+  
+  const customerState = systemState.customerStates[customerId];
+  if (!customerState) return;
+  
+  systemState.activeCustomer = customerId;
+  document.querySelectorAll('.customer-item').forEach(item => item.classList.remove('active'));
+  document.getElementById(`customer-${customerId}`)?.classList.add('active');
+  
+  renderMessages(customerId);
+  updateOrderPanel(customerId);
+  updateChatHeader(customerId);
+  
+  const transferButton = document.getElementById('transferBtn');
+  transferButton.classList.remove('pulse');
+  if (customerState.awaitTransfer) {
+    transferButton.classList.add('pulse');
+  }
+  
+  document.getElementById('chatInput').disabled = customerState.completed || systemState.end;
+  document.getElementById('sendBtn').disabled = customerState.completed || systemState.end;
+}
+
+/**
+ * 渲染消息列表
+ * @param {number} customerId - 客户ID
+ */
+function renderMessages(customerId) {
+  const element = document.getElementById('chatMessages');
+  element.innerHTML = '';
+  (systemState.customerStates[customerId]?.messages || []).forEach(message => {
+    addMessage(message, false);
+  });
+  scrollToBottom();
+}
+/**
+ * 添加消息到聊天界面
+ * @param {Object} message - 消息对象
+ * @param {boolean} animate - 是否添加动画效果
+ */
+function addMessage(message, animate = true) {
+  const element = document.getElementById('chatMessages');
+  const messageElement = document.createElement('div');
+  
+  if (!animate) {
+    messageElement.style.animation = 'none';
+  }
+  
+  if (message.type === 'system') {
+    messageElement.className = 'message message-system';
+    messageElement.innerHTML = `<div class="msg-content"><div class="msg-bubble">${message.text}</div></div>`;
+  } else if (message.type === 'customer') {
+    messageElement.className = 'message message-customer';
+    messageElement.innerHTML = `
+      <div class="msg-avatar">${message.avatar || '👩'}</div>
+      <div class="msg-content">
+        <div class="msg-name">${message.name}${message.emotion ? ' · ' + getEmotionText(message.emotion) : ''}</div>
+        <div class="msg-bubble">${message.text}</div>
+        <div class="msg-time">${message.time}</div>
+      </div>
+    `;
+  } else if (message.type === 'agent') {
+    let tag = '';
+    if (message.pen > 0) {
+      tag = `<div class="msg-penalty">⚠️ -${message.pen}分 ${message.pr || ''}</div>`;
+    }
+    if (message.ab) {
+      tag += `<div class="msg-penalty">🚫 违规</div>`;
+    }
+    messageElement.className = 'message message-agent';
+    messageElement.innerHTML = `
+      <div class="msg-avatar">👨‍💻</div>
+      <div class="msg-content">
+        <div class="msg-name">${systemState.agentName}·客服</div>
+        <div class="msg-bubble">${message.text}</div>
+        ${tag}
+        <div class="msg-time">${message.time}</div>
+      </div>
+    `;
+  } else if (message.type === 'transfer') {
+    messageElement.className = 'message message-system';
+    messageElement.innerHTML = `<div class="msg-content"><div class="msg-bubble">🔀 ${message.text}</div></div>`;
+  } else if (message.type === 'aftersale') {
+    messageElement.className = 'message message-aftersale';
+    const card = message.card;
+    messageElement.innerHTML = `
+      <div class="aftersale-card-wrapper">
+        <div class="aftersale-card">
+          <div class="aftersale-card-header">
+            <span class="aftersale-card-title">代用户预填写售后申请</span>
+            <button class="aftersale-card-submit-btn" onclick="confirmAfterSale('${message.cardId}')">用户直接提交</button>
+          </div>
+          <div class="aftersale-product">
+            <div class="product-images">
+              ${card.images.map(img => `<img src="${img}" class="product-image" />`).join('')}
+            </div>
+            <div class="product-info">
+              <div class="product-title">${card.productTitle}</div>
+              <div class="product-meta">共 ${card.quantity} 件商品，总价 ¥${card.totalPrice}</div>
+            </div>
+          </div>
+          <div class="aftersale-details">
+            <div class="aftersale-row"><span class="aftersale-label">货物状态：</span><span class="aftersale-value">${card.goodsStatus}</span></div>
+            <div class="aftersale-row"><span class="aftersale-label">退款原因：</span><span class="aftersale-value">${card.refundReason}</span></div>
+            <div class="aftersale-row"><span class="aftersale-label">退款金额：</span><span class="aftersale-value">${card.refundAmount}</span></div>
+            <div class="aftersale-row"><span class="aftersale-label">退款件数：</span><span class="aftersale-value">${card.refundQuantity}</span></div>
+            <div class="aftersale-row"><span class="aftersale-label">补充描述：</span><span class="aftersale-value">${card.description || '-'}</span></div>
+          </div>
+          <div class="aftersale-card-footer">
+            <button class="aftersale-cancel-btn" onclick="cancelAfterSale('${message.cardId}')">取消申请</button>
+          </div>
+        </div>
+        <div class="aftersale-card-time">${message.time}</div>
+      </div>
+    `;
+  }
+  
+  element.appendChild(messageElement);
+}
+
+/**
+ * 滚动到聊天底部
+ */
+function scrollToBottom() {
+  const element = document.getElementById('chatMessages');
+  setTimeout(() => {
+    element.scrollTop = element.scrollHeight;
+  }, 60);
+}
+
+/**
+ * 添加系统消息
+ * @param {number} customerId - 客户ID
+ * @param {string} text - 消息文本
+ */
+function addSystemMessage(customerId, text) {
+  const customerState = systemState.customerStates[customerId];
+  if (!customerState) return;
+  
+  const message = {
+    type: 'system',
+    text,
+    time: getCurrentTime()
+  };
+  
+  customerState.messages.push(message);
+  
+  if (systemState.activeCustomer === customerId) {
+    addMessage(message);
+    scrollToBottom();
+  }
+}
+/**
+ * 发送客户对话
+ * @param {number} customerId - 客户ID
+ */
+function sendCustomerDialogue(customerId) {
+  const customerState = systemState.customerStates[customerId];
+  const customer = customers.find(c => c.id === customerId);
+  
+  if (!customer || !customerState || customerState.completed || customerState.awaitTransfer) return;
+  
+  if (customerState.dialogueIndex >= customer.dialogues.length) {
+    completeCustomer(customerId);
+    return;
+  }
+  
+  const dialogue = customer.dialogues[customerState.dialogueIndex];
+  
+  // 条件分支：如果当前对话有conditionalMessages，根据命中的答案库和关键词选择消息
+  let messages = dialogue.customerMessages;
+  if (dialogue.conditionalMessages) {
+    // 检查是否是基于答案库的条件消息
+    if (customerState.hitAnswerBank) {
+      const bankKey = 'bank' + customerState.hitAnswerBank;
+      
+      // 如果命中答案库一，需要进一步判断关键词
+      if (customerState.hitAnswerBank === 1 && dialogue.conditionalKeywordsB) {
+        // 获取客服回复内容，并转换为小写以实现不区分大小写的匹配
+        const lastResponse = (customerState.lastAgentResponse || '').toLowerCase();
+        
+        // ========== 关键词判断优先级逻辑 ==========
+        // 第一优先级：检测"偏酸"、"酸性"、"体质"、"性体"
+        // 仅当未检测到第一优先级关键词时，才检测第二优先级关键词
+        // 关键词匹配区分中英文标点符号，但不区分大小写
+        
+        // 第一优先级：检测体质相关关键词
+        const priority1Keywords = dialogue.conditionalKeywordsB; // ['偏酸', '酸性', '体质', '性体']
+        const hasPriority1Keyword = priority1Keywords.some(keyword => 
+          lastResponse.includes(keyword.toLowerCase())
+        );
+        
+        if (hasPriority1Keyword) {
+          // 检测到第一优先级关键词（偏酸/酸性/体质/性体）
+          // 触发bank1B分支：纠正伪科学，引用国家标准
+          messages = dialogue.conditionalMessages[bankKey + 'B'] || dialogue.conditionalMessages[bankKey] || messages;
+        } else if (dialogue.conditionalKeywords) {
+          // 未检测到第一优先级关键词，进行第二优先级判断
+          // 第二优先级：检测环境相关关键词（晒/潮湿/梅雨）
+          const priority2Keywords = dialogue.conditionalKeywords; // ['晒', '潮湿', '梅雨']
+          const hasPriority2Keyword = priority2Keywords.some(keyword => 
+            lastResponse.includes(keyword.toLowerCase())
+          );
+          
+          if (hasPriority2Keyword) {
+            // 检测到第二优先级关键词（晒/潮湿/梅雨）
+            // 触发bank1A分支：反驳存放不当指责，要求举证
+            messages = dialogue.conditionalMessages[bankKey + 'A'] || dialogue.conditionalMessages[bankKey] || messages;
+          } else {
+            // 未检测到任何关键词，使用默认消息
+            messages = dialogue.conditionalMessages[bankKey] || messages;
+          }
+        } else {
+          // 没有配置第二优先级关键词，使用默认消息
+          messages = dialogue.conditionalMessages[bankKey] || messages;
+        }
+      } else {
+        // 其他答案库或没有二级关键词判断
+        messages = dialogue.conditionalMessages[bankKey] || messages;
+      }
+    } else if (customerState.lastPass !== undefined) {
+      // 传统的pass/fail条件分支
+      const passMessages = dialogue.conditionalMessages.pass;
+      if (customerState.lastPass) {
+        // 如果pass是数组，随机选择一个；否则直接使用
+        if (Array.isArray(passMessages) && Array.isArray(passMessages[0])) {
+          // pass是嵌套数组，如 [[msg1,msg2], [msg3,msg4], [msg5,msg6]]
+          // 随机选择一个话术库
+          const randomIndex = Math.floor(Math.random() * passMessages.length);
+          messages = passMessages[randomIndex];
+        } else {
+          // pass是普通数组或单个数组
+          messages = passMessages;
+        }
+      } else {
+        // 客服回复错误，从fail数组中随机选择一条追问话术发送
+        const failMessages = dialogue.conditionalMessages.fail;
+        if (Array.isArray(failMessages) && failMessages.length > 0) {
+          // 随机选择一条追问话术
+          const randomIndex = Math.floor(Math.random() * failMessages.length);
+          messages = [failMessages[randomIndex]];
+        } else {
+          messages = failMessages || messages;
+        }
+      }
+    }
+  }
+  
+  // 基于关键词的条件发送：检查客服回复是否包含conditionalKeywords
+  if (dialogue.conditionalKeywords && dialogue.conditionalKeywords.length > 0) {
+    const lastResponse = customerState.lastAgentResponse || '';
+    const hasConditionalKeyword = dialogue.conditionalKeywords.some(keyword => lastResponse.includes(keyword));
+    
+    // 如果客服回复包含关键词，检查是否需要移除条件消息
+    if (hasConditionalKeyword) {
+      // 条件满足，保持所有消息（包括条件消息）
+      // 条件消息已在customerMessages的最后一条
+    } else {
+      // 条件不满足，移除最后一条条件消息
+      if (messages.length > 1) {
+        messages = messages.slice(0, -1);
+      }
+    }
+  }
+  
+  sendMessageMessages(customerId, customer, dialogue, messages, 0);
+}
+
+/**
+ * 发送消息序列
+ * @param {number} customerId - 客户ID
+ * @param {Object} customer - 客户对象
+ * @param {Object} dialogue - 对话对象
+ * @param {Array} messages - 消息数组
+ * @param {number} index - 当前消息索引
+ */
+function sendMessageMessages(customerId, customer, dialogue, messages, index) {
+  if (index >= messages.length) return;
+  
+  const text = messages[index];
+  
+  if (systemState.activeCustomer === customerId) {
+    showTypingIndicator(customer, () => {
+      const message = {
+        type: 'customer',
+        text,
+        name: customer.name,
+        avatar: customer.avatar,
+        emotion: index === 0 ? dialogue.emotion : null,
+        time: getCurrentTime()
+      };
+      
+      systemState.customerStates[customerId].messages.push(message);
+      addMessage(message);
+      scrollToBottom();
+      
+      if (index < messages.length - 1) {
+        setTimeout(() => {
+          sendMessageMessages(customerId, customer, dialogue, messages, index + 1);
+        }, 800);
+      }
+    });
+  } else {
+    setTimeout(() => {
+      const message = {
+        type: 'customer',
+        text,
+        name: customer.name,
+        avatar: customer.avatar,
+        emotion: index === 0 ? dialogue.emotion : null,
+        time: getCurrentTime()
+      };
+      
+      systemState.customerStates[customerId].messages.push(message);
+      
+      if (index < messages.length - 1) {
+        setTimeout(() => {
+          sendMessageMessages(customerId, customer, dialogue, messages, index + 1);
+        }, 600);
+      }
+    }, 800);
+  }
+}
+
+/**
+ * 显示输入指示器
+ * @param {Object} customer - 客户对象
+ * @param {Function} callback - 回调函数
+ */
+function showTypingIndicator(customer, callback) {
+  const indicator = document.getElementById('typingIndicator');
+  indicator.querySelector('.typing-avatar').textContent = customer.avatar;
+  indicator.classList.add('show');
+  scrollToBottom();
+  
+  setTimeout(() => {
+    indicator.classList.remove('show');
+    callback();
+  }, 1200 + Math.random() * 600);
+}
+/**
+ * 发送客服消息
+ */
+function sendMessage() {
+  if (!systemState.on || systemState.end) return;
+  
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  
+  if (!text) return;
+  
+  if (!systemState.activeCustomer) {
+    alert('请先选择客户');
+    return;
+  }
+  
+  const customerId = systemState.activeCustomer;
+  const customerState = systemState.customerStates[customerId];
+  const customer = customers.find(c => c.id === customerId);
+  
+  if (!customer || customerState.completed) return;
+  
+  if (customerState.awaitTransfer) {
+    addSystemMessage(customerId, '⚠️ 请先点击右上角「🔀转接高级售后」按钮');
+    input.value = '';
+    return;
+  }
+  
+  if (customerState.dialogueIndex >= customer.dialogues.length) return;
+  
+  const dialogue = customer.dialogues[customerState.dialogueIndex];
+  
+  // 检查消息质量
+  const isAbusive = checkAbusiveLanguage(text);
+  const isContradictory = !isAbusive && checkContradictoryLanguage(text, dialogue.standardAnswers);
+  const responseQuality = checkResponseQuality(text, dialogue.keywords, dialogue.standardAnswers, dialogue.answerBanks);
+  
+  // 计算扣分
+  let penalty = 0;
+  let reason = '';
+  
+  if (isAbusive) {
+    penalty = dialogue.penalty;
+    reason = '辱骂性违规';
+  } else if (isContradictory) {
+    penalty = dialogue.penalty;
+    reason = '语义相反';
+  } else if (!responseQuality.pass) {
+    if (responseQuality.similarity < 0.15) {
+      penalty = dialogue.penalty;
+      reason = '回复差异极大';
+    } else if (responseQuality.similarity < 0.25) {
+      penalty = Math.ceil(dialogue.penalty * 0.7);
+      reason = '关键信息缺失';
+    } else {
+      penalty = Math.ceil(dialogue.penalty * 0.4);
+      reason = '部分要点缺失';
+    }
+  }
+  
+  // 记录本轮是否通过（用于条件分支）
+  const thisPass = (penalty === 0);
+  if (dialogue.trackResult || (customerId === 5 && dialogue.conditionalMessages && Array.isArray(dialogue.conditionalMessages.pass) && Array.isArray(dialogue.conditionalMessages.pass[0]))) {
+    // trackResult 为 true 或 陈晓梅的对话（有 conditionalMessages.pass 数组）时记录结果
+    customerState.lastPass = thisPass;
+  }
+  
+  // 处理扣分
+  if (penalty > 0) {
+    const module = systemState.scoringModules.find(m => m.id === dialogue.moduleId);
+    if (module && module.score > 0) {
+      const actualPenalty = Math.min(penalty, module.score);
+      module.score -= actualPenalty;
+      module.deductions.push({
+        round: `${customer.name}-对话${customerState.dialogueIndex + 1}`,
+        type: reason,
+        value: actualPenalty
+      });
+      
+      systemState.totalScore -= actualPenalty;
+      // 生成更具体的违规描述
+      let detailedDesc = '';
+      if (reason === '回复差异极大') {
+        detailedDesc = '回复内容与标准答案差异过大，未包含关键信息';
+      } else if (reason === '关键信息缺失') {
+        detailedDesc = '回复中缺少重要的关键信息点';
+      } else if (reason === '部分要点缺失') {
+        detailedDesc = '回复内容不完整，部分要点未提及';
+      } else if (reason === '语义相反') {
+        detailedDesc = '回复内容与标准答案语义相反';
+      } else if (reason === '辱骂性违规') {
+        detailedDesc = '回复中包含辱骂性语言';
+      }
+      
+      systemState.violations.push({
+        round: `${customer.name}-对话${customerState.dialogueIndex + 1}`,
+        type: reason,
+        desc: detailedDesc,
+        value: actualPenalty
+      });
+      
+      addStep('违规', `${customer.name}对话${customerState.dialogueIndex + 1}：${reason}（-${actualPenalty}分）`, 'done');
+      penalty = actualPenalty;
+    }
+  }
+  
+  // 添加客服消息
+  const agentMessage = {
+    type: 'agent',
+    text,
+    time: getCurrentTime(),
+    pen: penalty,
+    pr: penalty > 0 ? reason : '',
+    ab: isAbusive
+  };
+  
+  // 保存客服回复内容，用于条件发送判断
+  customerState.lastAgentResponse = text;
+  
+  // 保存命中的答案库信息，用于后续条件发送
+  if (responseQuality.hitAnswerBank) {
+    customerState.hitAnswerBank = responseQuality.hitAnswerBank;
+  }
+  
+  customerState.messages.push(agentMessage);
+  addMessage(agentMessage);
+  scrollToBottom();
+  
+  input.value = '';
+  updateTotalScore();
+  updateViolationList();
+  updateProgress();
+  
+  // 处理特殊情况
+  if (isAbusive) {
+    setTimeout(() => {
+      const response = getRandomResponse(abusiveResponses);
+      const customerMessage = {
+        type: 'customer',
+        text: response,
+        name: customer.name,
+        avatar: customer.avatar,
+        emotion: 'extreme',
+        time: getCurrentTime()
+      };
+      
+      customerState.messages.push(customerMessage);
+      
+      if (systemState.activeCustomer === customerId) {
+        addMessage(customerMessage);
+        scrollToBottom();
+      }
+      
+      addSystemMessage(customerId, '⚠️ 请重新回复。');
+    }, 1500);
+    return;
+  }
+  
+  if (isContradictory) {
+    setTimeout(() => {
+      const response = getRandomResponse(contradictoryResponses);
+      const customerMessage = {
+        type: 'customer',
+        text: response,
+        name: customer.name,
+        avatar: customer.avatar,
+        emotion: 'angry',
+        time: getCurrentTime()
+      };
+      
+      customerState.messages.push(customerMessage);
+      
+      if (systemState.activeCustomer === customerId) {
+        addMessage(customerMessage);
+        scrollToBottom();
+      }
+      
+      customerState.dialogueIndex++;
+      
+      setTimeout(() => {
+        if (customerState.dialogueIndex >= customer.dialogues.length) {
+          if (dialogue.isLastAndNeedTransfer) {
+            startTransferWait(customerId, customer);
+          } else {
+            completeCustomer(customerId);
+          }
+        } else {
+          sendCustomerDialogue(customerId);
+        }
+      }, 2000);
+    }, 1500);
+    return;
+  }
+  
+  // 继续下一轮对话
+  customerState.dialogueIndex++;
+  
+  if (dialogue.isLastAndNeedTransfer) {
+    startTransferWait(customerId, customer);
+    return;
+  }
+  
+  if (customerState.dialogueIndex >= customer.dialogues.length) {
+    setTimeout(() => completeCustomer(customerId), 1000);
+  } else {
+    setTimeout(() => sendCustomerDialogue(customerId), 1500);
+  }
+}
+/**
+ * 开始转接等待
+ * @param {number} customerId - 客户ID
+ * @param {Object} customer - 客户对象
+ */
+function startTransferWait(customerId, customer) {
+  const customerState = systemState.customerStates[customerId];
+  customerState.awaitTransfer = true;
+  
+  const transferButton = document.getElementById('transferBtn');
+  if (systemState.activeCustomer === customerId) {
+    transferButton.classList.add('pulse');
+  }
+  
+  addSystemMessage(customerId, '⚠️ 请立即点击右上角「🔀转接高级售后」按钮！未操作将判定本通0分');
+  
+  systemState.transferTimers[customerId] = setTimeout(() => {
+    if (customerState.awaitTransfer && !customerState.transferred) {
+      customerState.awaitTransfer = false;
+      transferButton.classList.remove('pulse');
+      
+      let totalDeduction = 0;
+      customer.dialogues.forEach(dialogue => {
+        const module = systemState.scoringModules.find(m => m.id === dialogue.moduleId);
+        if (module && module.score > 0) {
+          const actualPenalty = Math.min(dialogue.penalty, module.score);
+          module.score -= actualPenalty;
+          totalDeduction += actualPenalty;
+          module.deductions.push({
+            round: `${customer.name}`,
+            type: '未执行转接',
+            value: actualPenalty
+          });
+        }
+      });
+      
+      if (totalDeduction > 0) {
+        systemState.totalScore -= totalDeduction;
+        systemState.violations.push({
+          round: `${customer.name}`,
+          type: '未执行转接',
+          desc: '未在规定时间内点击转接按钮，违反流程规范',
+          value: totalDeduction
+        });
+      }
+      
+      addStep('严重违规', `${customer.name}：未操作转接（-${totalDeduction}分）`, 'done');
+      addSystemMessage(customerId, '❌ 未在规定时间内点击转接按钮，严重扣分！');
+      
+      updateTotalScore();
+      updateViolationList();
+      completeCustomer(customerId);
+    }
+  }, 15000);
+}
+
+/**
+ * 完成客户对话
+ * @param {number} customerId - 客户ID
+ */
+function completeCustomer(customerId) {
+  const customerState = systemState.customerStates[customerId];
+  if (customerState.completed) return;
+  
+  customerState.completed = true;
+  systemState.completedCustomers.push(customerId);
+  systemState.currentCustomers = systemState.currentCustomers.filter(id => id !== customerId);
+  
+  const element = document.getElementById(`customer-${customerId}`);
+  if (element) {
+    element.querySelector('.customer-status').className = 'customer-status status-completed';
+    element.querySelector('.customer-status').textContent = '完成';
+    element.classList.add('completed');
+    element.classList.remove('active');
+  }
+  
+  const customer = customers.find(c => c.id === customerId);
+  addSystemMessage(customerId, `✅ ${customer.name}（${customer.scene}）对话完成`);
+  
+  if (systemState.activeCustomer === customerId) {
+    updateChatHeader(customerId);
+  }
+  
+  addStep('完成', `${customer.name}（${customer.scene}）`, 'done');
+  
+  if (systemState.completedCustomers.length >= customers.length) {
+    completeTest();
+    return;
+  }
+  
+  // 确保始终保持两位客户同时服务
+  const currentActiveCount = systemState.currentCustomers.length;
+  const remainingCustomers = customers.length - systemState.nextCustomerIndex;
+  const neededCustomers = 2 - currentActiveCount;
+  
+  if (remainingCustomers > 0 && neededCustomers > 0) {
+    setTimeout(() => bringCustomers(neededCustomers), 1000);
+  }
+  
+  if (systemState.currentCustomers.length > 0) {
+    switchToCustomer(systemState.currentCustomers[0]);
+  }
+  
+  updateProgress();
+}
+
+/**
+ * 完成测试
+ */
+function completeTest() {
+  systemState.end = true;
+  systemState.endTime = new Date();
+  
+  document.getElementById('chatInput').disabled = true;
+  document.getElementById('sendBtn').disabled = true;
+  document.getElementById('transferBtn').disabled = true;
+  
+  addStep('测试完成', `总分：${systemState.totalScore}`, 'done');
+  updateProgress();
+  
+  setTimeout(() => switchTab('report'), 1500);
+}
+
+/**
+ * 显示转接模态框
+ */
+function showTransferModal() {
+  if (!systemState.on || !systemState.activeCustomer) return;
+  if (systemState.customerStates[systemState.activeCustomer]?.completed) return;
+  document.getElementById('transferModal').classList.add('show');
+}
+
+/**
+ * 隐藏转接模态框
+ */
+function hideTransferModal() {
+  document.getElementById('transferModal').classList.remove('show');
+}
+/**
+ * 确认转接
+ */
+function confirmTransfer() {
+  hideTransferModal();
+  
+  const customerId = systemState.activeCustomer;
+  if (!customerId) return;
+  
+  const customerState = systemState.customerStates[customerId];
+  const customer = customers.find(c => c.id === customerId);
+  
+  customerState.transferred = true;
+  document.getElementById('transferBtn').classList.remove('pulse');
+  
+  if (systemState.transferTimers[customerId]) {
+    clearTimeout(systemState.transferTimers[customerId]);
+    delete systemState.transferTimers[customerId];
+  }
+  
+  const transferMessage = {
+    type: 'transfer',
+    text: `会话已转接给「高级售后专员」— ${customer.name}的问题将由专员跟进`,
+    time: getCurrentTime()
+  };
+  
+  customerState.messages.push(transferMessage);
+  
+  if (systemState.activeCustomer === customerId) {
+    addMessage(transferMessage);
+    scrollToBottom();
+  }
+  
+  addStep('转接', `${customer.name} →高级售后`, 'done');
+  
+  if (customerState.awaitTransfer) {
+    customerState.awaitTransfer = false;
+    addSystemMessage(customerId, '✅ 转接操作已完成');
+    setTimeout(() => completeCustomer(customerId), 1000);
+  }
+}
+
+/**
+ * 更新订单面板
+ * @param {number} customerId - 客户ID
+ */
+function updateOrderPanel(customerId) {
+  const customer = customers.find(c => c.id === customerId);
+  const element = document.getElementById('orderContent');
+  
+  if (!customer) {
+    element.innerHTML = '<div style="text-align:center;padding:40px 0;color:var(--gray-400);font-size:12px">请选择客户</div>';
+    return;
+  }
+  
+  const order = customer.order;
+  element.innerHTML = `
+    <div class="order-detail-wrapper" id="orderDetailWrapper">
+      <div class="order-detail-page" id="page-order">
+        <div class="top-bar">
+          <span class="order-id-top" onclick="copyText('6951223808018487149')" title="点击复制">6951223808018487149</span>
+          <button class="btn-cancel" onclick="showToast('已关闭订单详情')">取消</button>
+        </div>
+
+        <div class="status-bar">
+          <span class="status-tag">已发货</span>
+          <div class="icon-btn-group">
+            <button class="icon-btn" onclick="openDrawer()">备</button>
+            <button class="icon-btn" onclick="openDrawer()">详</button>
+          </div>
+        </div>
+
+        <div class="product-section">
+          <div class="product-order-id">6951223808018487149</div>
+          <div class="product-row">
+            <div class="product-img">
+              <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                <rect width="100" height="100" rx="8" fill="#F5F5F5"/>
+                <path d="M20 80L45 45L60 65L70 45L85 80H20Z" fill="#E5E5E5"/>
+                <circle cx="35" cy="35" r="8" fill="#E5E5E5"/>
+              </svg>
+            </div>
+            <div class="product-info">
+              <div class="product-name">【杨紫同款】草本初色超薄蚕丝无痕非遗宋锦金钱纹亮闪细肩带内衣 [已发 1/1]</div>
+              <div class="service-tags">
+                <span class="service-tag" title="晚发即赔：承诺按时发货，否则给予赔付">晚发即赔</span>
+              <span class="service-tag" onclick="showToast('跳转7天售后政策')">7 天 ></span>
+              <span class="service-tag" onclick="showToast('跳转极速退款流程')">极速退 ></span>
+              <span class="service-tag" onclick="showToast('跳转关联短视频')">短视频</span>
+            </div>
+            <div class="price-row">
+              <span>实付 ¥99.00</span>
+              <span>优惠 ¥100.00</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-text">规格 梦境黑 + 梦境黑 / M: 91-110 斤 (34/75ABC)</span>
+                <button class="btn-send" onclick="sendInfo('规格 梦境黑 + 梦境黑 / M: 91-110 斤 (34/75ABC)')">发送</button>
+              </div>
+            <div class="code-row">编码 1J65101黑M+1J65101黑M</div>
+            <div class="gift-row">
+              <div class="gift-content">
+                <span class="gift-prefix">赠</span>
+                <span>杨紫限定非遗系列小卡 [x1]</span>
+              </div>
+              <button class="btn-send" onclick="sendInfo('赠 杨紫限定非遗系列小卡 [x1]')">发送</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-section">
+        <button class="btn-primary-action" onclick="goToAfterSale()">代客发起售后</button>
+        <button class="btn-secondary-action" onclick="showToast('售后卡已发送至对话')">发售后卡</button>
+        <div class="popover-wrapper">
+          <button class="btn-more" onclick="togglePopover('popover1')">···</button>
+          <div class="popover-menu" id="popover1">
+            <div class="popover-item" onclick="showToast('操作：催发货')">催发货</div>
+            <div class="popover-item" onclick="showToast('操作：标记异常')">标记异常</div>
+            <div class="popover-item" onclick="showToast('操作：复制订单信息')">复制订单信息</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="finance-section">
+        <div class="info-row">
+          <span class="info-label">实付金额</span>
+          <span class="info-value-medium">¥99.00</span>
+          <span class="info-value-small">(含运费 ¥0.00)</span>
+          <span class="info-value-extra">优惠 ¥100.00</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">付款时间</span>
+          <span class="info-value">2026/03/11 22:07:44 (抖音支付)</span>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="logistics-section">
+        <div class="info-row">
+          <span class="info-label">物流信息</span>
+          <div>
+            <span class="logistics-number" onclick="copyText('YT0020077411577')">圆通快递 YT0020077411577</span>
+            <div>
+              <a class="logistics-status" onclick="openModal('logistics')" href="javascript:void(0)">[待取件] 2026-03-13 21:30:55 ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="receiver-section">
+        <div class="info-row">
+          <span class="info-label">收货信息</span>
+          <span class="info-value">菜 *，1***，广东省东莞市东莞市沙田镇 ***</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">发货时间</span>
+          <span class="info-value">2026-03-12 09:51</span>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="bottom-action-section">
+        <button class="btn-primary-action" onclick="showToast('物流卡已发送至对话')">发物流卡</button>
+        <button class="btn-primary-action" onclick="openModal('address')">改地址</button>
+        <button class="btn-primary-action" onclick="openModal('reship')">重新发货</button>
+        <button class="btn-secondary-action" onclick="openModal('payment')">打款</button>
+        <div class="popover-wrapper">
+          <button class="btn-more" onclick="togglePopover('popover2')">···</button>
+          <div class="popover-menu" id="popover2">
+            <div class="popover-item" onclick="showToast('操作：申请拦截')">申请拦截</div>
+            <div class="popover-item" onclick="showToast('操作：问题件处理')">问题件处理</div>
+            <div class="popover-item" onclick="showToast('操作：导出物流')">导出物流信息</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="after-sale-page" id="page-after-sale" style="display: none;">
+        <div class="nav-bar">
+          <button class="nav-back" onclick="backToOrder()">←</button>
+          <h1 class="nav-title">申请售后</h1>
+        </div>
+
+        <div class="product-info-area">
+          <div class="product-thumb">
+            <svg width="130" height="130" viewBox="0 0 130 130" fill="none">
+              <rect width="130" height="130" rx="6" fill="#F5F5F5"/>
+              <path d="M30 100L55 65L70 85L80 65L100 100H30Z" fill="#E5E5E5"/>
+              <circle cx="40" cy="50" r="8" fill="#E5E5E5"/>
+            </svg>
+          </div>
+          <div class="product-text">
+            <div class="product-name-as">【杨紫同款】草本初色超薄蚕丝无痕非遗宋锦金钱纹亮闪细肩带内衣</div>
+            <div class="product-spec-as">梦境黑 + 梦境黑 / M: 91-110 斤 (34/75ABC)</div>
+          </div>
+        </div>
+
+        <div class="form-area">
+          <div class="form-row">
+            <span class="form-required">*</span>
+            <span class="form-label-as">售后类型</span>
+            <div class="form-content">
+              <div class="radio-group">
+                <div class="radio-item" onclick="selectAfterSaleType('refund')">
+                  <div class="radio-circle"></div>
+                  <span>仅退款</span>
+                </div>
+                <div class="radio-item" onclick="selectAfterSaleType('returnRefund')">
+                  <div class="radio-circle"></div>
+                  <span>退货退款</span>
+                </div>
+                <div class="radio-item" onclick="selectAfterSaleType('exchange')">
+                  <div class="radio-circle"></div>
+                  <span>换货</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="form-required">*</span>
+            <span class="form-label-as">退款原因</span>
+            <div class="form-content">
+              <div class="select-wrapper">
+                <div class="custom-select" id="refund-select">
+                  <div class="select-input-wrapper">
+                    <input type="text" class="select-input" id="refund-input" placeholder="请选择或搜索退款原因" readonly>
+                    <button class="select-clear" id="refund-clear" onclick="event.stopPropagation(); clearRefundSelect()">×</button>
+                    <span class="select-arrow">▼</span>
+                  </div>
+                  <div class="select-dropdown" id="refund-dropdown">
+                    <div class="select-search">
+                      <input type="text" class="select-search-input" id="refund-search" placeholder="搜索退款原因...">
+                    </div>
+                    <div class="select-options" id="refund-options"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="select-error-msg" id="refund-error">
+                <span class="select-error-icon">⚠️</span>
+                <span>请选择退款原因</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="form-required">*</span>
+            <span class="form-label-as">退款金额</span>
+            <div class="form-content">
+              <div class="amount-wrapper">
+                <input type="text" class="amount-input-box" value="99.00" readonly>
+                <span class="amount-unit">元</span>
+              </div>
+              <div class="amount-hint">退款金额将原路返回</div>
+            </div>
+          </div>
+
+          <div class="form-row desc-row">
+            <span class="form-required">*</span>
+            <span class="form-label-as">退款说明</span>
+            <div class="form-content">
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" placeholder="请详细描述您的问题" maxlength="200"></textarea>
+                <span class="textarea-count">0/200</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row upload-row">
+            <span class="form-required">*</span>
+            <span class="form-label-as">凭证上传</span>
+            <div class="form-content">
+              <div class="upload-box" onclick="uploadVoucher()">
+                <span class="upload-plus">+</span>
+                <span class="upload-count">上传凭证</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-bar">
+          <button class="btn-cancel-as" onclick="backToOrder()">取消</button>
+          <button class="btn-confirm-as" onclick="submitAfterSale()">提交申请</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="toast" id="toast">操作成功</div>
+  `;
+  
+  // 初始化订单模块的CSS样式
+  addOrderModuleStyles();
+  // 初始化订单模块的JavaScript功能
+  initOrderModule();
+}
+
+/**
+ * 选择售后类型
+ * @param {string} type - 售后类型
+ */
+function selectAfterSaleType(type) {
+  document.querySelectorAll('.radio-item').forEach(item => {
+    item.classList.remove('checked');
+    item.querySelector('.radio-circle').classList.remove('checked');
+  });
+  event.currentTarget.classList.add('checked');
+  event.currentTarget.querySelector('.radio-circle').classList.add('checked');
+}
+
+/**
+ * 退款原因选项数据
+ */
+const refundReasons = [
+  '多拍/错拍/不想要',
+  '7天无理由退款',
+  '尺码没选对',
+  '与商家协商一致退款',
+  '商品质量不好',
+  '商品与描述不符',
+  '假冒品牌',
+  '商品破损/包装问题',
+  '少件/漏发',
+  '商家发错货',
+  '商品买贵了或降价',
+  '其他'
+];
+
+/**
+ * 自定义搜索选择组件实例
+ */
+let refundSelectInstance = null;
+
+/**
+ * 自定义搜索选择组件类
+ */
+class CustomSelect {
+  constructor(options) {
+    this.container = document.getElementById(options.containerId);
+    this.input = document.getElementById(options.inputId);
+    this.searchInput = document.getElementById(options.searchId);
+    this.optionsContainer = document.getElementById(options.optionsId);
+    this.errorEl = document.getElementById(options.errorId);
+    this.clearBtn = document.getElementById(options.clearId);
+    this.options = options.options;
+    this.filteredOptions = [...options.options];
+    this.value = null;
+    this.isOpen = false;
+    this.highlightedIndex = 0;
+    this.init();
+  }
+
+  init() {
+    this.renderOptions();
+    this.bindEvents();
+  }
+
+  renderOptions() {
+    this.optionsContainer.innerHTML = '';
+    
+    if (this.filteredOptions.length === 0) {
+      this.optionsContainer.innerHTML = '<div class="select-empty">无匹配的退款原因</div>';
+      return;
+    }
+
+    this.filteredOptions.forEach((option, index) => {
+      const optionEl = document.createElement('div');
+      optionEl.className = 'select-option';
+      optionEl.innerHTML = `
+        <span>${option}</span>
+        <svg class="select-option-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      `;
+      optionEl.dataset.index = index;
+      optionEl.dataset.value = option;
+      
+      if (this.value === option) {
+        optionEl.classList.add('selected');
+      }
+      
+      if (index === this.highlightedIndex) {
+        optionEl.classList.add('highlighted');
+      }
+
+      optionEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.selectOption(option);
+      });
+
+      optionEl.addEventListener('mouseenter', () => {
+        this.highlightedIndex = index;
+        this.updateHighlight();
+      });
+
+      this.optionsContainer.appendChild(optionEl);
+    });
+  }
+
+  bindEvents() {
+    this.input.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.toggle();
+    });
+
+    this.searchInput.addEventListener('input', (e) => {
+      this.filter(e.target.value);
+    });
+
+    this.searchInput.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    this.input.addEventListener('keydown', (e) => this.handleKeydown(e));
+    this.searchInput.addEventListener('keydown', (e) => this.handleKeydown(e));
+
+    document.addEventListener('click', (e) => {
+      if (this.isOpen && !this.container.contains(e.target)) {
+        this.close();
+      }
+    });
+  }
+
+  handleKeydown(e) {
+    switch (e.key) {
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        if (this.isOpen) {
+          if (this.highlightedIndex >= 0) {
+            this.selectOption(this.filteredOptions[this.highlightedIndex]);
+          }
+        } else {
+          this.open();
+        }
+        break;
+      
+      case 'Escape':
+        if (this.isOpen) {
+          this.close();
+          e.stopPropagation();
+        }
+        break;
+      
+      case 'ArrowDown':
+        if (!this.isOpen) {
+          this.open();
+        } else {
+          e.preventDefault();
+          this.highlightedIndex = Math.min(this.highlightedIndex + 1, this.filteredOptions.length - 1);
+          this.updateHighlight();
+          this.scrollToHighlighted();
+        }
+        break;
+      
+      case 'ArrowUp':
+        if (this.isOpen) {
+          e.preventDefault();
+          this.highlightedIndex = Math.max(this.highlightedIndex - 1, 0);
+          this.updateHighlight();
+          this.scrollToHighlighted();
+        }
+        break;
+      
+      case 'Tab':
+        if (this.isOpen) {
+          this.close();
+        }
+        break;
+    }
+  }
+
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this.isOpen = true;
+    this.container.classList.add('open');
+    this.searchInput.focus();
+    this.searchInput.select();
+    this.highlightedIndex = this.value ? this.filteredOptions.indexOf(this.value) : 0;
+    this.updateHighlight();
+  }
+
+  close() {
+    this.isOpen = false;
+    this.container.classList.remove('open');
+    this.highlightedIndex = -1;
+    this.searchInput.value = '';
+    this.filter('');
+  }
+
+  filter(searchTerm) {
+    const term = searchTerm.toLowerCase();
+    this.filteredOptions = this.options.filter(option => 
+      option.toLowerCase().includes(term)
+    );
+    this.highlightedIndex = 0;
+    this.renderOptions();
+  }
+
+  selectOption(option) {
+    this.value = option;
+    this.input.value = option;
+    this.container.classList.add('has-value');
+    this.setValid();
+    this.close();
+    this.input.focus();
+    updateRefundReason(option);
+  }
+
+  clear() {
+    this.value = null;
+    this.input.value = '';
+    this.container.classList.remove('has-value');
+    this.filter('');
+    this.renderOptions();
+    updateRefundReason('');
+  }
+
+  updateHighlight() {
+    const options = this.optionsContainer.querySelectorAll('.select-option');
+    options.forEach((el, index) => {
+      el.classList.remove('highlighted');
+      if (index === this.highlightedIndex) {
+        el.classList.add('highlighted');
+      }
+    });
+  }
+
+  scrollToHighlighted() {
+    const highlighted = this.optionsContainer.querySelector('.highlighted');
+    if (highlighted) {
+      highlighted.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  setError() {
+    this.container.classList.add('error');
+    this.container.classList.remove('valid');
+    if (this.errorEl) {
+      this.errorEl.classList.add('show');
+    }
+  }
+
+  setValid() {
+    this.container.classList.remove('error');
+    this.container.classList.add('valid');
+    if (this.errorEl) {
+      this.errorEl.classList.remove('show');
+    }
+  }
+
+  reset() {
+    this.clear();
+    this.container.classList.remove('error', 'valid');
+    if (this.errorEl) {
+      this.errorEl.classList.remove('show');
+    }
+  }
+
+  getValue() {
+    return this.value;
+  }
+}
+
+/**
+ * 更新退款原因（兼容旧函数）
+ * @param {string} reason - 退款原因
+ */
+function updateRefundReason(reason) {
+  const select = document.querySelector('.custom-select');
+  if (!select) return;
+  
+  if (reason) {
+    select.classList.add('selected');
+  } else {
+    select.classList.remove('selected');
+  }
+}
+
+/**
+ * 清除退款原因选择
+ */
+function clearRefundSelect() {
+  if (refundSelectInstance) {
+    refundSelectInstance.clear();
+  }
+}
+
+/**
+ * 初始化退款原因选择组件
+ */
+function initRefundSelect() {
+  if (!refundSelectInstance) {
+    refundSelectInstance = new CustomSelect({
+      containerId: 'refund-select',
+      inputId: 'refund-input',
+      searchId: 'refund-search',
+      optionsId: 'refund-options',
+      errorId: 'refund-error',
+      clearId: 'refund-clear',
+      options: refundReasons
+    });
+  }
+}
+
+/**
+ * 上传凭证
+ */
+function uploadVoucher() {
+  showToast('请选择要上传的凭证图片');
+}
+
+/**
+ * 提交售后申请
+ */
+function submitAfterSale() {
+  // 初始化组件（如果尚未初始化）
+  initRefundSelect();
+  
+  // 验证退款原因
+  if (!refundSelectInstance || !refundSelectInstance.getValue()) {
+    if (refundSelectInstance) {
+      refundSelectInstance.setError();
+    }
+    showToast('请选择退款原因', 'error');
+    return;
+  }
+  
+  // 清除错误状态
+  if (refundSelectInstance) {
+    refundSelectInstance.setValid();
+  }
+  
+  // 获取订单信息
+  const orderInfo = getCurrentOrderInfo();
+  
+  // 生成售后卡片
+  const afterSaleCard = {
+    productTitle: orderInfo.productTitle,
+    quantity: orderInfo.quantity,
+    totalPrice: orderInfo.totalPrice,
+    images: orderInfo.images,
+    goodsStatus: document.getElementById('goods-status')?.value || '已收到货',
+    refundReason: refundSelectInstance.getValue(),
+    refundAmount: document.getElementById('refund-amount')?.value || orderInfo.totalPrice,
+    refundQuantity: document.getElementById('refund-quantity')?.value || orderInfo.quantity,
+    description: document.getElementById('refund-desc')?.value || ''
+  };
+  
+  // 发送售后卡片到聊天区域
+  sendAfterSaleCard(afterSaleCard);
+  
+  showToast('售后申请卡片已发送');
+  backToOrder();
+}
+
+/**
+ * 获取当前订单信息
+ */
+function getCurrentOrderInfo() {
+  return {
+    productTitle: '【1号同款宽肩带背心】草本初色超薄舒适无痕透气内衣',
+    quantity: 1,
+    totalPrice: '108.00',
+    images: [
+      'https://neeko-copilot.bytedance.net/api/text_to_image?prompt=comfortable%20women%20underwear%20bra%20product%20photo%20white%20background&image_size=square',
+      'https://neeko-copilot.bytedance.net/api/text_to_image?prompt=comfortable%20women%20underwear%20bra%20beige%20color%20product%20photo&image_size=square'
+    ]
+  };
+}
+
+/**
+ * 发送售后卡片到聊天区域
+ */
+function sendAfterSaleCard(cardData) {
+  const cardId = 'aftersale-' + Date.now();
+  
+  const message = {
+    type: 'aftersale',
+    cardId: cardId,
+    card: cardData,
+    time: getCurrentTime()
+  };
+  
+  // 添加到当前客户的消息列表
+  const customerId = systemState.activeCustomer;
+  if (customerId) {
+    const customerState = systemState.customerStates[customerId];
+    if (customerState) {
+      customerState.messages.push(message);
+    }
+  }
+  
+  // 添加到聊天界面
+  addMessage(message);
+  scrollToBottom();
+}
+
+/**
+ * 确认售后申请
+ */
+function confirmAfterSale(cardId) {
+  showToast('售后申请已提交给用户确认', 'success');
+}
+
+/**
+ * 取消售后申请
+ */
+function cancelAfterSale(cardId) {
+  showToast('售后申请已取消', 'warning');
+}
+
+/**
+ * 添加订单模块的CSS样式
+ */
+function addOrderModuleStyles() {
+  if (!document.getElementById('order-module-styles')) {
+    const style = document.createElement('style');
+    style.id = 'order-module-styles';
+    style.textContent = `
+      .order-detail-wrapper {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .order-detail-page,
+      .after-sale-page {
+        background: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        position: relative;
+        will-change: transform, opacity;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+
+      .after-sale-page {
+        display: none;
+        min-height: 0;
+      }
+
+      .order-detail-page > * {
+        flex-shrink: 0;
+      }
+
+      .order-detail-page .product-section {
+        flex-shrink: 0;
+        overflow-y: visible;
+        overflow-x: hidden;
+      }
+
+      .after-sale-page > .form-area {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      @keyframes fadeSlideInRight {
+        from { opacity: 0; transform: translateX(40px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes fadeSlideOutLeft {
+        from { opacity: 1; transform: translateX(0); }
+        to   { opacity: 0; transform: translateX(-40px); }
+      }
+
+      @keyframes fadeSlideInLeft {
+        from { opacity: 0; transform: translateX(-40px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes fadeSlideOutRight {
+        from { opacity: 1; transform: translateX(0); }
+        to   { opacity: 0; transform: translateX(40px); }
+      }
+
+      .anim-out-left  { animation: fadeSlideOutLeft  0.26s cubic-bezier(.4,0,.2,1) forwards; }
+      .anim-in-right  { animation: fadeSlideInRight  0.26s cubic-bezier(.4,0,.2,1) forwards; }
+      .anim-out-right { animation: fadeSlideOutRight 0.26s cubic-bezier(.4,0,.2,1) forwards; }
+      .anim-in-left   { animation: fadeSlideInLeft   0.26s cubic-bezier(.4,0,.2,1) forwards; }
+
+      .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+        height: 26px;
+        background: #0057D9;
+        flex-shrink: 0;
+      }
+
+      .order-id-top {
+        font-size: 8px;
+        color: #FFF;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 1px 3px;
+        transition: color 0.15s, background 0.15s;
+        word-break: break-all;
+        max-width: 450px;
+      }
+      .order-id-top:hover { color: #FFF; background: rgba(255,255,255,0.2); }
+
+      .btn-cancel {
+        height: 16px;
+        padding: 0 5px;
+        font-size: 8px;
+        color: #FFF;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background 0.15s;
+        flex-shrink: 0;
+      }
+      .btn-cancel:hover { background: rgba(255,255,255,0.2); }
+
+      .status-bar {
+        display: flex;
+        align-items: center;
+        padding: 5px 8px;
+        border-bottom: 1px solid #F0F0F0;
+      }
+
+      .status-tag {
+        height: 16px;
+        padding: 0 7px;
+        background: #00B42A;
+        color: #FFF;
+        font-size: 9px;
+        font-weight: 600;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+      }
+
+      .icon-btn-group {
+        display: flex;
+        gap: 4px;
+        margin-left: auto;
+      }
+
+      .icon-btn {
+        width: 14px;
+        height: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0057D9;
+        font-size: 8px;
+        border: 1px solid #0057D9;
+        border-radius: 3px;
+        cursor: pointer;
+        background: transparent;
+        transition: background 0.15s, transform 0.15s;
+        flex-shrink: 0;
+      }
+      .icon-btn:hover { background: #E8F0FE; transform: scale(1.08); }
+      .icon-btn:active { transform: scale(0.95); }
+
+      .product-section {
+        padding: 7px 8px;
+        border-bottom: 1px solid #F0F0F0;
+      }
+
+      .product-order-id {
+        font-size: 8px;
+        color: #000;
+        margin-bottom: 5px;
+      }
+
+      .product-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 7px;
+      }
+
+      .product-img {
+        width: 46px;
+        height: 46px;
+        background: #F5F5F5;
+        border-radius: 4px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .product-name {
+        font-size: 8px;
+        color: #000;
+        font-weight: 500;
+        line-height: 1.4;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+
+      .service-tags {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+
+      .service-tag {
+        height: 13px;
+        padding: 0 5px;
+        font-size: 7px;
+        color: #0057D9;
+        border: 1px solid #0057D9;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background: transparent;
+        transition: background 0.15s, transform 0.12s;
+        flex-shrink: 0;
+      }
+      .service-tag:hover { background: #E8F0FE; transform: translateY(-1px); }
+      .service-tag:active { transform: translateY(0); }
+
+      .price-row {
+        display: flex;
+        gap: 8px;
+        font-size: 8px;
+        color: #000;
+      }
+
+      .spec-text {
+        font-size: 10px;
+        color: #000;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 390px;
+      }
+
+      .spec-row, .gift-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 4px;
+      }
+
+      .btn-send {
+        font-size: 8px;
+        color: #0057D9;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 2px 4px;
+        border-radius: 3px;
+        flex-shrink: 0;
+        transition: background 0.15s, transform 0.12s;
+      }
+      .btn-send:hover { background: #E8F0FE; transform: scale(1.05); }
+      .btn-send:active { transform: scale(0.96); }
+
+      .code-row { font-size: 8px; color: #000; word-break: break-all; }
+
+      .gift-content {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        font-size: 8px;
+        color: #000;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .gift-prefix {
+        background: #FF0000;
+        color: #FFF;
+        font-size: 7px;
+        padding: 1px 2px;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .action-section {
+        display: flex;
+        align-items: center;
+        padding: 7px 8px;
+        gap: 8px;
+        border-bottom: 1px solid #F0F0F0;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary-action {
+        height: 26px;
+        padding: 0 12px;
+        font-size: 10px;
+        color: #0057D9;
+        background: #FFF;
+        border: 1px solid #0057D9;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+        flex-shrink: 0;
+      }
+      .btn-primary-action:hover {
+        background: #E8F0FE;
+        box-shadow: 0 1px 5px rgba(0,87,217,0.15);
+        transform: translateY(-1px);
+      }
+      .btn-primary-action:active { transform: translateY(0); box-shadow: none; }
+
+      .btn-secondary-action {
+        height: 26px;
+        padding: 0 12px;
+        font-size: 10px;
+        color: #5A5A5A;
+        background: #F5F5F5;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.15s, transform 0.12s;
+        flex-shrink: 0;
+      }
+      .btn-secondary-action:hover { background: #E8E8E8; transform: translateY(-1px); }
+      .btn-secondary-action:active { transform: translateY(0); }
+
+      .btn-more {
+        width: 21px;
+        height: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #5A5A5A;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.15s;
+        letter-spacing: -1px;
+      }
+      .btn-more:hover { background: #F0F0F0; }
+
+      .section-divider {
+        height: 5px;
+        background: #F2F3F5;
+      }
+
+      .finance-section,
+      .logistics-section,
+      .receiver-section {
+        padding: 7px 8px;
+        border-bottom: 1px solid #F0F0F0;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .info-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .info-label {
+        font-size: 10px;
+        color: #5A5A5A;
+        width: 65px;
+        flex-shrink: 0;
+      }
+
+      .info-value { font-size: 10px; color: #000; word-break: break-all; }
+      .info-value-medium { font-size: 10px; color: #000; font-weight: 500; }
+      .info-value-small { font-size: 9px; color: #5A5A5A; margin-left: 5px; }
+      .info-value-extra { font-size: 10px; color: #000; margin-left: 16px; }
+
+      .logistics-number {
+        font-size: 10px;
+        color: #000;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 1px 3px;
+        transition: color 0.15s, background 0.15s;
+        display: inline-block;
+        word-break: break-all;
+      }
+      .logistics-number:hover { color: #0057D9; background: #EFF4FF; }
+
+      .logistics-status {
+        font-size: 10px;
+        color: #0057D9;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 3px;
+        padding: 1px 3px;
+        transition: background 0.15s, opacity 0.15s;
+        display: inline-block;
+        margin-top: 4px;
+      }
+      .logistics-status:hover { background: #EFF4FF; opacity: 0.85; }
+
+      .bottom-action-section {
+        display: flex;
+        align-items: center;
+        padding: 7px 8px;
+        gap: 7px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+      }
+
+      .popover-wrapper { position: relative; display: inline-block; }
+
+      .popover-menu {
+        position: absolute;
+        bottom: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        background: #FFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 5px;
+        box-shadow: 0 4px 13px rgba(0,0,0,0.12);
+        min-width: 98px;
+        z-index: 200;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease, transform 0.18s ease;
+      }
+      .popover-menu.show {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .popover-item {
+        padding: 7px 10px;
+        font-size: 10px;
+        color: #000;
+        cursor: pointer;
+        border-bottom: 1px solid #F5F5F5;
+        transition: background 0.12s, color 0.12s;
+        white-space: nowrap;
+      }
+      .popover-item:last-child { border-bottom: none; }
+      .popover-item:hover { background: #F0F5FF; color: #0057D9; }
+
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.42);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.22s ease;
+      }
+      .modal-overlay.show { opacity: 1; pointer-events: all; }
+
+      .modal {
+        background: #FFF;
+        border-radius: 7px;
+        padding: 18px 21px;
+        width: 312px;
+        max-width: 90vw;
+        transform: scale(0.94) translateY(5px);
+        transition: transform 0.22s cubic-bezier(.34,1.56,.64,1), opacity 0.22s ease;
+        box-shadow: 0 7px 26px rgba(0,0,0,0.16);
+        opacity: 0;
+      }
+      .modal-overlay.show .modal {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+
+      .modal-title {
+        font-size: 11px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 12px;
+      }
+
+      .modal-content {
+        font-size: 10px;
+        color: #5A5A5A;
+        margin-bottom: 16px;
+        line-height: 1.7;
+      }
+
+      .form-label-modal {
+        display: block;
+        font-size: 10px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 5px;
+        margin-top: 10px;
+      }
+
+      .form-label-modal:first-of-type {
+        margin-top: 0;
+      }
+
+      .form-input {
+        width: 100%;
+        height: 28px;
+        padding: 0 9px;
+        border: 1px solid #D9D9D9;
+        border-radius: 4px;
+        font-size: 10px;
+        color: #000;
+        background: #FFF;
+        transition: all 0.18s ease;
+        outline: none;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+      }
+
+      .form-input::placeholder {
+        color: #A0A0A0;
+      }
+
+      .form-input:hover {
+        border-color: #B3B3B3;
+      }
+
+      .form-input:focus {
+        border-color: #0057D9;
+        box-shadow: 0 0 0 3px rgba(0, 87, 217, 0.1);
+        background: #FAFCFF;
+      }
+
+      .form-input:focus-visible {
+        outline: none;
+      }
+
+      .form-input.error {
+        border-color: #EF4444;
+        background: #FEF2F2;
+        animation: shake 0.4s ease-in-out;
+      }
+
+      .form-input.error:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+      }
+
+      .form-input.valid {
+        border-color: #10B981;
+        background: #F0FDF4;
+      }
+
+      .form-input.valid:focus {
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+      }
+
+      .form-input:disabled {
+        background: #F5F5F5;
+        color: #A0A0A0;
+        cursor: not-allowed;
+        border-color: #E5E5E5;
+      }
+
+      .error-message {
+        font-size: 9px;
+        color: #EF4444;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      .success-message {
+        font-size: 9px;
+        color: #10B981;
+        margin-top: 4px;
+        margin-bottom: 8px;
+        display: none;
+      }
+
+      .success-message.show {
+        display: block;
+      }
+
+      .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .modal-btn-cancel {
+        height: 23px;
+        padding: 0 13px;
+        font-size: 10px;
+        color: #5A5A5A;
+        background: #F5F5F5;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      .modal-btn-cancel:hover { background: #E8E8E8; }
+
+      .modal-btn-confirm {
+        height: 23px;
+        padding: 0 13px;
+        font-size: 10px;
+        color: #FFF;
+        background: #0057D9;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.15s, transform 0.12s;
+      }
+      .modal-btn-confirm:hover { background: #0048B3; transform: translateY(-1px); }
+      .modal-btn-confirm:active { transform: translateY(0); }
+
+      .nav-bar {
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        height: 33px;
+        border-bottom: 1px solid #F0F0F0;
+        flex-shrink: 0;
+      }
+
+      .nav-back {
+        width: 21px;
+        height: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #000;
+        cursor: pointer;
+        background: none;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.15s, transform 0.12s;
+        flex-shrink: 0;
+      }
+      .nav-back:hover { background: #F0F0F0; transform: translateX(-2px); }
+      .nav-back:active { transform: translateX(0); }
+
+      .nav-title {
+        font-size: 12px;
+        font-weight: 500;
+        color: #000;
+        margin-left: 10px;
+      }
+
+      .product-info-area {
+        display: flex;
+        align-items: flex-start;
+        padding: 10px 16px 9px 16px;
+        border-bottom: 1px solid #F0F0F0;
+        gap: 9px;
+        flex-shrink: 0;
+      }
+
+      .product-thumb {
+        width: 65px;
+        height: 65px;
+        background: #F5F5F5;
+        border-radius: 4px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-top: 3px;
+        min-width: 0;
+      }
+
+      .product-name-as {
+        font-size: 10px;
+        color: #000;
+        line-height: 1.4;
+        word-break: break-all;
+        overflow-wrap: break-word;
+      }
+
+      .product-spec-as {
+        font-size: 9px;
+        color: #5A5A5A;
+      }
+
+      .form-area {
+        padding: 0 16px;
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        min-height: 33px;
+        border-bottom: 1px solid #F5F5F5;
+        padding: 8px 0;
+        gap: 5px;
+      }
+
+      .form-row.desc-row,
+      .form-row.upload-row {
+        align-items: flex-start;
+        padding-top: 9px;
+        padding-bottom: 9px;
+      }
+
+      .form-required {
+        font-size: 10px;
+        font-weight: 700;
+        color: #FF0000;
+        width: 10px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .form-label-as {
+        font-size: 10px;
+        font-weight: 500;
+        color: #000;
+        width: 52px;
+        flex-shrink: 0;
+      }
+
+      .form-content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .radio-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .radio-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        font-size: 10px;
+        color: #000;
+        user-select: none;
+        transition: color 0.15s;
+      }
+      .radio-item:hover { color: #0057D9; }
+
+      .radio-circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #CCC;
+        background: #FFF;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.18s, transform 0.15s;
+      }
+      .radio-circle.checked { border-color: #0057D9; }
+      .radio-circle.checked::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #0057D9;
+        animation: radioPop 0.18s cubic-bezier(.34,1.56,.64,1);
+      }
+      @keyframes radioPop {
+        from { transform: scale(0); }
+        to   { transform: scale(1); }
+      }
+      .radio-item:hover .radio-circle:not(.checked) { border-color: #0057D9; transform: scale(1.1); }
+
+      .select-wrapper { position: relative; flex: 1; max-width: 320px; min-width: 240px; }
+
+      .custom-select {
+        position: relative;
+        width: 100%;
+      }
+
+      .select-input-wrapper {
+        position: relative;
+      }
+
+      .select-input {
+        width: 100%;
+        height: 26px;
+        padding: 0 40px 0 10px;
+        border: 1.5px solid #D9D9D9;
+        border-radius: 6px;
+        font-size: 10px;
+        color: #000;
+        background: #FFF;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.18s cubic-bezier(.4,0,.2,1);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .select-input::placeholder {
+        color: #A0A0A0;
+      }
+
+      .select-input:hover {
+        border-color: #B3B3B3;
+      }
+
+      .select-input:focus {
+        border-color: #0057D9;
+        box-shadow: 0 0 0 3px rgba(0,87,217,0.1);
+        background: #FAFCFF;
+      }
+
+      .custom-select.error .select-input {
+        border-color: #EF4444;
+        background: #FEF2F2;
+        animation: shake 0.4s ease-in-out;
+      }
+
+      .custom-select.error .select-input:focus {
+        box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
+      }
+
+      .custom-select.valid .select-input {
+        border-color: #10B981;
+        background: #F0FDF4;
+      }
+
+      .custom-select.valid .select-input:focus {
+        box-shadow: 0 0 0 3px rgba(16,185,129,0.1);
+      }
+
+      .select-arrow {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #999;
+        font-size: 8px;
+        transition: transform 0.2s ease;
+      }
+
+      .custom-select.open .select-arrow {
+        transform: translateY(-50%) rotate(180deg);
+        color: #0057D9;
+      }
+
+      .select-clear {
+        position: absolute;
+        right: 32px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #A0A0A0;
+        font-size: 14px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.15s ease;
+      }
+
+      .select-clear:hover {
+        color: #5A5A5A;
+        background: #F0F0F0;
+      }
+
+      .custom-select.has-value .select-clear {
+        display: flex;
+      }
+
+      .select-dropdown {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        right: 0;
+        background: #FFF;
+        border: 1.5px solid #E5E5E5;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        z-index: 100;
+        max-height: 300px;
+        min-width: 100%;
+        width: auto;
+        overflow-y: auto;
+        overflow-x: visible;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.2s cubic-bezier(.4,0,.2,1);
+      }
+
+      .custom-select.open .select-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .select-search {
+        padding: 8px;
+        border-bottom: 1px solid #F0F0F0;
+        position: sticky;
+        top: 0;
+        background: #FFF;
+        z-index: 1;
+      }
+
+      .select-search-input {
+        width: 100%;
+        height: 28px;
+        padding: 0 10px 0 32px;
+        border: 1px solid #D9D9D9;
+        border-radius: 6px;
+        font-size: 10px;
+        outline: none;
+        transition: all 0.18s ease;
+        background: #F8F9FA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23A0A0A0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.3-4.3'%3E%3C/path%3E%3C/svg%3E") no-repeat 10px center;
+      }
+
+      .select-search-input:focus {
+        border-color: #0057D9;
+        box-shadow: 0 0 0 2px rgba(0,87,217,0.1);
+        background-color: #FFF;
+      }
+
+      .select-options {
+        padding: 6px;
+      }
+
+      .select-option {
+        padding: 6px 10px;
+        font-size: 10px;
+        color: #000;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.12s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        overflow: visible;
+      }
+
+      .select-option:hover {
+        background: #F0F5FF;
+        color: #0057D9;
+      }
+
+      .select-option.highlighted {
+        background: #E8F0FE;
+        color: #0057D9;
+      }
+
+      .select-option.selected {
+        background: #0057D9;
+        color: #FFF;
+      }
+
+      .select-option.selected:hover {
+        background: #0048B3;
+      }
+
+      .select-option-icon {
+        width: 14px;
+        height: 14px;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+
+      .select-option.selected .select-option-icon {
+        opacity: 1;
+      }
+
+      .select-empty {
+        padding: 24px 12px;
+        text-align: center;
+        color: #A0A0A0;
+        font-size: 12px;
+      }
+
+      .select-error-msg {
+        font-size: 10px;
+        color: #EF4444;
+        margin-top: 6px;
+        display: none;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .select-error-msg.show {
+        display: flex;
+      }
+
+      .select-error-icon {
+        font-size: 12px;
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        75% { transform: translateX(4px); }
+      }
+
+      .amount-wrapper {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        max-width: 260px;
+      }
+
+      .amount-input-box {
+        flex: 1;
+        height: 26px;
+        border: 1px solid #D9D9D9;
+        border-right: none;
+        border-radius: 4px 0 0 4px;
+        padding: 0 8px;
+        font-size: 10px;
+        color: #000;
+        background: #F5F5F5;
+        outline: none;
+        cursor: not-allowed;
+      }
+
+      .amount-unit {
+        width: 29px;
+        height: 26px;
+        border: 1px solid #D9D9D9;
+        border-radius: 0 4px 4px 0;
+        background: #F5F5F5;
+        font-size: 10px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .amount-hint { font-size: 9px; color: #5A5A5A; margin-top: 3px; }
+      .amount-col { display: flex; flex-direction: column; }
+
+      .textarea-wrapper { position: relative; flex: 1; max-width: 293px; }
+
+      .form-textarea {
+        width: 100%;
+        height: 65px;
+        border: 1px solid #D9D9D9;
+        border-radius: 4px;
+        padding: 7px 8px 16px 8px;
+        font-size: 10px;
+        color: #000;
+        background: #FFF;
+        resize: none;
+        outline: none;
+        font-family: inherit;
+        transition: border-color 0.15s, box-shadow 0.15s;
+        line-height: 1.5;
+      }
+      .form-textarea::placeholder { color: #A0A0A0; }
+      .form-textarea:focus { border-color: #0057D9; box-shadow: 0 0 0 2px rgba(0,87,217,0.1); }
+
+      .textarea-count {
+        position: absolute;
+        right: 7px;
+        bottom: 5px;
+        font-size: 8px;
+        color: #A0A0A0;
+        pointer-events: none;
+      }
+
+      .upload-box {
+        width: 65px;
+        height: 65px;
+        border: 1px dashed #CCC;
+        border-radius: 4px;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: border-color 0.18s, background 0.18s, transform 0.15s;
+        flex-shrink: 0;
+      }
+      .upload-box:hover {
+        border-color: #0057D9;
+        background: #F5F8FF;
+        transform: scale(1.04);
+      }
+      .upload-box:active { transform: scale(0.98); }
+
+      .upload-plus {
+        font-size: 17px;
+        color: #A0A0A0;
+        line-height: 1;
+        margin-bottom: 3px;
+        transition: color 0.15s;
+      }
+      .upload-box:hover .upload-plus { color: #0057D9; }
+
+      .upload-count { font-size: 9px; color: #A0A0A0; }
+
+      .bottom-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 46px;
+        background: #FFF;
+        border-top: 1px solid #F0F0F0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 16px;
+        gap: 8px;
+        border-radius: 0 0 5px 5px;
+        flex-shrink: 0;
+      }
+
+      .btn-confirm-as {
+        width: 98px;
+        height: 29px;
+        background: #0057D9;
+        color: #FFF;
+        font-size: 10px;
+        font-weight: 500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+      }
+      .btn-confirm-as:hover {
+        background: #0048B3;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0,87,217,0.3);
+      }
+      .btn-confirm-as:active { transform: translateY(0); box-shadow: none; }
+
+      .btn-cancel-as {
+        width: 65px;
+        height: 29px;
+        background: #FFF;
+        color: #000;
+        font-size: 10px;
+        border: 1px solid #D9D9D9;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s, border-color 0.15s, transform 0.12s;
+      }
+      .btn-cancel-as:hover { background: #F5F5F5; border-color: #BFBFBF; transform: translateY(-1px); }
+      .btn-cancel-as:active { transform: translateY(0); }
+
+      .toast {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 7px 12px;
+        background: rgba(0,0,0,0.7);
+        color: #FFFFFF;
+        border-radius: 3px;
+        font-size: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+        z-index: 9999;
+      }
+
+      .toast.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media screen and (max-width: 700px) {
+        .order-detail-wrapper {
+          width: 100% !important;
+        }
+
+        .modal {
+          width: 95% !important;
+          max-width: 95% !important;
+          padding: 20px !important;
+        }
+
+        .modal-title {
+          font-size: 16px !important;
+        }
+
+        .modal-content {
+          font-size: 14px !important;
+        }
+
+        .modal-btn-cancel,
+        .modal-btn-confirm {
+          height: 34px !important;
+          padding: 0 16px !important;
+          font-size: 14px !important;
+        }
+
+        .form-label-modal {
+          font-size: 14px !important;
+          margin-bottom: 6px !important;
+        }
+
+        .form-input {
+          height: 36px !important;
+          font-size: 14px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .order-detail-page .top-bar,
+        .after-sale-page .top-bar {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .order-detail-page .status-bar,
+        .order-detail-page .product-section,
+        .order-detail-page .order-info-section,
+        .order-detail-page .logistics-section,
+        .order-detail-page .address-section,
+        .after-sale-page .form-area {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .product-info .product-name {
+          font-size: 10px !important;
+        }
+
+        .product-info .spec-text {
+          font-size: 8px !important;
+          max-width: calc(100% - 72px) !important;
+        }
+
+        .order-detail-page .info-row {
+          flex-wrap: wrap !important;
+          gap: 8px !important;
+        }
+
+        .order-detail-page .info-label {
+          width: auto !important;
+          min-width: 80px !important;
+        }
+
+        .order-detail-page .info-value {
+          flex: 1 !important;
+          min-width: 0 !important;
+        }
+
+        .bottom-bar {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .btn-confirm-as {
+          width: 130px !important;
+        }
+
+        .btn-cancel-as {
+          width: 85px !important;
+        }
+
+        .action-section,
+        .bottom-action-section {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+
+        .btn-primary-action,
+        .btn-secondary-action {
+          height: 34px !important;
+          padding: 0 12px !important;
+          font-size: 14px !important;
+        }
+
+        .finance-section,
+        .receiver-section {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .order-detail-wrapper {
+          width: 100% !important;
+        }
+
+        .product-info {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 8px !important;
+        }
+        
+        .product-image-wrapper {
+          width: 52px !important;
+          height: 52px !important;
+        }
+        
+        .product-info .spec-text {
+          max-width: 100% !important;
+        }
+        
+        .service-tags {
+          flex-wrap: wrap !important;
+        }
+        
+        .bottom-bar {
+          flex-direction: column !important;
+          gap: 5px !important;
+          padding-top: 8px !important;
+          padding-bottom: 8px !important;
+        }
+        
+        .btn-confirm-as,
+        .btn-cancel-as {
+          width: 100% !important;
+        }
+        
+        .form-row-as {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+        }
+        
+        .form-label-as {
+          width: 100% !important;
+          margin-bottom: 5px !important;
+          text-align: left !important;
+        }
+        
+        .form-content {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+        
+        .radio-group {
+          flex-wrap: wrap !important;
+        }
+        
+        .amount-wrapper {
+          width: 100% !important;
+        }
+        
+        .textarea-wrapper {
+          width: 100% !important;
+        }
+      }
+
+      @keyframes previewIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to   { opacity: 1; transform: scale(1); }
+      }
+
+      .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.42);
+        display: none;
+        align-items: flex-end;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.22s ease;
+      }
+      .drawer-overlay.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .drawer {
+        background: #FFF;
+        border-radius: 12px 12px 0 0;
+        width: 100%;
+        max-width: 600px;
+        max-height: 70vh;
+        overflow-y: auto;
+        transform: translateY(100%);
+        transition: transform 0.28s cubic-bezier(.34,1.56,.64,1);
+        box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+      }
+      .drawer-overlay.show .drawer {
+        transform: translateY(0);
+      }
+
+      .drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-bottom: 1px solid #F0F0F0;
+      }
+
+      .drawer-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+      }
+
+      .drawer-close {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #000;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background 0.15s;
+      }
+      .drawer-close:hover { background: #F0F0F0; }
+
+      .drawer-content {
+        padding: 20px;
+      }
+
+      .drawer-info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+
+      .drawer-info-label {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .drawer-info-value {
+        font-size: 14px;
+        color: #000;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
+/**
+ * 初始化订单模块的JavaScript功能
+ */
+function initOrderModule() {
+  // 初始化订单模块的全局变量
+  window.radioGroups = {
+    type:  { count: 4, current: 0 },
+    goods: { count: 2, current: 1 }
+  };
+  
+  window.uploadedFiles = [];
+  window.toastTimer = null;
+  window.isAnimating = false;
+  
+  // 初始化退款原因选择组件
+  setTimeout(function() {
+    initRefundSelect();
+  }, 100);
+}
+
+/**
+ * 跳转到售后页面
+ */
+function goToAfterSale() {
+  if (window.isAnimating) return;
+  window.isAnimating = true;
+  var orderPage = document.getElementById('page-order');
+  var asPage = document.getElementById('page-after-sale');
+  orderPage.classList.add('anim-out-left');
+  setTimeout(function() {
+    orderPage.style.display = 'none';
+    orderPage.classList.remove('anim-out-left');
+    asPage.style.display = 'block';
+    asPage.classList.add('anim-in-right');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(function() {
+      asPage.classList.remove('anim-in-right');
+      window.isAnimating = false;
+    }, 280);
+  }, 240);
+}
+
+/**
+ * 返回订单页面
+ */
+function backToOrder() {
+  if (window.isAnimating) return;
+  window.isAnimating = true;
+  var orderPage = document.getElementById('page-order');
+  var asPage = document.getElementById('page-after-sale');
+  asPage.classList.add('anim-out-right');
+  setTimeout(function() {
+    asPage.style.display = 'none';
+    asPage.classList.remove('anim-out-right');
+    orderPage.style.display = 'block';
+    orderPage.classList.add('anim-in-left');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(function() {
+      orderPage.classList.remove('anim-in-left');
+      window.isAnimating = false;
+    }, 280);
+  }, 240);
+}
+
+/**
+ * 提交售后申请
+ */
+function handleSubmit() {
+  var reason = document.getElementById('refund-reason').value;
+  if (!reason) {
+    showToast('请选择退款原因');
+    return;
+  }
+  showToast('售后申请已提交，正在处理...');
+  setTimeout(function() {
+    backToOrder();
+  }, 1600);
+}
+
+/**
+ * 选择单选按钮
+ * @param {string} group - 单选按钮组
+ * @param {number} index - 选中的索引
+ */
+function selectRadio(group, index) {
+  var g = window.radioGroups[group];
+  if (!g) return;
+  var prevEl = document.getElementById(group + '-' + g.current);
+  if (prevEl) prevEl.classList.remove('checked');
+  var nextEl = document.getElementById(group + '-' + index);
+  if (nextEl) nextEl.classList.add('checked');
+  g.current = index;
+}
+
+/**
+ * 处理退款原因选择
+ * @param {HTMLElement} el - 选择元素
+ */
+function onReasonChange(el) {
+  if (el.value) el.classList.add('selected');
+}
+
+/**
+ * 更新文本域计数
+ * @param {HTMLElement} el - 文本域元素
+ */
+function updateCount(el) {
+  document.getElementById('desc-count').textContent = el.value.length + '/200';
+}
+
+/**
+ * 触发文件上传
+ */
+function triggerUpload() {
+  if (window.uploadedFiles.length >= 4) {
+    showToast('最多上传 4 张凭证图片');
+    return;
+  }
+  document.getElementById('file-input').click();
+}
+
+/**
+ * 处理文件上传
+ * @param {Event} event - 上传事件
+ */
+function handleFileUpload(event) {
+  var files = Array.from(event.target.files);
+  var remaining = 4 - window.uploadedFiles.length;
+  var toAdd = files.slice(0, remaining);
+  toAdd.forEach(function(file) {
+    window.uploadedFiles.push(file);
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      addPreview(e.target.result, window.uploadedFiles.length - 1);
+      updateUploadUI();
+    };
+    reader.readAsDataURL(file);
+  });
+  if (files.length > remaining) showToast('最多上传 4 张凭证图片');
+  event.target.value = '';
+}
+
+/**
+ * 添加预览图片
+ * @param {string} src - 图片源
+ * @param {number} index - 图片索引
+ */
+function addPreview(src, index) {
+  var area = document.getElementById('preview-area');
+  var wrap = document.createElement('div');
+  wrap.style.cssText = 'position:relative;width:120px;height:120px;border-radius:6px;overflow:hidden;border:1px solid #E5E5E5;flex-shrink:0;animation:previewIn .2s ease;';
+  wrap.id = 'preview-' + index;
+  var img = document.createElement('img');
+  img.src = src;
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+  var del = document.createElement('div');
+  del.innerHTML = '×';
+  del.style.cssText = 'position:absolute;top:4px;right:4px;width:22px;height:22px;background:rgba(0,0,0,0.55);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:background .15s,transform .15s;';
+  del.onmouseenter = function() { this.style.background = 'rgba(0,0,0,0.8)'; this.style.transform = 'scale(1.1)'; };
+  del.onmouseleave = function() { this.style.background = 'rgba(0,0,0,0.55)'; this.style.transform = 'scale(1)'; };
+  del.onclick = function() { removePreview(index); };
+  wrap.appendChild(img);
+  wrap.appendChild(del);
+  area.appendChild(wrap);
+}
+
+/**
+ * 移除预览图片
+ * @param {number} index - 图片索引
+ */
+function removePreview(index) {
+  window.uploadedFiles.splice(index, 1);
+  document.getElementById('preview-area').innerHTML = '';
+  window.uploadedFiles.forEach(function(file, i) {
+    var reader = new FileReader();
+    reader.onload = function(e) { addPreview(e.target.result, i); };
+    reader.readAsDataURL(file);
+  });
+  updateUploadUI();
+}
+
+/**
+ * 更新上传UI
+ */
+function updateUploadUI() {
+  var count = window.uploadedFiles.length;
+  document.getElementById('upload-count').textContent = '(' + count + '/4)';
+  document.getElementById('upload-box-main').style.display = count >= 4 ? 'none' : 'flex';
+}
+
+/**
+ * 显示提示信息
+ * @param {string} msg - 提示信息
+ */
+function showToast(msg) {
+  var toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  if (window.toastTimer) clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(function() { toast.classList.remove('show'); }, 2200);
+}
+
+/**
+ * 复制文本
+ * @param {string} text - 要复制的文本
+ */
+function copyText(text) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() { showToast('已复制：' + text); });
+  } else {
+    var el = document.createElement('textarea');
+    el.value = text;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    showToast('已复制：' + text);
+  }
+}
+
+/**
+ * 发送信息
+ * @param {string} text - 要发送的文本
+ */
+function sendInfo(text) {
+  showToast('已发送至对话：' + text.substring(0, 20) + (text.length > 20 ? '…' : ''));
+}
+
+/**
+ * 打开抽屉
+ */
+function openDrawer() {
+  var overlay = document.getElementById('drawer-overlay');
+  if (!overlay) {
+    // 创建抽屉元素
+    overlay = document.createElement('div');
+    overlay.id = 'drawer-overlay';
+    overlay.className = 'drawer-overlay';
+    overlay.onclick = closeDrawerOnOverlay;
+    overlay.innerHTML = `
+      <div class="drawer">
+        <div class="drawer-header">
+          <div class="drawer-title">订单详情</div>
+          <button class="drawer-close" onclick="closeDrawer()">×</button>
+        </div>
+        <div class="drawer-content">
+          <div class="drawer-info-row"><span class="drawer-info-label">订单编号</span><span class="drawer-info-value">6951223808018487149</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">商品金额</span><span class="drawer-info-value">¥199.00</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">优惠金额</span><span class="drawer-info-value">¥100.00</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">实付金额</span><span class="drawer-info-value">¥99.00</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">订单状态</span><span class="drawer-info-value" style="color:#00B42A;font-weight:600;">已发货</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">下单时间</span><span class="drawer-info-value">2026-03-11 22:07:44</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">发货时间</span><span class="drawer-info-value">2026-03-12 09:51</span></div>
+          <div class="drawer-info-row"><span class="drawer-info-label">收货地址</span><span class="drawer-info-value">广东省东莞市东莞市沙田镇 ***</span></div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+  overlay.style.display = 'flex';
+  requestAnimationFrame(function() { overlay.classList.add('show'); });
+}
+
+/**
+ * 关闭抽屉
+ */
+function closeDrawer() {
+  var overlay = document.getElementById('drawer-overlay');
+  overlay.classList.remove('show');
+  setTimeout(function() { overlay.style.display = 'none'; }, 290);
+}
+
+/**
+ * 点击抽屉外部关闭抽屉
+ * @param {Event} e - 点击事件
+ */
+function closeDrawerOnOverlay(e) {
+  if (e.target === document.getElementById('drawer-overlay')) closeDrawer();
+}
+
+/**
+ * 打开模态框
+ * @param {string} type - 模态框类型
+ */
+function openModal(type) {
+  var map = {
+    logistics: 'modal-logistics',
+    address:   'modal-address',
+    reship:    'modal-reship',
+    payment:   'modal-payment'
+  };
+  var id = map[type];
+  if (!id) return;
+  var el = document.getElementById(id);
+  if (!el) {
+    // 创建模态框元素
+    el = document.createElement('div');
+    el.id = id;
+    el.className = 'modal-overlay';
+    el.style.display = 'none';
+    
+    let modalContent = '';
+    switch(type) {
+      case 'logistics':
+        modalContent = `
+          <div class="modal">
+            <div class="modal-title">物流详情</div>
+            <div class="modal-content">
+              圆通快递 YT0020077411577<br>
+              [待取件] 2026-03-13 21:30:55<br>
+              快递员正在派送，请保持电话畅通。
+            </div>
+            <div class="modal-footer">
+              <button class="modal-btn-cancel" onclick="closeModal('${id}')">取消</button>
+              <button class="modal-btn-confirm" onclick="closeModalWithToast('${id}', '物流信息已更新')">确认</button>
+            </div>
+          </div>
+        `;
+        break;
+      case 'address':
+        modalContent = `
+          <div class="modal">
+            <div class="modal-title">修改收货地址</div>
+            <div class="modal-content">
+              <label class="form-label-modal" for="address-name">收货人 <span style="color:#EF4444">*</span></label>
+              <input class="form-input" type="text" id="address-name" placeholder="请输入收货人姓名" autocomplete="name">
+              <div class="error-message" id="address-name-error">请输入收货人姓名</div>
+              
+              <label class="form-label-modal" for="address-phone">联系电话 <span style="color:#EF4444">*</span></label>
+              <input class="form-input" type="tel" id="address-phone" placeholder="请输入联系电话" autocomplete="tel">
+              <div class="error-message" id="address-phone-error">请输入有效的联系电话</div>
+              
+              <label class="form-label-modal" for="address-detail">收货地址 <span style="color:#EF4444">*</span></label>
+              <input class="form-input" type="text" id="address-detail" placeholder="请输入详细地址" autocomplete="street-address">
+              <div class="error-message" id="address-detail-error">请输入详细收货地址</div>
+            </div>
+            <div class="modal-footer">
+              <button class="modal-btn-cancel" onclick="closeModal('${id}')">取消</button>
+              <button class="modal-btn-confirm" onclick="validateAddressForm('${id}')">确认修改</button>
+            </div>
+          </div>
+        `;
+        break;
+      case 'reship':
+        modalContent = `
+          <div class="modal">
+            <div class="modal-title">重新发货</div>
+            <div class="modal-content">确认对此订单进行重新发货操作吗？<br>操作后将重新生成发货单，请确认商品库存充足。</div>
+            <div class="modal-footer">
+              <button class="modal-btn-cancel" onclick="closeModal('${id}')">取消</button>
+              <button class="modal-btn-confirm" onclick="closeModalWithToast('${id}', '重新发货申请已提交')">确认</button>
+            </div>
+          </div>
+        `;
+        break;
+      case 'payment':
+        modalContent = `
+          <div class="modal">
+            <div class="modal-title">打款</div>
+            <div class="modal-content">
+              <label class="form-label-modal" for="payment-amount">打款金额 <span style="color:#EF4444">*</span></label>
+              <input class="form-input" type="text" id="payment-amount" placeholder="请输入打款金额（如：100.00）">
+              <div class="error-message" id="payment-amount-error">请输入有效的金额</div>
+              
+              <label class="form-label-modal" for="payment-reason">打款原因 <span style="color:#EF4444">*</span></label>
+              <input class="form-input" type="text" id="payment-reason" placeholder="请输入打款原因">
+              <div class="error-message" id="payment-reason-error">请输入打款原因</div>
+            </div>
+            <div class="modal-footer">
+              <button class="modal-btn-cancel" onclick="closeModal('${id}')">取消</button>
+              <button class="modal-btn-confirm" onclick="validatePaymentForm('${id}')">确认</button>
+            </div>
+          </div>
+        `;
+        break;
+    }
+    
+    el.innerHTML = modalContent;
+    document.body.appendChild(el);
+  }
+  el.style.display = 'flex';
+  requestAnimationFrame(function() { el.classList.add('show'); });
+  el.addEventListener('click', function oc(e) {
+    if (e.target === el) { closeModal(id); el.removeEventListener('click', oc); }
+  });
+  
+  // 初始化输入框事件监听
+  initModalInputs(id);
+}
+
+/**
+ * 关闭模态框
+ * @param {string} id - 模态框ID
+ */
+function closeModal(id) {
+  var el = document.getElementById(id);
+  el.classList.remove('show');
+  setTimeout(function() { el.style.display = 'none'; }, 230);
+}
+
+/**
+ * 关闭模态框并显示提示
+ * @param {string} id - 模态框ID
+ * @param {string} msg - 提示信息
+ */
+function closeModalWithToast(id, msg) {
+  closeModal(id);
+  setTimeout(function() { showToast(msg); }, 160);
+}
+
+/**
+ * 设置输入框错误状态
+ * @param {string} inputId - 输入框ID
+ * @param {string} errorId - 错误信息ID
+ * @param {boolean} show - 是否显示错误
+ */
+function setInputError(inputId, errorId, show) {
+  var input = document.getElementById(inputId);
+  var error = document.getElementById(errorId);
+  if (!input || !error) return;
+  
+  if (show) {
+    input.classList.add('error');
+    input.classList.remove('valid');
+    error.classList.add('show');
+  } else {
+    input.classList.remove('error');
+    error.classList.remove('show');
+  }
+}
+
+/**
+ * 设置输入框验证成功状态
+ * @param {string} inputId - 输入框ID
+ */
+function setInputValid(inputId) {
+  var input = document.getElementById(inputId);
+  if (!input) return;
+  input.classList.add('valid');
+  input.classList.remove('error');
+}
+
+/**
+ * 验证手机号格式
+ * @param {string} phone - 手机号
+ * @returns {boolean}
+ */
+function validatePhone(phone) {
+  var phoneRegex = /^1[3-9]\d{9}$/;
+  return phoneRegex.test(phone);
+}
+
+/**
+ * 验证金额格式
+ * @param {string} amount - 金额
+ * @returns {boolean}
+ */
+function validateAmount(amount) {
+  var amountRegex = /^\d+(\.\d{1,2})?$/;
+  return amountRegex.test(amount) && parseFloat(amount) > 0;
+}
+
+/**
+ * 验证地址表单
+ * @param {string} modalId - 模态框ID
+ */
+function validateAddressForm(modalId) {
+  var nameInput = document.getElementById('address-name');
+  var phoneInput = document.getElementById('address-phone');
+  var addressInput = document.getElementById('address-detail');
+  
+  var isValid = true;
+  
+  // 验证姓名
+  if (!nameInput.value.trim()) {
+    setInputError('address-name', 'address-name-error', true);
+    isValid = false;
+  } else {
+    setInputError('address-name', 'address-name-error', false);
+    setInputValid('address-name');
+  }
+  
+  // 验证电话
+  if (!phoneInput.value.trim()) {
+    setInputError('address-phone', 'address-phone-error', true);
+    document.getElementById('address-phone-error').textContent = '请输入联系电话';
+    isValid = false;
+  } else if (!validatePhone(phoneInput.value)) {
+    setInputError('address-phone', 'address-phone-error', true);
+    document.getElementById('address-phone-error').textContent = '请输入有效的11位手机号';
+    isValid = false;
+  } else {
+    setInputError('address-phone', 'address-phone-error', false);
+    setInputValid('address-phone');
+  }
+  
+  // 验证地址
+  if (!addressInput.value.trim()) {
+    setInputError('address-detail', 'address-detail-error', true);
+    isValid = false;
+  } else if (addressInput.value.trim().length < 5) {
+    setInputError('address-detail', 'address-detail-error', true);
+    document.getElementById('address-detail-error').textContent = '地址至少需要5个字符';
+    isValid = false;
+  } else {
+    setInputError('address-detail', 'address-detail-error', false);
+    setInputValid('address-detail');
+  }
+  
+  // 全部验证通过
+  if (isValid) {
+    closeModalWithToast(modalId, '地址修改成功');
+  }
+}
+
+/**
+ * 验证打款表单
+ * @param {string} modalId - 模态框ID
+ */
+function validatePaymentForm(modalId) {
+  var amountInput = document.getElementById('payment-amount');
+  var reasonInput = document.getElementById('payment-reason');
+  
+  var isValid = true;
+  
+  // 验证金额
+  if (!amountInput.value.trim()) {
+    setInputError('payment-amount', 'payment-amount-error', true);
+    document.getElementById('payment-amount-error').textContent = '请输入打款金额';
+    isValid = false;
+  } else if (!validateAmount(amountInput.value)) {
+    setInputError('payment-amount', 'payment-amount-error', true);
+    document.getElementById('payment-amount-error').textContent = '请输入有效的金额（如：100.00）';
+    isValid = false;
+  } else {
+    setInputError('payment-amount', 'payment-amount-error', false);
+    setInputValid('payment-amount');
+  }
+  
+  // 验证原因
+  if (!reasonInput.value.trim()) {
+    setInputError('payment-reason', 'payment-reason-error', true);
+    isValid = false;
+  } else if (reasonInput.value.trim().length < 2) {
+    setInputError('payment-reason', 'payment-reason-error', true);
+    document.getElementById('payment-reason-error').textContent = '原因至少需要2个字符';
+    isValid = false;
+  } else {
+    setInputError('payment-reason', 'payment-reason-error', false);
+    setInputValid('payment-reason');
+  }
+  
+  // 全部验证通过
+  if (isValid) {
+    closeModalWithToast(modalId, '打款申请已提交');
+  }
+}
+
+/**
+ * 初始化模态框输入框事件监听
+ * @param {string} modalId - 模态框ID
+ */
+function initModalInputs(modalId) {
+  setTimeout(function() {
+    var modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    var inputs = modal.querySelectorAll('.form-input');
+    inputs.forEach(function(input) {
+      // 输入时清除错误状态
+      input.addEventListener('input', function() {
+        var errorEl = document.getElementById(input.id + '-error');
+        if (errorEl) {
+          input.classList.remove('error');
+          errorEl.classList.remove('show');
+        }
+      });
+      
+      // 焦点时聚焦样式
+      input.addEventListener('focus', function() {
+        // 样式已通过CSS处理
+      });
+      
+      // 键盘事件 - Enter键提交表单
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          if (modalId === 'modal-address') {
+            validateAddressForm(modalId);
+          } else if (modalId === 'modal-payment') {
+            validatePaymentForm(modalId);
+          }
+        }
+      });
+    });
+    
+    // 自动聚焦到第一个输入框
+    var firstInput = inputs[0];
+    if (firstInput) {
+      firstInput.focus();
+    }
+  }, 250);
+}
+
+/**
+ * 切换弹出菜单
+ * @param {string} id - 弹出菜单ID
+ */
+function togglePopover(id) {
+  var el = document.getElementById(id);
+  var isShow = el.classList.contains('show');
+  document.querySelectorAll('.popover-menu').forEach(function(p) { p.classList.remove('show'); });
+  if (!isShow) {
+    el.classList.add('show');
+    setTimeout(function() {
+      document.addEventListener('click', closePopoverOutside);
+    }, 0);
+  }
+}
+
+/**
+ * 点击外部关闭弹出菜单
+ * @param {Event} e - 点击事件
+ */
+function closePopoverOutside(e) {
+  if (!e.target.closest('.popover-wrapper')) {
+    document.querySelectorAll('.popover-menu').forEach(function(p) { p.classList.remove('show'); });
+    document.removeEventListener('click', closePopoverOutside);
+  }
+}
+
+/**
+ * 更新总分显示
+ */
+function updateTotalScore() {
+  const element = document.getElementById('topScoreValue');
+  element.textContent = systemState.totalScore;
+  element.style.color = systemState.totalScore >= 80 ? '#6ee7b7' : '#fca5a5';
+}
+
+/**
+ * 更新违规列表
+ */
+function updateViolationList() {
+  const list = document.getElementById('violationList');
+  const count = document.getElementById('violationCount');
+  
+  count.textContent = systemState.violations.length;
+  
+  if (!systemState.violations.length) {
+    list.innerHTML = '<div class="no-violations">✅ 暂无违规</div>';
+    return;
+  }
+  
+  list.innerHTML = systemState.violations.slice(-20).map(violation => `
+    <div class="violation-item">
+      <div><span class="violation-round">${violation.round}</span></div>
+      <div class="violation-desc">${violation.type} — ${violation.desc}</div>
+      <div class="violation-score">-${violation.value}分</div>
+    </div>
+  `).join('');
+  
+  list.scrollTop = list.scrollHeight;
+}
+/**
+ * 更新进度显示
+ */
+function updateProgress() {
+  const completedCount = systemState.completedCustomers.length;
+  const totalCount = customers.length;
+  
+  document.getElementById('progressBar').style.width = (completedCount / totalCount * 100).toFixed(0) + '%';
+  document.getElementById('progressCount').textContent = `${completedCount}/${totalCount}`;
+  document.getElementById('progressLabel').textContent = systemState.end ? '完成' : (systemState.on ? '测试中' : '等待');
+  document.getElementById('stageLabel').textContent = systemState.end ? '已完成' : (systemState.on ? `${completedCount}/${totalCount}` : '待启动');
+}
+
+/**
+ * 更新分数面板
+ */
+function updateScorePanel() {
+  const scoreCircle = document.getElementById('scoreCircle');
+  const scoreCircleValue = document.getElementById('scoreCircleValue');
+  const scoreSummaryTitle = document.getElementById('scoreSummaryTitle');
+  const scoreSummaryDesc = document.getElementById('scoreSummaryDesc');
+  
+  if (!systemState.on) {
+    scoreCircle.className = 'score-circle pending';
+    scoreCircleValue.textContent = '—';
+    scoreSummaryTitle.textContent = '等待测试开始';
+    scoreSummaryDesc.textContent = '';
+    return;
+  }
+  
+  scoreCircleValue.textContent = systemState.totalScore;
+  
+  if (systemState.totalScore >= 80) {
+    scoreCircle.className = 'score-circle pass';
+    scoreSummaryTitle.textContent = '✅ 合格';
+    scoreSummaryDesc.textContent = `总分 ${systemState.totalScore}`;
+  } else {
+    scoreCircle.className = 'score-circle fail';
+    scoreSummaryTitle.textContent = '❌ 待改进';
+    scoreSummaryDesc.textContent = `总分 ${systemState.totalScore}`;
+  }
+  
+  document.getElementById('scoreModules').innerHTML = systemState.scoringModules.map(module => {
+    const rate = (module.score / module.maxScore * 100).toFixed(0);
+    let rateColor = 'var(--success)';
+    let rateLevel = '优秀';
+    
+    if (rate < 60) {
+      rateColor = 'var(--danger)';
+      rateLevel = '待提升';
+    } else if (rate < 80) {
+      rateColor = 'var(--warning)';
+      rateLevel = '合格';
+    }
+    
+    const deductionHtml = module.deductions.length === 0 ? 
+      '<div class="no-deduction">✅ 无扣分</div>' : 
+      module.deductions.map(deduction => `
+        <div class="deduction-item">
+          <span>${deduction.round}：${deduction.type}</span>
+          <span style="color:var(--danger);font-weight:600">-${deduction.value}</span>
+        </div>
+      `).join('');
+    
+    return `
+      <div class="score-module-card">
+        <div class="module-header">
+          <span class="module-name">${module.name}</span>
+          <span class="module-score" style="color:${rateColor}">
+            ${module.score}<span style="font-size:12px;color:var(--gray-400)">/${module.maxScore}</span>
+          </span>
+        </div>
+        <div class="module-progress">
+          <div class="module-progress-fill" style="width:${rate}%;background:${rateColor}"></div>
+        </div>
+        <div class="module-rate">
+          ${rate}%·<span class="rating-badge ${rate >= 80 ? 'rating-excellent' : rate >= 60 ? 'rating-pass' : 'rating-fail'}">${rateLevel}</span>
+        </div>
+        <div class="module-deductions">
+          ${deductionHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/**
+ * 添加步骤
+ * @param {string} title - 步骤标题
+ * @param {string} description - 步骤描述
+ * @param {string} status - 步骤状态
+ */
+function addStep(title, description, status) {
+  systemState.steps.push({
+    title,
+    desc: description,
+    status,
+    time: getCurrentTime()
+  });
+}
+
+/**
+ * 更新流程面板
+ */
+function updateProcessPanel() {
+  const element = document.getElementById('processTimeline');
+  
+  if (!systemState.steps.length) {
+    element.innerHTML = '<div style="text-align:center;padding:60px;color:var(--gray-400)">测试开始后显示</div>';
+    return;
+  }
+  
+  element.innerHTML = systemState.steps.map(step => `
+    <div class="process-step">
+      <div class="process-dot done">✅</div>
+      <div class="process-info">
+        <div class="process-title">
+          ${step.title}<span style="font-size:11px;color:var(--gray-400);font-weight:normal"> ${step.time}</span>
+        </div>
+        <div class="process-desc">${step.desc}</div>
+      </div>
+    </div>
+  `).join('');
+}
+/**
+ * 更新报告面板
+ */
+function updateReportPanel() {
+  const element = document.getElementById('reportContent');
+  
+  if (!systemState.end) {
+    element.innerHTML = `
+      <div class="report-not-ready">
+        <div class="icon">📋</div>
+        <h3>报告尚未生成</h3>
+        <p>完成全部客户对话后自动生成</p>
+      </div>
+    `;
+    return;
+  }
+  
+  const duration = Math.round((systemState.endTime - systemState.startTime) / 1000);
+  const minutes = Math.floor(duration / 60);
+  const seconds = duration % 60;
+  
+  const conclusion = systemState.totalScore >= 80 ? '✅ 合格' : '❌ 待改进';
+  const conclusionClass = systemState.totalScore >= 80 ? 'rating-excellent' : 'rating-fail';
+  
+  const rows = systemState.scoringModules.map((module, index) => {
+    const rate = (module.score / module.maxScore * 100).toFixed(0);
+    let rateLevel = '优秀';
+    let rateClass = 'rating-excellent';
+    
+    if (rate < 60) {
+      rateLevel = '待提升';
+      rateClass = 'rating-fail';
+    } else if (rate < 80) {
+      rateLevel = '合格';
+      rateClass = 'rating-pass';
+    }
+    
+    const deductionSummary = module.deductions.length === 0 ? 
+      '无扣分' : 
+      module.deductions.map(deduction => `${deduction.round} ${deduction.type}(-${deduction.value})`).join('；');
+    
+    return `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${module.name}</td>
+        <td>${module.maxScore}</td>
+        <td>${module.score}</td>
+        <td>${rate}%</td>
+        <td style="max-width:200px;font-size:11px">${deductionSummary}</td>
+        <td><span class="rating-badge ${rateClass}">${rateLevel}</span></td>
+      </tr>
+    `;
+  }).join('');
+  
+  const suggestionMap = {
+    greeting: '加强开场问候。',
+    problem: '提升问题确认。',
+    solution: '加强方案提供。',
+    communication: '优化沟通技巧。',
+    process: '强化流程规范。',
+    closing: '优化结束语。'
+  };
+  
+  const lowScoreModules = systemState.scoringModules.filter(module => (module.score / module.maxScore) < 0.8);
+  const suggestionHtml = lowScoreModules.length === 0 ? 
+    '<div style="text-align:center;padding:20px;color:var(--success)">✅ 表现优秀</div>' : 
+    '<div class="suggestion-cards">' + 
+    lowScoreModules.map(module => `
+      <div class="suggestion-card">
+        <h4>📌 ${module.name}（${(module.score / module.maxScore * 100).toFixed(0)}%）</h4>
+        <p>${suggestionMap[module.id] || ''}</p>
+      </div>
+    `).join('') + 
+    '</div>';
+  
+  element.innerHTML = `
+    <div class="report-container" id="rpa">
+      <div class="report-header">
+        <h2>🌿 草本初色 · 客服岗前测试报告</h2>
+        <p>祈愿工作室· 标准化考核</p>
+      </div>
+      <div class="report-body">
+        <div class="report-info-grid">
+          <div class="report-info-item">
+            <div class="report-info-label">被测人员</div>
+            <div class="report-info-value">${systemState.agentName}</div>
+          </div>
+          <div class="report-info-item">
+            <div class="report-info-label">测试时间</div>
+            <div class="report-info-value">${systemState.startTime.toLocaleString('zh-CN')}</div>
+          </div>
+          <div class="report-info-item">
+            <div class="report-info-label">总用时</div>
+            <div class="report-info-value">${minutes}分${seconds}秒</div>
+          </div>
+          <div class="report-info-item">
+            <div class="report-info-label">结论</div>
+            <div class="report-info-value">
+              <span class="rating-badge ${conclusionClass}" style="font-size:14px;padding:4px 14px">${conclusion}</span>
+            </div>
+          </div>
+        </div>
+        <h3 style="font-size:15px;margin-bottom:12px">📊 评分明细</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>维度</th>
+              <th>满分</th>
+              <th>得分</th>
+              <th>得分率</th>
+              <th>扣分摘要</th>
+              <th>评级</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+            <tr>
+              <td colspan="2"><strong>汇总</strong></td>
+              <td><strong>100</strong></td>
+              <td><strong>${systemState.totalScore}</strong></td>
+              <td><strong>${systemState.totalScore}%</strong></td>
+              <td></td>
+              <td><span class="rating-badge ${conclusionClass}">${conclusion}</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 style="font-size:15px;margin-bottom:12px">💡 改进建议</h3>
+        ${suggestionHtml}
+      </div>
+      <div class="report-actions">
+        <button class="btn btn-primary" onclick="downloadReport()" style="width:auto">📥 下载</button>
+        <button class="btn btn-outline" onclick="window.print()" style="width:auto">🖨️ 打印</button>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * 下载报告
+ */
+function downloadReport() {
+  const reportElement = document.getElementById('rpa');
+  const styleContent = document.querySelector('style').textContent;
+  
+  const html = `
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+      <meta charset="UTF-8">
+      <title>报告-${systemState.agentName}</title>
+      <style>
+        ${styleContent}
+        body {
+          background: #f5f5f5;
+          padding: 20px;
+        }
+        .report-container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .report-actions {
+          display: none;
+        }
+      </style>
+    </head>
+    <body>
+      ${reportElement.outerHTML}
+    </body>
+    </html>
+  `;
+  
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  
+  link.href = url;
+  link.download = `测试报告_${systemState.agentName}.html`;
+  link.click();
+  
+  URL.revokeObjectURL(url);
+}
+
+/**
+ * 显示重置模态框
+ */
+function showResetModal() {
+  document.getElementById('resetModal').classList.add('show');
+}
+
+/**
+ * 隐藏重置模态框
+ */
+function hideResetModal() {
+  document.getElementById('resetModal').classList.remove('show');
+}
+
+/**
+ * 重置测试
+ */
+function resetTest() {
+  location.reload();
+}
+document.addEventListener('keydown',function(e){if(e.target.id==='chatInput'){if(e.key==='Enter'&&!e.ctrlKey&&!e.shiftKey){e.preventDefault();sendMessage()}if(e.key==='Enter'&&e.ctrlKey){const i=document.getElementById('chatInput'),p=i.selectionStart;i.value=i.value.substring(0,p)+'\n'+i.value.substring(p);i.selectionStart=i.selectionEnd=p+1}}});
+initCustomerList();
+</script>
+</body>
+</html>
